@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pratt & Whitney</title>
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <!-- <meta
+    http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' 'unsafe-eval' blob:; style-src 'self' 'unsafe-inline'; img-src * 'self' data: https:; worker-src 'self' blob:;"
+  /> -->
+  <meta
+  http-equiv="Content-Security-Policy"
+  content="
+    default-src 'self' https://cdn.jsdelivr.net https://www.gstatic.com  blob:  ;
+    script-src 'self' 'unsafe-eval' blob:;
+    style-src 'self' 'unsafe-inline';
+    img-src * 'self' data: https:;
+    font-src 'self' data:;
+    worker-src 'self' blob:;
+    media-src 'self' http://commondatastorage.googleapis.com;
+ 
+    "
+/>
+<!-- <link href="https://db.onlinewebfonts.com/c/0d884994137146a0ff80aa77e8fedbce?family=Objektiv+VF+Trial" rel="stylesheet" type="text/css"/> -->
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

@@ -1,0 +1,129 @@
+import React, { useRef } from 'react'
+import { useGLTF } from '@react-three/drei'
+import glb3d from "../../assets/3dFile/turbine__turbofan_engine__jet_engine.glb"
+
+export function Test3d(props) {
+  const { nodes, materials } = useGLTF(glb3d)
+  return (
+    <group {...props} dispose={null}>
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={0.974}>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_2.geometry}
+          material={materials['metal-bright']}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_3.geometry}
+          material={materials['plastic-cone-black']}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_4.geometry}
+          material={materials['plastic-grey']}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_5.geometry}
+          material={materials['accent-yellow']}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_6.geometry}
+          material={materials['accent-yellow']}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_7.geometry}
+          material={materials['accent-yellow']}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_8.geometry}
+          material={materials['metal-bright']}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_9.geometry}
+          material={materials['metal-bright']}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_10.geometry}
+          material={materials['metal-bright']}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_11.geometry}
+          material={materials['metal-dark']}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_12.geometry}
+          material={materials['metal-dark']}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_13.geometry}
+          material={materials['metal-dark']}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_14.geometry}
+          material={materials['metal-mid']}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_15.geometry}
+          material={materials['metal-mid']}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_16.geometry}
+          material={materials['metal-mid']}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_17.geometry}
+          material={materials['metal-mid']}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_18.geometry}
+          material={materials['metal-mid']}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_19.geometry}
+          material={materials['metal-mid']}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_20.geometry}
+          material={materials['metal-mid']}
+        />
+      </group>
+    </group>
+  )
+}
+
+useGLTF.preload(glb3d)

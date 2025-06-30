@@ -1,0 +1,100 @@
+import React, { useEffect, useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.css"; // Import Swiper styles
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
+import { Navigation, Pagination, Scrollbar, A11y,Virtual } from "swiper/modules";
+import activeRedDot from "../../assets/100years/active-dot.png";
+import redDot from "../../assets/100years/non-active-dots.png";
+import { gsap } from "gsap";
+
+const InnerSliderCarousal = ({ images,onImageClick,type,combinedImages }) => {
+  const [activeIndex,setActiveIndex] = useState(0)
+  // console.log("type",type);
+  // console.log("haldeclick",onImageClick);
+  // console.log("images",images);
+
+  const swiperInnerRef = useRef(null);
+  const handlePrevClick = () => {
+    swiperInnerRef.current.swiper.slidePrev(); // Go to previous slide
+  };
+
+  const handleNextClick = () => {
+    swiperInnerRef.current.swiper.slideNext(); // Go to next slide
+  };
+  return (
+    <>
+      <div className="relative">
+        {" "}
+      
+        {images?.slice(1).length > 3 && (
+          <>
+            <div
+          className={`absolute left_arrow_clip_path left-btn top-1/2 -left-2 transform -translate-y-1/2 cursor-pointer w-[18px] h-[18px] flex justify-center items-center ${activeIndex === 0 ? "bg-[#918F8F]" : "bg-[#D91027]"}  text-white font-bold z-10`}
+          onClick={handlePrevClick}
+        >
+          <FaChevronLeft className="w-2 h-2" />
+        </div>
+        <div
+          className={`absolute right_arrow_clip_path right-btn top-1/2 -right-2 transform -translate-y-1/2 cursor-pointer w-[18px] h-[18px] flex justify-center items-center  ${activeIndex === images.length-4 ? "bg-[#918F8F]" : "bg-[#D91027]"}  text-white font-bold z-10`}
+          onClick={handleNextClick}
+        >
+          <FaChevronRight className="w-2 h-2" />
+        </div>
+        </>)}
+       
+        <Swiper
+          ref={swiperInnerRef}
+          spaceBetween={10} // Adjust space between slides
+          slidesPerView={3}
+          onSlideChange={(e)=> setActiveIndex(e.realIndex)}
+          modules={[Navigation, Pagination,Virtual]}
+          virtual //Only render what's visible in the viewport.
+          className="my-swiper innerSlideSwiper"
+        >
+            {/* <div
+          className={`h-full w-full z-30 bg-slate-500 absolute top-0 ${images?.length > 7 ? 'opacity-100' : 'opacity-0'} `}
+          style={{
+            background: "linear-gradient(270deg, #f3f3f3, transparent)",
+          }}
+        ></div> */}
+          {images?.slice(1).map((item, index) => (
+            <SwiperSlide key={index}>
+              {item.img ? (
+                 <img
+                 loading="lazy"
+                src={item.img}
+                alt={`Slide Image ${index}`}
+                className="w-full  h-[60px] object-cover" 
+                // style={{
+                //   opacity: 1 - index * 0.1 > 0.3 ? 1 - index * 0.2 : 0.3 // Minimum opacity 0.3
+                // }}
+                onClick={() => {
+                  // console.log('Image clicked:', e); // Check what image is clicked
+                  // console.log('All images:', images?.slice(1));
+                  onImageClick(index, images?.slice(1))}}
+              />
+              ) : item.video ? (
+       <div className="h-[60px] relative" onClick={() => {
+                  onImageClick(index, images?.slice(1))}}>
+         <video
+          preload="none"
+  playsInline
+          src={item.video}
+          className="h-[60px] w-full object-cover cursor-pointer"
+        />
+       <div className="absolute inset-0 flex justify-center items-center cursor-pointer"><button className="bg-black bg-opacity-50 p-2 rounded-full text-white"><svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.752 11.168l-5.197-3.03A1 1 0 008 9.03v5.94a1 1 0 001.555.832l5.197-3.03a1 1 0 000-1.664z"></path></svg></button></div>
+       </div>
+      ) : null}
+             
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        
+      </div>
+    </>
+  );
+};
+
+export default InnerSliderCarousal;
