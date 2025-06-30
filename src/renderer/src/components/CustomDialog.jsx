@@ -57,7 +57,7 @@ const CustomDialog =({ images, startIndex, onClose }) => {
   }, []);
   console.log("start",startIndex);
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-60 z-50 flex justify-center items-center rounded-[5px]"   onClick={onClose}>
+    <div className="fixed inset-0 bg-black bg-opacity-60 z-[9999] flex justify-center items-center rounded-[5px]"   onClick={onClose}>
     <div className="bg-white  rounded-lg w-[80%] max-w-5xl  relative border-2 border-black"      onClick={(e) => e.stopPropagation()} >
     <button
   onClick={onClose}

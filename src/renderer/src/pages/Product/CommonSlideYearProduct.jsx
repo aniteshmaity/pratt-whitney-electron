@@ -11,16 +11,15 @@ import gtf from "../../assets/100years/gtf-engine.png";
 import layer1 from "../../assets/100years/layer-1.png";
 import layer2 from "../../assets/100years/layer-2.png";
 import layer3 from "../../assets/100years/layer-3.png";
+import layer4 from "../../assets/100years/machine-1.png";
 const CommonSlideYearProduct = ({gallery,onImageClick}) => {
   console.log("gallery",gallery);
   const cards = [
     { id: 1, img: layer1, description: "Lorem ipsum dolor" },
-    { id: 2, img: layer1, description: "Lorem ipsum dolor" },
+    { id: 2, img: layer2, description: "Lorem ipsum dolor" },
     { id: 3, img: layer3, description: "Lorem ipsum dolor" },
-    { id: 4, img: layer2, description: "Lorem ipsum dolor" },
-    { id: 5, img: layer2, description: "Lorem ipsum dolor" },
-    { id: 6, img: layer3, description: "Lorem ipsum dolor" },
-    { id: 7, img: layer3, description: "Lorem ipsum dolor" },
+    { id: 4, img: layer4, description: "Lorem ipsum dolor" },
+  
   ];
 
   const [activeIndex, setActiveIndex] = useState(1); // Initial second card is active

@@ -40,7 +40,7 @@ const MapScreen = () => {
   (state) => state.presence
 );
 // console.log("selectedCityData",selectedCityData);
-//   console.log("currentindex", currentIndex);
+  // console.log("currentindex", currentIndex);
   // console.log("activeInxed", activeIndex);
   // const cities = [
   //   { name: "Delhi", x: "0%", y: "0%", position: "top-[8%] left-[36%]",cityPosition:"top-[26%] left-[26%]" },
@@ -303,18 +303,20 @@ const MapScreen = () => {
     if (currentIndex === cities.length - 1) return;
     setCurrentIndex((prev) => (prev === cities.length - 1 ? 0 : prev + 1));
   };
-  const handlePresenceClick = (index,city)=> {
-      if (activeCity?.id === city.id) {
-      setActiveCity(null);
-    } else {
-      setActiveCity(city);
-    }
-     const cityData = mapData[activeIndex]?.cities[index];   
+ const handlePresenceClick = (index, city) => {
+  const isSameCity = activeCity?.id === city.id;
 
-  // Save to Redux
-  dispatch(setSelectedCity({ index, city }));
-    setCurrentIndex(index)
+  if (isSameCity) {
+    setActiveCity(null);
+    setCurrentIndex(null);
+    return;
   }
+
+  setActiveCity(city);
+  setCurrentIndex(index);
+  dispatch(setSelectedCity({ index, city }));
+};
+
 
   const handleImageClick = (index, img) => {
     console.log("images------", img);
@@ -610,16 +612,18 @@ const MapScreen = () => {
      handleCityClick(city)
   }
 }}
-                className={`flex flex-col items-center absolute z-[9999] ${city.cityPosition} cursor-pointer`}
+                className={`flex flex-col items-center absolute z-[99] ${city.cityPosition} cursor-pointer`}
               >
-                <ReddropSvg />
+  
+                  <ReddropSvg className={"z-[40px]"}/>
+ 
                 <div>
                   <h2 className="font-objektiv text-[0.8rem] font-semibold">{city.name}</h2>
                 </div>
               </div>
             ))}
 
-          {activeCity && (
+          {activeCity && activeIndex === 2 && (
             <div className={`absolute  p-4 flex gap-4 w-[380px] z-[999] ${activeCity.position}`}>
               <img
                 src={activeCity.data.img}
@@ -655,7 +659,7 @@ const MapScreen = () => {
           {/* Line from dot to card (corner line example) */}
           {
             activeCity && (
-              <svg className={`absolute w-[200px] h-[200px] pointer-events-none ${activeCity.svgPosition}`} viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg className={`absolute w-[200px] z-[10] h-[200px] pointer-events-none ${activeCity.svgPosition}`} viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
                 {activeCity?.linePath?.length >= 2 &&
                   activeCity.linePath.slice(1).map((point, i) => (
                     <line

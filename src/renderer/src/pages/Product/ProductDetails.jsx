@@ -76,7 +76,7 @@ const ProductDetails = ({ onClose, engineData }) => {
   const redDotRef = useRef(null);
   const scrollableRef = useRef(null);
   const redDot2Ref = useRef(null);
-      const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const [isExpanded, setIsExpanded] = useState(null);
   const [isOverflowing, setIsOverflowing] = useState(false);
   const [showSlider, setShowSlider] = useState(false);
@@ -88,11 +88,11 @@ const ProductDetails = ({ onClose, engineData }) => {
   const [dialogImages, setDialogImages] = useState([]);
   const [startIndex, setStartIndex] = useState(0);
   const homeId = 2;
-  const { year, innerIndex,activeYear } = useSelector((state) => state.year);
+  const { year, innerIndex, activeYear } = useSelector((state) => state.year);
   const decadeIndex = yearEngineData.findIndex((decade) =>
     decade.timeline.some((item) => item.year === activeYear),
   );
-    // const { year, innerIndex } = useSelector((state) => state.year);
+  // const { year, innerIndex } = useSelector((state) => state.year);
 
   const lastVisited = useSelector((state) => state.navigation.lastVisited);
   // console.log("lastvisited",lastVisited);
@@ -119,10 +119,10 @@ const ProductDetails = ({ onClose, engineData }) => {
   // }
   const onBack = () => {
     dispatch(setShowLoader(true));
- 
+
     if (engineParamSlug) {
       console.log("inside eingien param page");
-    navigate(-1);
+      navigate(-1);
     }
     if (yearParamSlug || lastVisited === 'years') {
       navigate(`/A100years/yearCourasal/${yearParamName}`);
@@ -326,39 +326,39 @@ const ProductDetails = ({ onClose, engineData }) => {
             </div>
 
             <div className="bg-[#D91027] h-[50%] relative ">
-            {!engineParamSlug && ( allData?.title === "F135" ||
-  allData?.logoTitle === "PT6E" ||
-  allData?.title === "PW800" ||
-  allData?.title === "PW127XT" ||
-  allData?.title === "GTF Engine Family" 
+              {!engineParamSlug && (allData?.title === "F135" ||
+                allData?.logoTitle === "PT6E" ||
+                allData?.title === "PW800" ||
+                allData?.title === "PW127XT" ||
+                allData?.title === "GTF Engine Family"
 
-) && (
-  <>
-    <div className="top-0 absolute w-[170px] h-[170px] left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-      <img
-        ref={rotateImgRef}
-        src={rotateImg}
-        alt=""
-        className=" object-cover"
-      />
-    </div>
+              ) && (
+                  <>
+                    <div className="top-0 absolute w-[170px] h-[170px] left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+                      <img
+                        ref={rotateImgRef}
+                        src={rotateImg}
+                        alt=""
+                        className=" object-cover"
+                      />
+                    </div>
 
-    <div
-      onClick={() =>
-        allData?.title === "F135"
-          ? handleExplore3dExe()
-          :  allData?.title === "GTF Engine Family" ? handleGtf() :  handleExplore3d(allData.video3d)
-      }
-      className="w-[150px] m-auto relative"
-    >
-      <div className="absolute bg-[#404040] border-[#D91027] border-[10px] w-[130px] h-[130px] rounded-full  transform  -translate-y-1/2 left-1/2 -translate-x-1/2 text-center z-20  flex justify-center items-center">
-        <p className="w-[65%] text-[17px] text-[#ffff] font-[600]">
-          Explore 3D
-        </p>
-      </div>
-    </div>
-  </>
-)}
+                    <div
+                      onClick={() =>
+                        allData?.title === "F135"
+                          ? handleExplore3dExe()
+                          : allData?.title === "GTF Engine Family" ? handleGtf() : handleExplore3d(allData.video3d)
+                      }
+                      className="w-[150px] m-auto relative"
+                    >
+                      <div className="absolute bg-[#404040] border-[#D91027] border-[10px] w-[130px] h-[130px] rounded-full  transform  -translate-y-1/2 left-1/2 -translate-x-1/2 text-center z-20  flex justify-center items-center">
+                        <p className="w-[65%] text-[17px] text-[#ffff] font-[600]">
+                          Explore 3D
+                        </p>
+                      </div>
+                    </div>
+                  </>
+                )}
 
 
               <div
@@ -433,130 +433,130 @@ const ProductDetails = ({ onClose, engineData }) => {
           <div
             className={`bg-[#FFFFFF]  overflow-y-hidden relative ${mapData ? "pl-[20px] pt-5" : ""}`}
           >
-            <div  className={`pt-2 ${mapData ? "" : "h-[calc(50%-40px)]"}`}>
+            <div className={`pt-2 ${mapData ? "" : "h-[calc(50%-40px)]"}`}>
               {mapData ? (
-              <p className="text-[30px] font-[900] p-[1.9px] pl-4">
-                <span className="text-black ">{allData.header1}</span>{" "}
-                <span className="text-[#E11C37]">{allData.header2}</span>
-              </p>
-            ) : (
-              <>
-                <div className="relative w-[55%]">
-                  <div
-                    className="absolute inset-0 bg-[#D91027] p-[1.9px]"
-                    style={{
-                      clipPath:
-                        "polygon(100% 0%, 100% 0%, 100% 50%, 90% 100%, 0% 100%, 0 0)",
-                    }}
-                  />
-                  <div
-                    className="relative bg-[#393637] h-full w-full px-5 py-3"
-                    style={{
-                      clipPath:
-                        "polygon(100% 0%, 100% 0%, 100% 50%, 90% 100%, 0% 100%, 0 0)",
-                    }}
-                  >
-                    <h1 className="text-5xl font-bold text-white">
-                      {allData?.title}
-                    </h1>
-                    <p className="text-[#CE2028] font-medium pt-3">
-                      {allData?.subTitle}
-                    </p>
-                  </div>
-                </div>
-              </>
-            )}
-
-            {!mapData && <div className="h-[1px] mt-2 w-full bg-[#e7e7e7b8]" />}
-
-            <div
-              className={`grid grid-cols-[auto_1fr] gap-8  ml-5 mt-5 pb-2 w-[90%] relative ${mapData || allData?.variants?.length === 0 ? "" : "border-b"}`}
-            >
-              {!mapData && (
-                <div className="border-[1px] rounded-full shadow-[3px_7px_20px_10px_#6b646426] overflow-hidden  w-[80px] h-[80px] p-1">
-                  <div className="overflow-hidden w-full h-full border-[1px] rounded-full">
-                    <img
-                      src={allData?.logo || gtf}
-                      alt=""
-                      className="h-full w-full object-cover object-center"
+                <p className="text-[30px] font-[900] p-[1.9px] pl-4">
+                  <span className="text-black ">{allData.header1}</span>{" "}
+                  <span className="text-[#E11C37]">{allData.header2}</span>
+                </p>
+              ) : (
+                <>
+                  <div className="relative w-[55%]">
+                    <div
+                      className="absolute inset-0 bg-[#D91027] p-[1.9px]"
+                      style={{
+                        clipPath:
+                          "polygon(100% 0%, 100% 0%, 100% 50%, 90% 100%, 0% 100%, 0 0)",
+                      }}
                     />
+                    <div
+                      className="relative bg-[#393637] h-full w-full px-5 py-3"
+                      style={{
+                        clipPath:
+                          "polygon(100% 0%, 100% 0%, 100% 50%, 90% 100%, 0% 100%, 0 0)",
+                      }}
+                    >
+                      <h1 className="text-5xl font-bold text-white">
+                        {allData?.title}
+                      </h1>
+                      <p className="text-[#CE2028] font-medium pt-3">
+                        {allData?.subTitle}
+                      </p>
+                    </div>
                   </div>
-                </div>
+                </>
               )}
 
-              <p
-                onScroll={handleScroll1}
-                ref={scrollableRef}
-                className={`text-[rgba(0, 0, 0, 0.7)] ${mapData ? "h-auto" : "h-[100px]"} ${(!mapData && (allData?.variants?.length > 0)) ? "h-[100px]" : "h-auto"} no-scrollbar overflow-auto pr-2 max-w-[88%]`}
+              {!mapData && <div className="h-[1px] mt-2 w-full bg-[#e7e7e7b8]" />}
+
+              <div
+                className={`grid grid-cols-[auto_1fr] gap-8  ml-5 mt-5 pb-2 w-[90%] relative ${mapData || allData?.variants?.length === 0 ? "" : "border-b"}`}
               >
-                {allData?.description}
-              </p>
-              {isScrollableOverflowing && (
-                <div className="bg-[#D9D9D9] w-0.5  right-0 top-0 h-[80%] translate-x-1/2 absolute">
-                  <div
-                    ref={redDot2Ref}
-                    className=" w-5 h-5 bg-[#D9D9D9] rounded-full absolute left-1/2 transform -translate-x-1/2 flex justify-center items-center"
-                  >
-                    <div className="bg-red-600 rounded-full w-2 h-2" />
+                {!mapData && (
+                  <div className="border-[1px] rounded-full shadow-[3px_7px_20px_10px_#6b646426] overflow-hidden  w-[80px] h-[80px] p-1">
+                    <div className="overflow-hidden w-full h-full border-[1px] rounded-full">
+                      <img
+                        src={allData?.logo || gtf}
+                        alt=""
+                        className="h-full w-full object-cover object-center"
+                      />
+                    </div>
                   </div>
-                </div>
-              )}
-            </div>
-            {mapData ? (
-              <>
-                <div className="flex gap-[70px] ml-5 mt-5 items-center">
+                )}
+
+                <p
+                  onScroll={handleScroll1}
+                  ref={scrollableRef}
+                  className={`text-[rgba(0, 0, 0, 0.7)] ${mapData ? "h-auto" : "h-[100px]"} ${(!mapData && (allData?.variants?.length > 0)) ? "h-[100px]" : "h-auto"} no-scrollbar overflow-auto pr-2 max-w-[88%]`}
+                >
+                  {allData?.description}
+                </p>
+                {isScrollableOverflowing && (
+                  <div className="bg-[#D9D9D9] w-0.5  right-0 top-0 h-[80%] translate-x-1/2 absolute">
+                    <div
+                      ref={redDot2Ref}
+                      className=" w-5 h-5 bg-[#D9D9D9] rounded-full absolute left-1/2 transform -translate-x-1/2 flex justify-center items-center"
+                    >
+                      <div className="bg-red-600 rounded-full w-2 h-2" />
+                    </div>
+                  </div>
+                )}
+              </div>
+              {mapData ? (
+                <>
+                  <div className="flex gap-[70px] ml-5 mt-5 items-center">
+                    {allData?.variants && allData?.variants.length > 0 && (
+                      <>
+                        {allData?.variants.map((item, index) => {
+                          return (
+                            <div className="flex">
+                              <div className="flex flex-col">
+                                <h2 className="text-[35px] text-center mt-2  font-[800] text-[#CE2028]">
+                                  {item.title}
+                                </h2>
+                                <p className="text-[13px] text-center mt-2 font-[700]">
+                                  {item.subtitle}
+                                </p>
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </>
+                    )}
+                  </div>
+                </>
+              ) : (
+                <div className="flex gap-[30px] ml-5 mt-5 items-center">
                   {allData?.variants && allData?.variants.length > 0 && (
                     <>
+                      <h2 className="text-[#CE2028] font-[700]">
+                        Select Variant
+                      </h2>
+
                       {allData?.variants.map((item, index) => {
                         return (
-                          <div className="flex">
-                            <div className="flex flex-col">
-                              <h2 className="text-[35px] text-center mt-2  font-[800] text-[#CE2028]">
-                                {item.title}
-                              </h2>
-                              <p className="text-[13px] text-center mt-2 font-[700]">
-                                {item.subtitle}
-                              </p>
+                          <div
+                            className={` ${selectedVariant === index ? "border-2 border-[#D0D3D3] rounded" : "border-transparent"} flex flex-col justify-center items-center p-1`}
+                            key={index}
+                            onClick={() => handleVariantClick(index)}
+                          >
+                            <div className="border-[1px] rounded-full shadow-[3px_7px_20px_10px_#6b646426] overflow-hidden w-[50px] h-[50px] p-1 ">
+                              <img
+                                src={item.img}
+                                alt=""
+                                className="h-full w-full object-cover object-center"
+                              />
                             </div>
+                            <p className="text-[12px] text-center mt-2 ">
+                              {item.title}
+                            </p>
                           </div>
                         );
                       })}
                     </>
                   )}
                 </div>
-              </>
-            ) : (
-              <div className="flex gap-[30px] ml-5 mt-5 items-center">
-                {allData?.variants && allData?.variants.length > 0 && (
-                  <>
-                    <h2 className="text-[#CE2028] font-[700]">
-                      Select Variant
-                    </h2>
-
-                    {allData?.variants.map((item, index) => {
-                      return (
-                        <div
-                          className={` ${selectedVariant === index ? "border-2 border-[#D0D3D3] rounded" : "border-transparent"} flex flex-col justify-center items-center p-1`}
-                          key={index}
-                          onClick={() => handleVariantClick(index)}
-                        >
-                          <div className="border-[1px] rounded-full shadow-[3px_7px_20px_10px_#6b646426] overflow-hidden w-[50px] h-[50px] p-1 cursor-pointer">
-                            <img
-                              src={item.img}
-                              alt=""
-                              className="h-full w-full object-cover object-center"
-                            />
-                          </div>
-                          <p className="text-[12px] text-center mt-2 ">
-                            {item.title}
-                          </p>
-                        </div>
-                      );
-                    })}
-                  </>
-                )}
-              </div>
-            )}
+              )}
             </div>
             {mapData ? (
               <div className="ml-5 mt-5 relative overflow-hidden  h-[calc(100%-352px)] w-[86%]">
@@ -633,7 +633,7 @@ const ProductDetails = ({ onClose, engineData }) => {
                               </p>
                             </div>
                             <div className="flex-[1]">
-                              <div className="rounded-full scale-[0.9]  w-[68px] h-[68px] shadow-[2px_4px_8px_6px_#b1afaf3d] z-40 relative p-[4px] bg-white cursor-pointer flex flex-col ">
+                              <div className="rounded-full scale-[0.9]  w-[68px] h-[68px] shadow-[2px_4px_8px_6px_#b1afaf3d] z-40 relative p-[4px] bg-white  flex flex-col ">
                                 <div className="border-[1px] w-full h-full rounded-full shadow-[1px_0px_4px_3px_#b1afaf3d] overflow-hidden">
                                   <img
                                     src={item.content2.image || gtf}
@@ -656,7 +656,7 @@ const ProductDetails = ({ onClose, engineData }) => {
                             <div className="flex-[2]">
                               {item.content3 && (
                                 <>
-                                  <div className="rounded-full scale-[0.9]  w-[68px] h-[68px] shadow-[2px_4px_8px_6px_#b1afaf3d] z-40 relative p-[4px] bg-white cursor-pointer flex flex-col ">
+                                  <div className="rounded-full scale-[0.9]  w-[68px] h-[68px] shadow-[2px_4px_8px_6px_#b1afaf3d] z-40 relative p-[4px] bg-white  flex flex-col ">
                                     <div className="border-[1px] w-full h-full rounded-full shadow-[1px_0px_4px_3px_#b1afaf3d] overflow-hidden">
                                       <img
                                         src={item.content3.image || gtf}
@@ -721,7 +721,11 @@ const ProductDetails = ({ onClose, engineData }) => {
                   {tabsData.map((tab, index) => (
                     <button
                       key={index}
-                      onClick={() => setActiveTab(index)}
+                      onClick={() => {
+                        setActiveTab(index)
+                        setIsExpanded(null)
+                      }
+                      }
                       className={`
         w-[150px] text-[0.7rem] font-semibold text-white h-full px-4 py-2 
         ${activeTab === index ? "bg-[#CE2028]" : "bg-[#918F8F]"} 
@@ -810,19 +814,20 @@ const ProductDetails = ({ onClose, engineData }) => {
                         {tabsData[activeTab]?.title !== "Specifications" &&
                           tabsData[activeTab]?.title !== "Customers" ? (
                           <div>
-                            {item.description !== "" && (
+                            {item.description && (
                               <p className="text-[0.8rem]">
-                                {isExpanded === idx
+                                {item.description.length <= 200 || isExpanded === idx
                                   ? item.description
-                                  : `${item.description.slice(0, 200)}...`}{" "}
-                                <span
-                                  className="text-[#CE2028] text-[0.7rem] font-medium cursor-pointer block"
-                                  onClick={() => toggleDescription(idx)}
-                                >
-                                  {isExpanded === idx
-                                    ? "Tap to collapse"
-                                    : "Tap for more"}
-                                </span>
+                                  : `${item.description.slice(0, 200)}...`}
+
+                                {item.description.length > 200 && (
+                                  <span
+                                    className="text-[#CE2028] text-[0.7rem] font-medium cursor-pointer block"
+                                    onClick={() => toggleDescription(idx)}
+                                  >
+                                    {isExpanded === idx ? "Tap to collapse" : "Tap for more"}
+                                  </span>
+                                )}
                               </p>
                             )}
                           </div>

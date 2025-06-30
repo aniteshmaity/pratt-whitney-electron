@@ -4228,7 +4228,7 @@ const engineDetails = {
             {
               image: Hernet_P_3,
               enginetext: "Curtiss P-6 Hawk (some variants)",
-              description: "Fighter biplane",
+              description: "Fighter biplane.",
             },
           ],
         },
