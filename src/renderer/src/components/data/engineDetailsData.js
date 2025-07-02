@@ -2260,30 +2260,7 @@ const engineDetails = {
               description:
                 "These agricultural aircraft are specifically designed for crop dusting and aerial application of fertilizers and pesticides. Models like the AT-502B are known for their high payload capacity.",
             },
-            // {
-            //   enginetext: "Piper Cheyenne Series",
-            //   description: "Twin-engine turboprops that offer high performance and speed, often used in business aviation and cargo transport."
-            // },
-            // {
-            //   enginetext: "Quest Kodiak",
-            //   description: "A modern utility aircraft designed for short takeoff and landing operations, ideal for remote access to underserved regions."
-            // },
-            // {
-            //   enginetext: "Socata TBM Series",
-            //   description: "High-performance single-engine turboprop aircraft that blend speed with efficiency, popular in business aviation."
-            // },
-            // {
-            //   enginetext: "Basler Turbo BT-67",
-            //   description: "The conversion of the Douglas DC-3 into a modern turboprop freighter or passenger aircraft, known for its reliability and large cargo capacity."
-            // },
-            // {
-            //   enginetext: "PZL-Okecie PZL-130 Turbo-Orlik",
-            //   description: "A Polish trainer aircraft designed for military training purposes, featuring advanced avionics and performance characteristics suitable for pilot training."
-            // },
-            // {
-            //   enginetext: "Frakes Mallard",
-            //   description: "A unique amphibious aircraft that can operate from both land and water, often used in tourism and cargo transport."
-            // },
+            
             {
               image: PT6A_P_7,
               enginetext: "T-6 Texan II",
@@ -2492,11 +2469,7 @@ const engineDetails = {
               content: [
                 { image: fanDiameter, description: "73” fan diameter." },
                 { image: thrust_new, description: "19K-25K pounds of thrust. " },
-                // {
-                //   image: GTF_S_5,
-                //   description:
-                //     "Certified – Feb. 2013, Entered Service – July 2016.",
-                // },
+           
                 {
                   image: GTF_V1_S_1,
                   description:
@@ -2581,11 +2554,7 @@ const engineDetails = {
               content: [
                 { image: fanDiameter, description: "73” fan diameter." },
                 { image: thrust_new, description: "19K-23K pounds of thrust. " },
-                // {
-                //   image: GTF_S_5,
-                //   description:
-                //     "Certified – Apr. 2017, Entered Service – Apr. 2018. ",
-                // },
+                
                 {
                   image: GTF_V1_S_1,
                   description:
@@ -3145,7 +3114,7 @@ const engineDetails = {
               title: "Customers",
               content: [
                 { name: "Air India", image: AmericanAir },
-                { name: "United Airlines", image: DeltaAir },
+                { name: "United Airlines", image: UnitedAir },
                 { name: "Japan Airlines", image: japanAirline },
                 { name: "All Nippon Airways (ANA)", image: ANA },
                 { name: "Ethiopian Airlines", image: Ethiopian },

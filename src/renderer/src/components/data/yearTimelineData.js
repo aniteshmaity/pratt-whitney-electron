@@ -648,7 +648,7 @@ export const slideData = [
       title: "Lorem ipsum ",
       subtitle: "Lorem ipsum dolor sit amet sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       description:
-        "The TF33 is the United States Air Force designation for the Lorem ipsum  JT3 commercial engine,First flown 60 years ago, and with more than 1,000 engines still in..",
+        "The TF33 is the United States Air Force designation for the Lorem ipsum  JT3 commercial engine,First flown 60 years ago, and with more than 1,000 engines still in.",
       image: machine2,
       thumbnail:machine1,
       buttonLink: "/yearEngineDetails",
