@@ -676,7 +676,7 @@ timeline.add(() => {
         onSlideChange={(swiper) => {
           const current = swiper.realIndex;
           const previous = swiper.previousIndex;
-          setCurrentSlide(swiper.realIndex)
+          setCurrentSlide(swiper.realIndex)        
           setSlideDataIndex(swiper.realIndex);
           setIsExpanded(null);
           const previousIndex = currentSlide - 1;

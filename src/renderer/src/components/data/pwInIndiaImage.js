@@ -143,6 +143,35 @@ import TruNet_mounted_radio from "../../assets/images/pwInIndia/aboutRtx/img/Tru
 import US_Middletown from "../../assets/images/pwInIndia/aboutRtx/img/US - Middletown.webp";
 import RTXanswerssizzle from "../../assets/images/pwInIndia/aboutRtx/video/RTXanswerssizzle.mp4";
 
+
+// ====================RTX gallery=====================
+import RTX_gallery_1 from "../../assets/images/pwInIndia/aboutRtx/gallery/1-AMRAAM.webp";
+import RTX_gallery_2 from "../../assets/images/pwInIndia/aboutRtx/gallery/293A8559.webp";
+import RTX_gallery_3 from "../../assets/images/pwInIndia/aboutRtx/gallery/293A8582.webp";
+import RTX_gallery_4 from "../../assets/images/pwInIndia/aboutRtx/gallery/293A8596.webp";
+import RTX_gallery_5 from "../../assets/images/pwInIndia/aboutRtx/gallery/293A8635.webp";
+import RTX_gallery_6 from "../../assets/images/pwInIndia/aboutRtx/gallery/787-deck 10x6.webp";
+import RTX_gallery_7 from "../../assets/images/pwInIndia/aboutRtx/gallery/787_Generator.webp";
+import RTX_gallery_8 from "../../assets/images/pwInIndia/aboutRtx/gallery/Aerostructures - PurePower Nacelle.webp";
+import RTX_gallery_9 from "../../assets/images/pwInIndia/aboutRtx/gallery/Challenger 604_Left Angle_NO-LOGOS.webp";
+import RTX_gallery_10 from "../../assets/images/pwInIndia/aboutRtx/gallery/CM408499.webp";
+import RTX_gallery_11 from "../../assets/images/pwInIndia/aboutRtx/gallery/CM408500.webp";
+import RTX_gallery_12 from "../../assets/images/pwInIndia/aboutRtx/gallery/CM408506.webp";
+import RTX_gallery_13 from "../../assets/images/pwInIndia/aboutRtx/gallery/Collins 1st class seat assembly.webp";
+import RTX_gallery_14 from "../../assets/images/pwInIndia/aboutRtx/gallery/DSC08462.webp";
+import RTX_gallery_15 from "../../assets/images/pwInIndia/aboutRtx/gallery/EngineWise - Woman at Computer.webp";
+import RTX_gallery_16 from "../../assets/images/pwInIndia/aboutRtx/gallery/ESA Singapore-28Nov19-05.webp";
+import RTX_gallery_17 from "../../assets/images/pwInIndia/aboutRtx/gallery/F-35 HMS Queen Elizabeth Day.webp";
+import RTX_gallery_18 from "../../assets/images/pwInIndia/aboutRtx/gallery/India 1.webp";
+import RTX_gallery_19 from "../../assets/images/pwInIndia/aboutRtx/gallery/Interiors-seat-testing_1418_Hi-Res.webp";
+import RTX_gallery_20 from "../../assets/images/pwInIndia/aboutRtx/gallery/LTAMDS_lr.webp";
+import RTX_gallery_21 from "../../assets/images/pwInIndia/aboutRtx/gallery/Patriot Launcher.webp";
+import RTX_gallery_22 from "../../assets/images/pwInIndia/aboutRtx/gallery/pwc-aftermarket-03.webp";
+import RTX_gallery_23 from "../../assets/images/pwInIndia/aboutRtx/gallery/TruNet_mounted_radio.webp";
+import RTX_gallery_24 from "../../assets/images/pwInIndia/aboutRtx/gallery/US - Middletown.webp";
+import RTX_pdf from "../../assets/images/pwInIndia/aboutRtx/gallery/India Brochure_compressed.pdf";
+import RTX_video from "../../assets/images/pwInIndia/aboutRtx/gallery/RTX answers sizzle.mp4";
+
 // Additional Backups
 import AH64Apache from "../../assets/images/pwInIndia/additionalBackups/img/AH64Apache.webp";
 import AdditionalAircraftandenginethumbnails from "../../assets/images/pwInIndia/additionalBackups/img/Additional Aircraft and engine thumbnails.webp";
@@ -296,6 +325,32 @@ export const PwInIndiaImage = {
     pwlogo6,
     IDCC,
     hydrabad,
+    RTX_gallery_1,
+    RTX_gallery_2,
+    RTX_gallery_3,
+    RTX_gallery_4,
+    RTX_gallery_5,
+    RTX_gallery_6,
+    RTX_gallery_7,
+    RTX_gallery_8,
+    RTX_gallery_9,
+    RTX_gallery_10,
+    RTX_gallery_11,
+    RTX_gallery_12,
+    RTX_gallery_13,
+    RTX_gallery_14,
+    RTX_gallery_15,
+    RTX_gallery_16,
+    RTX_gallery_17,
+    RTX_gallery_18,
+    RTX_gallery_19,
+    RTX_gallery_20,
+    RTX_gallery_21,
+    RTX_gallery_22,
+    RTX_gallery_23,
+    RTX_gallery_24,
+    RTX_pdf,
+
   },
   video: {
     PrattAndWhitneyICCSecondVideo,
@@ -320,5 +375,6 @@ export const PwInIndiaImage = {
     RTXanswerssizzle,
     digitalCapabilityVideo,
     MainVideoforDisplayWindowOurFleetMainvideo,
+    RTX_video
   },
 };

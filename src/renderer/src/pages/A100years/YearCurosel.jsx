@@ -102,25 +102,25 @@ function YearCurosel() {
     {
       year: "1990s",
       name: "1990",
-      subTitle: "PW4000 and PW500 become clean leaders",
+      subTitle: "PW4000 and PW500 Become Clean Leaders",
       description: "The 90s allowed PW to build not only the world’s first 5th Gen engine, but also  develop quieter engines that addressed growing concerns over aircraft noise pollution. ",
     },
     {
       year: "2000s",
       name: "2000",
-      subTitle: "Innovation and new frontiers",
+      subTitle: "Innovation and New Frontiers",
       description: "In the 2000s, Pratt & Whitney adapted with further innovation and next-generation thinking that helped the industry begin a new ascent toward even greater accessibility and sustainability efforts.",
     },
     {
       year: "2010s",
       name: "2010",
-      subTitle: "Decade of expansion",
+      subTitle: "Decade of Expansion",
       description: "From the GTF’s entry-into-service, to the introduction of the PW800, the 2010s focused on expansion.",
     },
     {
       year: "2020s",
       name: "2020",
-      subTitle: "Focus on the future",
+      subTitle: "Focus on the Future",
       description: "The 2020s have emphasized the importance of future sustainability, and ongoing research has been devoted to hybrid-electric, alternative fuel and adaptive engine technologies.",
     },
 

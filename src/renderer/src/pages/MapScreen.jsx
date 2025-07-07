@@ -20,6 +20,7 @@ import { BiHomeAlt2 } from "react-icons/bi";
 import { BiSolidChevronLeft } from "react-icons/bi";
 import { clearSelectedCity, setSelectedCity } from '../features/presenceSlice';
 import { useDispatch, useSelector } from 'react-redux';
+import { PwInIndiaImage } from '../components/data/pwInIndiaImage';
 const MapScreen = () => {
   const buttonsRef = useRef([]);
   const spansRef = useRef([]);
@@ -39,14 +40,35 @@ const MapScreen = () => {
   const { selectedCityIndex, selectedCityData } = useSelector(
   (state) => state.presence
 );
-// console.log("selectedCityData",selectedCityData);
-  // console.log("currentindex", currentIndex);
-  // console.log("activeInxed", activeIndex);
-  // const cities = [
-  //   { name: "Delhi", x: "0%", y: "0%", position: "top-[8%] left-[36%]",cityPosition:"top-[26%] left-[26%]" },
-  //   { name: "Bengaluru", x: "-15%", y: "-10%", position: "top-[44%] left-[36%]",cityPosition:"top-[65%] left-[25%]"  },
 
-  // ];
+const rtxGallery = [
+    { img: PwInIndiaImage.image.RTX_gallery_1 },
+  { img: PwInIndiaImage.image.RTX_gallery_2 },
+  { img: PwInIndiaImage.image.RTX_gallery_3 },
+  { img: PwInIndiaImage.image.RTX_gallery_4 },
+  { img: PwInIndiaImage.image.RTX_gallery_5 },
+  { img: PwInIndiaImage.image.RTX_gallery_6 },
+  { img: PwInIndiaImage.image.RTX_gallery_7 },
+  { img: PwInIndiaImage.image.RTX_gallery_8 },
+  { img: PwInIndiaImage.image.RTX_gallery_9 },
+  { img: PwInIndiaImage.image.RTX_gallery_10 },
+  { img: PwInIndiaImage.image.RTX_gallery_11 },
+  { img: PwInIndiaImage.image.RTX_gallery_12 },
+  { img: PwInIndiaImage.image.RTX_gallery_13 },
+  { img: PwInIndiaImage.image.RTX_gallery_14 },
+  { img: PwInIndiaImage.image.RTX_gallery_15 },
+  { img: PwInIndiaImage.image.RTX_gallery_16 },
+  { img: PwInIndiaImage.image.RTX_gallery_17 },
+  { img: PwInIndiaImage.image.RTX_gallery_18 },
+  { img: PwInIndiaImage.image.RTX_gallery_19 },
+  { img: PwInIndiaImage.image.RTX_gallery_20 },
+  { img: PwInIndiaImage.image.RTX_gallery_21 },
+  { img: PwInIndiaImage.image.RTX_gallery_22 },
+  { img: PwInIndiaImage.image.RTX_gallery_23 },
+  { img: PwInIndiaImage.image.RTX_gallery_24 },
+  { video: PwInIndiaImage.video.RTX_video },
+  { pdf: PwInIndiaImage.image.RTX_pdf },
+]
 
   const cities = mapData[activeIndex]?.cities || [];
   console.log("activeCity", activeCity);
@@ -724,7 +746,7 @@ const MapScreen = () => {
 
                   <CommonSlideYearProduct
                     onImageClick={handleImageClick}
-                    gallery={""}
+                    gallery={rtxGallery}
                   />
 
                 </div>

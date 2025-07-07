@@ -15,6 +15,7 @@ import settingAero from "../../assets/product/millitary/World records (1).webp"
 import settingBig from "../../assets/images/maps/extra/rtx-icon_money-gear_rgb2.png"
 import develop from "../../assets/images/maps/extra/Layer-2.png"
 import jetvertical from "../../assets/product/millitary/5th generation stealth technologies (1).webp";
+import jetFire from "../../assets/product/millitary/40K+ pounds of thrust_ (1).webp";
 import capabilityMaintance from "../../assets/product/millitary/Performance and Capability (1).webp"
 import thrust from "../../assets/product/commercial/V2500 thrust.webp"
 import APS3200 from "../../assets/product/APU/APS3200 hero.webp"
@@ -1351,7 +1352,7 @@ const mapData = [
           desc: "Narrowbody aircraft",
         },
         {
-          logo: PwInIndiaImage.image.RANDD,
+          logo: jetFire,
           text: "1700+",
           desc: "IAF aircraft",
         },
