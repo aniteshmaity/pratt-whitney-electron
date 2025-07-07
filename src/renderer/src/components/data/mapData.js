@@ -8,10 +8,13 @@ import redCraft from "../../assets/product/commercial/V2500 3000 Aircraft.webp"
 import FADEC from "../../assets/product/commercial/FADEC.webp"
 import managementTool from "../../assets/product/general/•_40_ reduction in scheduled maintenance_.webp"
 import flyingHours from "../../assets/product/general/•_100+ parameters monitored for optimum performance.webp"
+import cloudAero from "../../assets/product/commercial/V2500 Flight Hours.webp";
+import aeroRedHandle from "../../assets/product/general/•_100+ parameters monitored for optimum performance.webp";
 import headphone from "../../assets/product/commercial/Quiet.webp"
 import settingAero from "../../assets/product/millitary/World records (1).webp"
 import settingBig from "../../assets/images/maps/extra/rtx-icon_money-gear_rgb2.png"
 import develop from "../../assets/images/maps/extra/Layer-2.png"
+import jetvertical from "../../assets/product/millitary/5th generation stealth technologies (1).webp";
 import capabilityMaintance from "../../assets/product/millitary/Performance and Capability (1).webp"
 import thrust from "../../assets/product/commercial/V2500 thrust.webp"
 import APS3200 from "../../assets/product/APU/APS3200 hero.webp"
@@ -672,7 +675,7 @@ const mapData = [
               content1: {
                 enginetext: "Airbus A320neo   ",
                 engineNumber: "116",
-                engineCraft: "aircraft",
+                engineCraft: "Aircraft",
               },
               content2: {
                 image: "",
@@ -688,7 +691,7 @@ const mapData = [
               content1: {
                 enginetext: "Airbus A320ceo  ",
                 engineNumber: "20",
-                engineCraft: "aircraft",
+                engineCraft: "Aircraft",
               },
               content2: {
                 image: V2500,
@@ -704,7 +707,7 @@ const mapData = [
               content1: {
                 enginetext: "ATR 42/72 ",
                 engineNumber: "70",
-                engineCraft: "aircraft",
+                engineCraft: "Aircraft",
               },
               content2: {
                 image: PW127XT,
@@ -716,7 +719,7 @@ const mapData = [
               content1: {
                 enginetext: "Dash-8/Q400",
                 engineNumber: "21",
-                engineCraft: "aircraft",
+                engineCraft: "Aircraft",
               },
               content2: {
                 image: PW100_150,
@@ -728,7 +731,7 @@ const mapData = [
               content1: {
                 enginetext: "Boeing 787-8/9",
                 engineNumber: "34",
-                engineCraft: "aircraft",
+                engineCraft: "Aircraft",
               },
               content2: {
                 image: APS5000,
@@ -765,7 +768,7 @@ const mapData = [
               content1: {
                 enginetext: "C-295 ",
                 engineNumber: "56",
-                engineCraft: "aircraft",
+                engineCraft: "Aircraft",
               },
               content2: {
                 image: PW127XT,
@@ -777,7 +780,7 @@ const mapData = [
               content1: {
                 enginetext: "737-200 (adv)",
                 engineNumber: "2",
-                engineCraft: "aircraft",
+                engineCraft: "Aircraft",
               },
               content2: {
                 image: Jt8d,
@@ -789,7 +792,7 @@ const mapData = [
               content1: {
                 enginetext: "707-320C ",
                 engineNumber: "1",
-                engineCraft: "aircraft",
+                engineCraft: "Aircraft",
               },
               content2: {
                 image: Jt3d,
@@ -801,7 +804,7 @@ const mapData = [
               content1: {
                 enginetext: "King Air Family  ",
                 engineNumber: "61",
-                engineCraft: "aircraft",
+                engineCraft: "Aircraft",
               },
               content2: {
                 image: PT6A,
@@ -813,7 +816,7 @@ const mapData = [
               content1: {
                 enginetext: "Bell 412 ",
                 engineNumber: "28",
-                engineCraft: "aircraft",
+                engineCraft: "Aircraft",
               },
               content2: {
                 image: PT6T,
@@ -825,7 +828,7 @@ const mapData = [
               content1: {
                 enginetext: "AW139  ",
                 engineNumber: "12",
-                engineCraft: "aircraft",
+                engineCraft: "Aircraft",
               },
               content2: {
                 image: PT6C,
@@ -837,7 +840,7 @@ const mapData = [
               content1: {
                 enginetext: "AW109  ",
                 engineNumber: "23",
-                engineCraft: "aircraft",
+                engineCraft: "Aircraft",
               },
               content2: {
                 image: PW200,
@@ -849,7 +852,7 @@ const mapData = [
               content1: {
                 enginetext: "Twin Otter   ",
                 engineNumber: "3",
-                engineCraft: "aircraft",
+                engineCraft: "Aircraft",
               },
               content2: {
                 image: PT6A,
@@ -861,7 +864,7 @@ const mapData = [
               content1: {
                 enginetext: "Caravan Family       ",
                 engineNumber: "10",
-                engineCraft: "aircraft",
+                engineCraft: "Aircraft",
               },
               content2: {
                 image: PT6A,
@@ -873,7 +876,7 @@ const mapData = [
               content1: {
                 enginetext: "PC-12  ",
                 engineNumber: "7",
-                engineCraft: "aircraft",
+                engineCraft: "Aircraft",
               },
               content2: {
                 image: PT6A,
@@ -890,7 +893,7 @@ const mapData = [
               content1: {
                 enginetext: "Airbus A320neo   ",
                 engineNumber: "116",
-                engineCraft: "aircraft",
+                engineCraft: "Aircraft",
               },
               content2: {
                 image: "",
@@ -906,7 +909,7 @@ const mapData = [
               content1: {
                 enginetext: "Airbus A320ceo  ",
                 engineNumber: "20",
-                engineCraft: "aircraft",
+                engineCraft: "Aircraft",
               },
               content2: {
                 image: V2500,
@@ -922,7 +925,7 @@ const mapData = [
               content1: {
                 enginetext: "ATR 42/72 ",
                 engineNumber: "70",
-                engineCraft: "aircraft",
+                engineCraft: "Aircraft",
               },
               content2: {
                 image: PW127XT,
@@ -934,7 +937,7 @@ const mapData = [
               content1: {
                 enginetext: "Dash-8/Q400",
                 engineNumber: "21",
-                engineCraft: "aircraft",
+                engineCraft: "Aircraft",
               },
               content2: {
                 image: PW100_150,
@@ -946,7 +949,7 @@ const mapData = [
               content1: {
                 enginetext: "Boeing 787-8/9",
                 engineNumber: "34",
-                engineCraft: "aircraft",
+                engineCraft: "Aircraft",
               },
               content2: {
                 image: APS5000,
@@ -988,7 +991,7 @@ const mapData = [
               content1: {
                 enginetext: "C-295 ",
                 engineNumber: "56",
-                engineCraft: "aircraft",
+                engineCraft: "Aircraft",
               },
               content2: {
                 image: PW127XT,
@@ -1000,7 +1003,7 @@ const mapData = [
               content1: {
                 enginetext: "737-200 (adv)",
                 engineNumber: "2",
-                engineCraft: "aircraft",
+                engineCraft: "Aircraft",
               },
               content2: {
                 image: Jt8d,
@@ -1012,7 +1015,7 @@ const mapData = [
               content1: {
                 enginetext: "707-320C ",
                 engineNumber: "1",
-                engineCraft: "aircraft",
+                engineCraft: "Aircraft",
               },
               content2: {
                 image: Jt3d,
@@ -1029,7 +1032,7 @@ const mapData = [
               content1: {
                 enginetext: "King Air Family  ",
                 engineNumber: "61",
-                engineCraft: "aircraft",
+                engineCraft: "Aircraft",
               },
               content2: {
                 image: PT6A,
@@ -1041,7 +1044,7 @@ const mapData = [
               content1: {
                 enginetext: "Bell 412 ",
                 engineNumber: "28",
-                engineCraft: "aircraft",
+                engineCraft: "Aircraft",
               },
               content2: {
                 image: PT6T,
@@ -1053,7 +1056,7 @@ const mapData = [
               content1: {
                 enginetext: "AW139  ",
                 engineNumber: "12",
-                engineCraft: "aircraft",
+                engineCraft: "Aircraft",
               },
               content2: {
                 image: PT6C,
@@ -1065,7 +1068,7 @@ const mapData = [
               content1: {
                 enginetext: "AW109  ",
                 engineNumber: "23",
-                engineCraft: "aircraft",
+                engineCraft: "Aircraft",
               },
               content2: {
                 image: PW200,
@@ -1077,7 +1080,7 @@ const mapData = [
               content1: {
                 enginetext: "Twin Otter   ",
                 engineNumber: "3",
-                engineCraft: "aircraft",
+                engineCraft: "Aircraft",
               },
               content2: {
                 image: PT6A,
@@ -1089,7 +1092,7 @@ const mapData = [
               content1: {
                 enginetext: "Caravan Family       ",
                 engineNumber: "10",
-                engineCraft: "aircraft",
+                engineCraft: "Aircraft",
               },
               content2: {
                 image: PT6A,
@@ -1101,7 +1104,7 @@ const mapData = [
               content1: {
                 enginetext: "PC-12  ",
                 engineNumber: "7",
-                engineCraft: "aircraft",
+                engineCraft: "Aircraft",
               },
               content2: {
                 image: PT6A,
@@ -1164,7 +1167,7 @@ const mapData = [
         },
         { logo: PwInIndiaImage.image.RANDD, text: "3", desc: "R&D sites" },
         {
-          logo: PwInIndiaImage.image.RANDD,
+          logo: settingAero,
           text: "$500M+",
           desc: "Sourcing of parts & services annually",
         },
@@ -1313,17 +1316,17 @@ const mapData = [
           desc: "GDP in 2024",
         },
         {
-          logo: PwInIndiaImage.image.Manufacturing,
+          logo: redCraft,
           text: "#3",
           desc: "Largest air transport market",
         },
         {
-          logo: PwInIndiaImage.image.RANDD,
+          logo: Operators,
           text: "600M",
           desc: "Passengers per annum by 2044",
         },
         {
-          logo: PwInIndiaImage.image.RANDD,
+          logo: cloudAero,
           text: "860+",
           desc: "Fleet of aircraft in service",
         },
@@ -1333,17 +1336,17 @@ const mapData = [
       name: "",
       engineData: [
         {
-          logo: PwInIndiaImage.image.Employees,
+          logo: aeroRedHandle,
           text: "2,800+",
           desc: "Aircraft by 2044",
         },
         {
-          logo: PwInIndiaImage.image.Investment,
+          logo: settingAero,
           text: "1620",
           desc: "Current aircraft on order (2025)",
         },
         {
-          logo: PwInIndiaImage.image.Manufacturing,
+          logo: roter,
           text: "78%",
           desc: "Narrowbody aircraft",
         },
@@ -1353,7 +1356,7 @@ const mapData = [
           desc: "IAF aircraft",
         },
         {
-          logo: PwInIndiaImage.image.RANDD,
+          logo: jetvertical,
           text: "15%",
           desc: "IAF aircraft of US origin",
         },

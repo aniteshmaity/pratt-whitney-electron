@@ -124,7 +124,7 @@ const ProductDetails = ({ onClose, engineData }) => {
       console.log("inside eingien param page");
       navigate(-1);
     }
-    if (yearParamSlug || lastVisited === 'years') {
+    if (yearParamSlug || lastVisited === "years") {
       navigate(`/A100years/yearCourasal/${yearParamName}`);
     } else {
       navigate("/products");
@@ -170,17 +170,17 @@ const ProductDetails = ({ onClose, engineData }) => {
   ];
 
   const handleVariantClick = (index) => {
-    // Example: Update tabsData based on the selected variant index
-    setTabsData(allData.variants[index].tabsData ?? []);
-    // if (index === 0) {
-    //   setTabsData(engineData.variants[index].tabsData);
-    // } else if (index === 1) {
-
-    //   setTabsData(tabsDataVariant2);
-    // }
+  if (index === selectedVariant) {
+    setTabsData(alltabsData);
+    setSelectedVariant(null)
+  } else {
+    setTabsData(allData.variants[index]?.tabsData ?? []);
     setSelectedVariant(index);
-    setActiveTab(0); // Reset to the first tab when variant changes
-  };
+  }
+
+  
+  setActiveTab(0); // Reset to the first tab when variant changes
+};
   useEffect(() => {
     gsap.fromTo(
       contentRef.current,
@@ -247,8 +247,8 @@ const ProductDetails = ({ onClose, engineData }) => {
 
   const handleGtf = () => {
     const IsGtf = true;
-    navigate(`/experience3d/GTF3d/${IsGtf}`)
-  }
+    navigate(`/experience3d/GTF3d/${IsGtf}`);
+  };
 
   const handleExplore3dExe = () => {
     if (!window.api) {
@@ -275,7 +275,7 @@ const ProductDetails = ({ onClose, engineData }) => {
   return (
     <div
       className="bg-cover bg-center h-screen"
-    // style={{ backgroundImage: `url(${imageUrl})` }}
+      // style={{ backgroundImage: `url(${imageUrl})` }}
     >
       <video
         autoPlay
@@ -326,13 +326,12 @@ const ProductDetails = ({ onClose, engineData }) => {
             </div>
 
             <div className="bg-[#D91027] h-[50%] relative ">
-              {!engineParamSlug && (allData?.title === "F135" ||
-                allData?.logoTitle === "PT6E" ||
-                allData?.title === "PW800" ||
-                allData?.title === "PW127XT" ||
-                allData?.title === "GTF Engine Family"
-
-              ) && (
+              {!engineParamSlug &&
+                (allData?.title === "F135" ||
+                  allData?.logoTitle === "PT6E" ||
+                  allData?.title === "PW800" ||
+                  allData?.title === "PW127XT" ||
+                  allData?.title === "GTF Engine Family") && (
                   <>
                     <div className="top-0 absolute w-[170px] h-[170px] left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
                       <img
@@ -347,7 +346,9 @@ const ProductDetails = ({ onClose, engineData }) => {
                       onClick={() =>
                         allData?.title === "F135"
                           ? handleExplore3dExe()
-                          : allData?.title === "GTF Engine Family" ? handleGtf() : handleExplore3d(allData.video3d)
+                          : allData?.title === "GTF Engine Family"
+                            ? handleGtf()
+                            : handleExplore3d(allData.video3d)
                       }
                       className="w-[150px] m-auto relative"
                     >
@@ -359,7 +360,6 @@ const ProductDetails = ({ onClose, engineData }) => {
                     </div>
                   </>
                 )}
-
 
               <div
                 className="bg-[#393636] relative w-full h-full pt-[100px]"
@@ -467,7 +467,9 @@ const ProductDetails = ({ onClose, engineData }) => {
                 </>
               )}
 
-              {!mapData && <div className="h-[1px] mt-2 w-full bg-[#e7e7e7b8]" />}
+              {!mapData && (
+                <div className="h-[1px] mt-2 w-full bg-[#e7e7e7b8]" />
+              )}
 
               <div
                 className={`grid grid-cols-[auto_1fr] gap-8  ml-5 mt-5 pb-2 w-[90%] relative ${mapData || allData?.variants?.length === 0 ? "" : "border-b"}`}
@@ -487,7 +489,7 @@ const ProductDetails = ({ onClose, engineData }) => {
                 <p
                   onScroll={handleScroll1}
                   ref={scrollableRef}
-                  className={`text-[rgba(0, 0, 0, 0.7)] ${mapData ? "h-auto" : "h-[100px]"} ${(!mapData && (allData?.variants?.length > 0)) ? "h-[100px]" : "h-auto"} no-scrollbar overflow-auto pr-2 max-w-[88%]`}
+                  className={`text-[rgba(0, 0, 0, 0.7)] ${mapData ? "h-auto" : "h-[100px]"} ${!mapData && allData?.variants?.length > 0 ? "h-[100px]" : "h-auto"} no-scrollbar overflow-auto pr-2 max-w-[88%]`}
                 >
                   {allData?.description}
                 </p>
@@ -653,7 +655,7 @@ const ProductDetails = ({ onClose, engineData }) => {
                               </p>
                             </div>
 
-                            <div className="flex-[2]">
+                               <div className="flex-[2]">
                               {item.content3 && (
                                 <>
                                   <div className="rounded-full scale-[0.9]  w-[68px] h-[68px] shadow-[2px_4px_8px_6px_#b1afaf3d] z-40 relative p-[4px] bg-white  flex flex-col ">
@@ -684,7 +686,7 @@ const ProductDetails = ({ onClose, engineData }) => {
                             <img
                               src={item.image || gtf}
                               alt=""
-                              className="w-[60px] h-[60px] object-cover rounded-full"
+                              className="w-[60px] h-[60px] object-cover rounded-full "
                             />
 
                             <div>
@@ -722,10 +724,9 @@ const ProductDetails = ({ onClose, engineData }) => {
                     <button
                       key={index}
                       onClick={() => {
-                        setActiveTab(index)
-                        setIsExpanded(null)
-                      }
-                      }
+                        setActiveTab(index);
+                        setIsExpanded(null);
+                      }}
                       className={`
         w-[150px] text-[0.7rem] font-semibold text-white h-full px-4 py-2 
         ${activeTab === index ? "bg-[#CE2028]" : "bg-[#918F8F]"} 
@@ -746,7 +747,7 @@ const ProductDetails = ({ onClose, engineData }) => {
                 {/* Tabs Content */}
                 <div
                   ref={contentRef}
-                  className="relative mt-4 h-[calc(100%-52px)] w-[86%] ml-[30px] no-scrollbar  overflow-auto"
+                  className="relative mt-4 h-[calc(100%-52px)] w-[86%] pl-[30px] no-scrollbar  overflow-auto"
                 >
                   {tabsData[activeTab]?.content.map((item, idx) =>
                     typeof item === "string" ? (
@@ -762,7 +763,7 @@ const ProductDetails = ({ onClose, engineData }) => {
                           <img
                             src={item.image || gtf}
                             alt=""
-                            className="w-[60px] h-[60px] object-cover rounded-full"
+                            className="w-[60px] h-[60px] object-cover rounded-full shadow-[3px_7px_20px_10px_#6b646426]"
                           />
                         )}
                         {/* {tabsData[activeTab].title === "Specifications" ? (<div>
@@ -812,11 +813,12 @@ const ProductDetails = ({ onClose, engineData }) => {
                           ""
                         )}
                         {tabsData[activeTab]?.title !== "Specifications" &&
-                          tabsData[activeTab]?.title !== "Customers" ? (
+                        tabsData[activeTab]?.title !== "Customers" ? (
                           <div>
                             {item.description && (
                               <p className="text-[0.8rem]">
-                                {item.description.length <= 200 || isExpanded === idx
+                                {item.description.length <= 200 ||
+                                isExpanded === idx
                                   ? item.description
                                   : `${item.description.slice(0, 200)}...`}
 
@@ -825,7 +827,9 @@ const ProductDetails = ({ onClose, engineData }) => {
                                     className="text-[#CE2028] text-[0.7rem] font-medium cursor-pointer block"
                                     onClick={() => toggleDescription(idx)}
                                   >
-                                    {isExpanded === idx ? "Tap to collapse" : "Tap for more"}
+                                    {isExpanded === idx
+                                      ? "Tap to collapse"
+                                      : "Tap for more"}
                                   </span>
                                 )}
                               </p>

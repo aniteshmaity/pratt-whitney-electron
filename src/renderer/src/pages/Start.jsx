@@ -17,97 +17,75 @@ const TimelineAnimation = () => {
   const buttonRef = useRef(null)
   const footerRef = useRef(null)
   const gifsRef = useRef([]);
-    const videoRef = useRef(null);
-    const [videoEnded, setVideoEnded] = useState(false);
-  // useEffect(() => {
-  //   // Create a GSAP timeline
-  //   const timeline = gsap.timeline();
+    // const videoRef = useRef(null);
+    //  const [videoEnded, setVideoEnded] = useState(false);
+  useEffect(() => {
+    // Create a GSAP timeline
+    const timeline = gsap.timeline();
 
 
-  //   // Hide the second image initially
-  //   gsap.set(img2Ref.current, { autoAlpha: 0 });
-  //   gsap.set(buttonRef.current, { autoAlpha: 0 });
-  //   gsap.set(footerRef.current, { autoAlpha: 0 })
+    // Hide the second image initially
+    gsap.set(img2Ref.current, { autoAlpha: 0 });
+    gsap.set(buttonRef.current, { autoAlpha: 0 });
+    gsap.set(footerRef.current, { autoAlpha: 0 })
 
-  //   // Animation for the first image (rotate in center)
-  //   timeline
-  //     .to(img1Ref.current, {
-  //       duration: 5, // 3 seconds
-  //       rotate: 360, // full rotation
-  //       ease: "power2.inOut", // easing
-  //     })
-  //     .to(
-  //       [img1Ref.current, img2Ref.current],
-  //       {
-  //         duration: 2,
-  //         autoAlpha: 1,
-  //         x: (index) => (index === 0 ? -230 : 70), // img1 moves left (-300), img2 moves right (300)
-  //         ease: "power2.inOut",
-  //       }
-  //     )
-  //     .to(
-  //       [devRef.current, buttonRef.current],
-  //       {
-  //         duration: 1,
-  //         autoAlpha: 1,
-  //         y: (index) => (index === 0 ? -250 : 0), // img1 moves left (-300), img2 moves right (300)
-  //         ease: "power2.inOut",
-  //       }
-  //     )
-  //     .to(footerRef.current, {
-  //       duration: 2, // 3 seconds
-  //       autoAlpha: 1, // full rotation
-  //       ease: "power2.inOut", // easing
-  //     });
-  //       // Then fade in all gifs
-  //       timeline.to(gifsRef.current, {
-  //     duration: 1,
-  //     autoAlpha: 1,
-  //     stagger: 0.3, // optional: shows gifs one by one
-  //     ease: "power2.out",
-  //   });
+    // Animation for the first image (rotate in center)
+    timeline
+      .to(img1Ref.current, {
+        duration: 5, // 3 seconds
+        rotate: -360, // full rotation
+        ease: "power2.inOut", // easing
+      })
+      .to(
+        [img1Ref.current, img2Ref.current],
+        {
+          duration: 2,
+          autoAlpha: 1,
+          x: (index) => (index === 0 ? -230 : 70), // img1 moves left (-300), img2 moves right (300)
+          ease: "power2.inOut",
+        }
+      )
+      .to(
+        [devRef.current, buttonRef.current],
+        {
+          duration: 1,
+          autoAlpha: 1,
+          y: (index) => (index === 0 ? -250 : 0), // img1 moves left (-300), img2 moves right (300)
+          ease: "power2.inOut",
+        }
+      )
+      .to(footerRef.current, {
+        duration: 2, // 3 seconds
+        autoAlpha: 1, // full rotation
+        ease: "power2.inOut", // easing
+      });
+        // Then fade in all gifs
+        timeline.to(gifsRef.current, {
+      duration: 1,
+      autoAlpha: 1,
+      stagger: 0.3, // optional: shows gifs one by one
+      ease: "power2.out",
+    });
 
-  // }, []);
+  }, []);
 
 
 
 
   return (
-    <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh", width: '100vw' }} className="overflow-hidden relative flex flex-col justify-center items-center">
- {!videoEnded && (
-        <video
-          ref={videoRef}
-          src={splashVideo} // replace with your actual video import
-          className="w-full h-full object-cover"
-          autoPlay
-          muted
-          onEnded={() => setVideoEnded(true)}
-        />
-      )}
-
-         {videoEnded && (
-           <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            height: "100vh",
-            width: "100vw",
-          }}
-          className="overflow-hidden relative flex flex-col justify-center items-center"
-        >
-           <div ref={devRef} className=" w-[521px] h-[100px] absolute top-[20%] flex gap-5">
+       <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh", width: '100vw' }} className="overflow-hidden relative flex flex-col justify-center items-center">
+      <div ref={devRef} className="relative w-[521px] h-[100px]">
         {/* First Image */}
         <img
           src={CircleLogo}
           ref={img1Ref}
-          className="w-[100px] h-[100px]  left-[50%] top-[50%] "
+          className="w-[100px] h-[100px] absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]"
         />
 
         <img
           src={NameLogo}
           ref={img2Ref}
-          className="w-[421px] h-[100px]  left-[50%] top-[50%] t"
+          className="w-[421px] h-[100px] absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]"
         />
       </div>
       <div className="absolute flex flex-col justify-center items-center gap-16 z-50" ref={buttonRef}>
@@ -138,7 +116,7 @@ const TimelineAnimation = () => {
         <div
           key={i}
           ref={el => gifsRef.current[i] = el}
-          className={`absolute  z-20 ${style.className}`}
+          className={`absolute opacity-0 z-20 ${style.className}`}
         >
           <img
             src={MapGif}
@@ -147,11 +125,6 @@ const TimelineAnimation = () => {
           />
         </div>
       ))}
-        </div>
-         )}
-
-
-     
     </div>
   );
 };

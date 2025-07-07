@@ -549,11 +549,15 @@ import hornet_2 from "../../assets/100years/gallery/1927_Hornet 2.png";
 import hornet_3 from "../../assets/100years/gallery/1927_Hornet 3 copy.png";
 import hornet_4 from "../../assets/100years/gallery/1927_Hornet 4.png";
 
+// missing images
+import Asiana from "../../assets/product/new/Asiana.webp";
+import EclipseAviation from "../../assets/product/new/Eclipse Aviation.webp";
+import Singapore from "../../assets/product/new/Singapore.webp";
+
 //common customer
 import Dassault from "../../assets/product/bussiness/Dassault.png";
 import Gulfstream from "../../assets/product/bussiness/Gulfstream.png";
 import Cessna from "../../assets/product/bussiness/Cessna (1).png";
-import Eclipse from "../../assets/product/bussiness/Eclipse Aviation.png";
 import Embraer from "../../assets/product/bussiness/Embraer.png";
 import FairChild from "../../assets/product/bussiness/FAirchild.png";
 import Bombardier from "../../assets/product/bussiness/Bombardier.png";
@@ -1451,7 +1455,7 @@ const engineDetails = {
             { name: "Royal Saudi Air Force", image: RoyalSaudiAir },
             { name: "Republic of Korea Air Force", image: korean },
             { name: "Polish Air Force", image: PolishAir },
-            { name: "Singapore Air Force", image: gtf },
+            { name: "Singapore Air Force", image: Singapore },
             { name: "Israeli Air Force", image: IsraelAir },
           ],
         },
@@ -3113,12 +3117,12 @@ const engineDetails = {
             {
               title: "Customers",
               content: [
-                { name: "Air India", image: AmericanAir },
+                { name: "Air India", image: AirIndia },
                 { name: "United Airlines", image: UnitedAir },
                 { name: "Japan Airlines", image: japanAirline },
                 { name: "All Nippon Airways (ANA)", image: ANA },
                 { name: "Ethiopian Airlines", image: Ethiopian },
-                { name: "Asiana Airlines", image: UnitedAir },
+                { name: "Asiana Airlines", image: Asiana },
               ],
             },
             // {
@@ -3603,7 +3607,7 @@ const engineDetails = {
         {
           title: "Customers",
           content: [
-            { name: "Eclipse Aviation", image: Eclipse },
+            { name: "Eclipse Aviation", image: EclipseAviation },
             { name: "Cessna Aircraft Company", image: Cessna },
             { name: "Embraer", image: Embraer },
           ],
@@ -4231,7 +4235,7 @@ const engineDetails = {
               image: Hernet_H_3,
               enginetext: "Legacy and Impact",
               description:
-                "The Hornet helped establish Pratt & Whitney’s reputation for engineering excellence and laid the groundwork for subsequent engines like the R-1830 Twin Wasp. It was exported and licensed for use around the world, influencing engine design globally.working to fulfill a robust backlog of new engine orders, reinforcing our commitment to excellence in military aviation.",
+                "The Hornet helped establish Pratt & Whitney’s reputation for engineering excellence and laid the groundwork for subsequent engines like the R-1830 Twin Wasp. It was exported and licensed for use around the world, influencing engine design globally working to fulfill a robust backlog of new engine orders, reinforcing our commitment to excellence in military aviation.",
             },
           ],
         },
