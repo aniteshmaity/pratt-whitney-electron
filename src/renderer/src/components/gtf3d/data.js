@@ -9,9 +9,9 @@ const labelPositions = {
     },
     gearLeft: {
       label: 'Inlet Cone',
-      position: [0, 0.72, 1],
+      position: [0, 0.64, 1],
       rotation: [0, 0, 0],
-      target: [0, -0.5, 0.55]  
+      target: [0, -0.4, 0.55]  
     },
     cockpit: {
       label: 'LP Fan Rotor',
@@ -38,6 +38,31 @@ const labelPositions = {
         position: [0.4, -0.6, 0.65],
         rotation: [0, 0.7, 0],
         target: [0.4, 0, 0.65]  
+      },
+      FADEC: {
+        label: 'FADEC',
+        position: [-0.7, 0.44, 0.9],
+      rotation: [0, -0.8, 0],
+      target: [0, 0.4, 0.3]  ,
+      startOffset: [0, 0, 0],
+      },
+       LPCompressor: {
+        label: 'LP Compressor',
+         position: [-0.9, 0, 0.6],
+      rotation: [0, -1.52, 0],
+      target: [-0.2, 0, 0]  ,
+      startOffset: [0, 0, 0],
+      },
+      TurbineStator: {
+        label: 'Low Pressure Turbine Stator',
+
+           position: [0.2, 0.1, -1.6],
+        rotation: [0.02, 1.54,0],
+        target: [0.12, 0.1, -0.5] ,
+          startOffset: [0, 0, 0],
+        //    position: [0.3, 0, -1.6],
+        // rotation: [0.02, 1.54,0],
+        // target: [0.1, 0.3, -0.4]  
       },
       
 

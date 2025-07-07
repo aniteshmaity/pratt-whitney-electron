@@ -91,7 +91,7 @@ export default function LabelLine({
         <coneGeometry args={[0.05, 0.2, 8]} />
         <meshStandardMaterial color="#710b0b" />
       </mesh>
-      <mesh position={position} rotation={rotation} scale={[0.6, 0.2, 1]}>
+      <mesh position={position} rotation={rotation} scale={[0.7, 0.2, 1]}>
         <planeGeometry />
         <meshStandardMaterial color="#710b0b" />
         {/* <primitive object={shapeGeometry} /> */}
@@ -100,7 +100,7 @@ export default function LabelLine({
       <mesh
         position={[position[0], position[1], position[2] + 0.001]}
         rotation={rotation}
-        scale={[0.58, 0.18, 1]}
+        scale={[0.68, 0.18, 1]}
       >
         <planeGeometry />
 
@@ -113,11 +113,13 @@ export default function LabelLine({
         ref={textRef}
         position={[position[0], position[1], position[2] + 0.01]}
         rotation={rotation} // Adjust the position for where the label should appear
-        fontSize={0.08} // Adjust the font size
+        fontSize={0.054} // Adjust the font size
         color="white" // Text color
         anchorX="center" // Anchor in the center
         anchorY="middle" // Anchor in the middle
-        // Font path (use an appropriate font file)
+         maxWidth={0.5} // ✅ limits width and wraps text
+  lineHeight={1.1} // ✅ optional, adjust for vertical spacing
+   textAlign="center"
       >
         {label} {/* The label text */}
       </Text>

@@ -44,7 +44,8 @@ const MapCard = ({cardclass,cityPositions ,city,onPrevClick, onNextClick,cardRef
            style={{ clipPath: "polygon(50% 0%, 100% 0px, 100% 57%, 85% 100%, 53% 100%, 0px 100%, 0px 0px)" }}>
             <div className="relative flex-1 h-full rounded-full">
               <img
-                className="w-full h-[110px] object-cover rounded-full"
+                className="w-full h-full object-cover rounded-full overflow-hidden"
+                style={{ boxShadow: "2px 3px 9px 1px #cbcbcb" }}
                 src={entry?.img}
                 alt="card"
               />

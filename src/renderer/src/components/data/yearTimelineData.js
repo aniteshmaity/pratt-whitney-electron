@@ -821,7 +821,7 @@ export const slideData = [
       ],
       timeline: [
         { year: "1980s", text: "FADEC, V2500 and PW100" },
-        { year: "1990s", text: "PW4000 and PW500 become clean leaders" },
+        { year: "1990s", text: "PW4000 and PW500 Become Clean Leaders" },
       ],
     },
     {
@@ -902,8 +902,8 @@ export const slideData = [
         },
       ],
       timeline: [
-        { year: "1990s", text: "PW4000 and PW500 become clean leaders" },
-        { year: "2000s", text: "Innovation and new frontiers" },
+        { year: "1990s", text: "PW4000 and PW500 Become Clean Leaders" },
+        { year: "2000s", text: "Innovation and New Frontiers" },
       ],
     },
     {
@@ -1014,8 +1014,8 @@ export const slideData = [
         },
       ],
       timeline: [
-        { year: "2000s", text: "Innovation and new frontiers" },
-        { year: "2010s", text: "Decade of expansion" },
+        { year: "2000s", text: "Innovation and New Frontiers" },
+        { year: "2010s", text: "Decade of Expansion" },
       ],
     },
     {
@@ -1121,8 +1121,8 @@ export const slideData = [
         },
       ],
       timeline: [
-        { year: "2010s", text: "Decade of expansion" },
-        { year: "2020s", text: "Focus on the future" },
+        { year: "2010s", text: "Decade of Expansion" },
+        { year: "2020s", text: "Focus on the Future" },
       ],
     },
     {
@@ -1227,8 +1227,8 @@ export const slideData = [
         },
       ],
       timeline: [
-        { year: "2020s", text: "Focus on the future" },
-        { year: "2030s", text: "Advancing innovation" },
+        { year: "2020s", text: "Focus on the Future" },
+        { year: "2030s", text: "Advancing Innovation" },
       ],
     },
   ];
