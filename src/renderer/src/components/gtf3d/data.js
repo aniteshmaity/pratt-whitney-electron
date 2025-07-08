@@ -22,8 +22,14 @@ const labelPositions = {
     },
     Exhaust: {
         label: 'Exhaust Case',
-        position: [0.4, -0.6, -0.6],            
+        position: [0.4, 0.6, -0.7],            
         rotation: [0, 0.7, 0],                 
+        target: [0.4, -0.2, -0.7] 
+      },
+      TurbineCase: {
+        label: 'Turbine Support Case',
+        position: [0.4, -0.6, -0.6],            
+        rotation: [0, 0.7, 0],                      
         target: [0.4, 0.2, -0.6] 
       },
       ExhaustCone: {
@@ -41,9 +47,9 @@ const labelPositions = {
       },
       FADEC: {
         label: 'FADEC',
-        position: [-0.7, 0.44, 0.9],
+        position: [-0.6, 0.84, 0.9],
       rotation: [0, -0.8, 0],
-      target: [0, 0.4, 0.3]  ,
+      target: [-0.1, -0, 0.3]  ,
       startOffset: [0, 0, 0],
       },
        LPCompressor: {
@@ -56,9 +62,9 @@ const labelPositions = {
       TurbineStator: {
         label: 'Low Pressure Turbine Stator',
 
-           position: [0.2, 0.1, -1.6],
+           position: [0.4, 0.16, -1.6],
         rotation: [0.02, 1.54,0],
-        target: [0.12, 0.1, -0.5] ,
+        target: [0.1, 0.16, -0.5] ,
           startOffset: [0, 0, 0],
         //    position: [0.3, 0, -1.6],
         // rotation: [0.02, 1.54,0],

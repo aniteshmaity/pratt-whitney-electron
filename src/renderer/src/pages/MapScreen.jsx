@@ -70,6 +70,23 @@ const rtxGallery = [
   { pdf: PwInIndiaImage.image.RTX_pdf },
 ]
 
+const indiaGallery = [
+    { img: PwInIndiaImage.image.abtInd_1 },
+  { img: PwInIndiaImage.image.abtInd_1},
+  { img: PwInIndiaImage.image.abtInd_2},
+  { img: PwInIndiaImage.image.abtInd_3},
+  { img: PwInIndiaImage.image.abtInd_4},
+  { img: PwInIndiaImage.image.abtInd_5},
+  { img: PwInIndiaImage.image.abtInd_6},
+  { img: PwInIndiaImage.image.abtInd_7},
+  { img: PwInIndiaImage.image.abtInd_8},
+  { img: PwInIndiaImage.image.abtInd_9},
+  { img: PwInIndiaImage.image.abtInd_10},
+  { img: PwInIndiaImage.image.abtInd_11},
+ 
+]
+
+
   const cities = mapData[activeIndex]?.cities || [];
   console.log("activeCity", activeCity);
 
@@ -706,7 +723,7 @@ const rtxGallery = [
 
           {/* gallery section */}
           {
-            mapData[activeIndex]?.name === "RTX in India" && (
+            (mapData[activeIndex]?.name === "RTX in India" || mapData[activeIndex]?.name === "About India") && (
               <div className='absolute bottom-8'>
                 <div className="w-full m-auto">
 
@@ -746,7 +763,7 @@ const rtxGallery = [
 
                   <CommonSlideYearProduct
                     onImageClick={handleImageClick}
-                    gallery={rtxGallery}
+                    gallery={ activeIndex === 2 ? rtxGallery : indiaGallery}
                   />
 
                 </div>

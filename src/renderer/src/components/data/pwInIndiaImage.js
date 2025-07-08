@@ -172,6 +172,22 @@ import RTX_gallery_24 from "../../assets/images/pwInIndia/aboutRtx/gallery/US - 
 import RTX_pdf from "../../assets/images/pwInIndia/aboutRtx/gallery/India Brochure_compressed.pdf";
 import RTX_video from "../../assets/images/pwInIndia/aboutRtx/gallery/RTX answers sizzle.mp4";
 
+
+
+// ====================about india gallery=====================
+
+import abtInd_1 from "../../assets/images/pwInIndia/aboutRtx/gallery/293A8596.webp";
+import abtInd_2 from "../../assets/images/pwInIndia/aboutRtx/gallery/293A8635.webp";
+import abtInd_3 from "../../assets/images/pwInIndia/aboutRtx/gallery/CM408500.webp";
+import abtInd_4 from "../../assets/images/pwInIndia/aboutRtx/gallery/Collins 1st class seat assembly.webp";
+import abtInd_5 from "../../assets/images/pwInIndia/aboutRtx/gallery/DSC08462.webp";
+import abtInd_6 from "../../assets/images/pwInIndia/aboutIndia/iStock-1250233669.webp";
+import abtInd_7 from "../../assets/images/pwInIndia/aboutIndia/iStock-1291603074.webp";
+import abtInd_8 from "../../assets/images/pwInIndia/aboutIndia/iStock-1664972076.webp";
+import abtInd_9 from "../../assets/images/pwInIndia/aboutIndia/iStock-2178667146.webp";
+import abtInd_10 from "../../assets/images/pwInIndia/aboutIndia/iStock-2187246521.webp";
+import abtInd_11 from "../../assets/images/pwInIndia/aboutIndia/iStock-905404318.webp";
+
 // Additional Backups
 import AH64Apache from "../../assets/images/pwInIndia/additionalBackups/img/AH64Apache.webp";
 import AdditionalAircraftandenginethumbnails from "../../assets/images/pwInIndia/additionalBackups/img/Additional Aircraft and engine thumbnails.webp";
@@ -350,6 +366,17 @@ export const PwInIndiaImage = {
     RTX_gallery_23,
     RTX_gallery_24,
     RTX_pdf,
+    abtInd_1,
+    abtInd_2,
+    abtInd_3,
+    abtInd_4,
+    abtInd_5,
+    abtInd_6,
+    abtInd_7,
+    abtInd_8,
+    abtInd_9,
+    abtInd_10,
+    abtInd_11,
 
   },
   video: {
