@@ -47,9 +47,9 @@ const labelPositions = {
       },
       FADEC: {
         label: 'FADEC',
-        position: [-0.6, 0.84, 0.9],
-      rotation: [0, -0.8, 0],
-      target: [-0.1, -0, 0.3]  ,
+       position: [-0.3, 0.8, 0.6],            
+        rotation: [0, -0.7, 0],                 
+        target: [-0.3, 0.1, 0.6] ,
       startOffset: [0, 0, 0],
       },
        LPCompressor: {

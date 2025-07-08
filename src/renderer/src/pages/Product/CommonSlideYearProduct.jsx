@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css"; // Import Swiper styles
@@ -36,6 +36,12 @@ console.log("activeindex",activeIndex);
       swiperRef.current.slideNext(); // Navigate to the next slide
     }
   };
+  useEffect(() => {
+  if (swiperRef.current && gallery) {
+    swiperRef.current.slideTo(0); // Reset to first slide
+    setActiveIndex(1);
+  }
+}, [gallery]);
   const data = gallery || cards
   return (
     <div className="common-slider-section w-full relative px-3">

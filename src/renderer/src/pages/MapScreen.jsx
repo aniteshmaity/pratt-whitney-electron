@@ -38,57 +38,56 @@ const MapScreen = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { selectedCityIndex, selectedCityData } = useSelector(
-  (state) => state.presence
-);
+    (state) => state.presence
+  );
 
-const rtxGallery = [
+  const rtxGallery = [
     { img: PwInIndiaImage.image.RTX_gallery_1 },
-  { img: PwInIndiaImage.image.RTX_gallery_2 },
-  { img: PwInIndiaImage.image.RTX_gallery_3 },
-  { img: PwInIndiaImage.image.RTX_gallery_4 },
-  { img: PwInIndiaImage.image.RTX_gallery_5 },
-  { img: PwInIndiaImage.image.RTX_gallery_6 },
-  { img: PwInIndiaImage.image.RTX_gallery_7 },
-  { img: PwInIndiaImage.image.RTX_gallery_8 },
-  { img: PwInIndiaImage.image.RTX_gallery_9 },
-  { img: PwInIndiaImage.image.RTX_gallery_10 },
-  { img: PwInIndiaImage.image.RTX_gallery_11 },
-  { img: PwInIndiaImage.image.RTX_gallery_12 },
-  { img: PwInIndiaImage.image.RTX_gallery_13 },
-  { img: PwInIndiaImage.image.RTX_gallery_14 },
-  { img: PwInIndiaImage.image.RTX_gallery_15 },
-  { img: PwInIndiaImage.image.RTX_gallery_16 },
-  { img: PwInIndiaImage.image.RTX_gallery_17 },
-  { img: PwInIndiaImage.image.RTX_gallery_18 },
-  { img: PwInIndiaImage.image.RTX_gallery_19 },
-  { img: PwInIndiaImage.image.RTX_gallery_20 },
-  { img: PwInIndiaImage.image.RTX_gallery_21 },
-  { img: PwInIndiaImage.image.RTX_gallery_22 },
-  { img: PwInIndiaImage.image.RTX_gallery_23 },
-  { img: PwInIndiaImage.image.RTX_gallery_24 },
-  { video: PwInIndiaImage.video.RTX_video },
-  { pdf: PwInIndiaImage.image.RTX_pdf },
-]
+    { img: PwInIndiaImage.image.RTX_gallery_2 },
+    { img: PwInIndiaImage.image.RTX_gallery_3 },
+    { img: PwInIndiaImage.image.RTX_gallery_4 },
+    { img: PwInIndiaImage.image.RTX_gallery_5 },
+    { img: PwInIndiaImage.image.RTX_gallery_6 },
+    { img: PwInIndiaImage.image.RTX_gallery_7 },
+    { img: PwInIndiaImage.image.RTX_gallery_8 },
+    { img: PwInIndiaImage.image.RTX_gallery_9 },
+    { img: PwInIndiaImage.image.RTX_gallery_10 },
+    { img: PwInIndiaImage.image.RTX_gallery_11 },
+    { img: PwInIndiaImage.image.RTX_gallery_12 },
+    { img: PwInIndiaImage.image.RTX_gallery_13 },
+    { img: PwInIndiaImage.image.RTX_gallery_14 },
+    { img: PwInIndiaImage.image.RTX_gallery_15 },
+    { img: PwInIndiaImage.image.RTX_gallery_16 },
+    { img: PwInIndiaImage.image.RTX_gallery_17 },
+    { img: PwInIndiaImage.image.RTX_gallery_18 },
+    { img: PwInIndiaImage.image.RTX_gallery_19 },
+    { img: PwInIndiaImage.image.RTX_gallery_20 },
+    { img: PwInIndiaImage.image.RTX_gallery_21 },
+    { img: PwInIndiaImage.image.RTX_gallery_22 },
+    { img: PwInIndiaImage.image.RTX_gallery_23 },
+    { img: PwInIndiaImage.image.RTX_gallery_24 },
+    { video: PwInIndiaImage.video.RTX_video },
+    { pdf: PwInIndiaImage.image.RTX_pdf },
+  ]
 
-const indiaGallery = [
+  const indiaGallery = [
     { img: PwInIndiaImage.image.abtInd_1 },
-  { img: PwInIndiaImage.image.abtInd_1},
-  { img: PwInIndiaImage.image.abtInd_2},
-  { img: PwInIndiaImage.image.abtInd_3},
-  { img: PwInIndiaImage.image.abtInd_4},
-  { img: PwInIndiaImage.image.abtInd_5},
-  { img: PwInIndiaImage.image.abtInd_6},
-  { img: PwInIndiaImage.image.abtInd_7},
-  { img: PwInIndiaImage.image.abtInd_8},
-  { img: PwInIndiaImage.image.abtInd_9},
-  { img: PwInIndiaImage.image.abtInd_10},
-  { img: PwInIndiaImage.image.abtInd_11},
- 
-]
+    { img: PwInIndiaImage.image.abtInd_2 },
+    { img: PwInIndiaImage.image.abtInd_3 },
+    { img: PwInIndiaImage.image.abtInd_4 },
+    { img: PwInIndiaImage.image.abtInd_5 },
+    { img: PwInIndiaImage.image.abtInd_6 },
+    { img: PwInIndiaImage.image.abtInd_7 },
+    { img: PwInIndiaImage.image.abtInd_8 },
+    { img: PwInIndiaImage.image.abtInd_9 },
+    { img: PwInIndiaImage.image.abtInd_10 },
+    { img: PwInIndiaImage.image.abtInd_11 },
+
+  ]
 
 
   const cities = mapData[activeIndex]?.cities || [];
-  console.log("activeCity", activeCity);
+  // console.log("activeCity", activeCity);
 
   const showCards = () => {
     gsap.set(leftCardsRef.current, { x: "-180%", opacity: 0 });
@@ -138,9 +137,12 @@ const indiaGallery = [
       const fletData = mapData[1]?.exploreData
       // console.log("fleetdata", fletData);
       navigate("/products/productdetails", { state: { mapData: fletData, isFleetData: true } });
-        dispatch(clearSelectedCity());
-       
+      dispatch(clearSelectedCity());
 
+
+    }
+    if(type === "RTX") {
+      setActiveCity( mapData[2]?.cities[0])
     }
     if (type === "RTX" || type === "India") {
       console.log("Triggering GSAP showCards");
@@ -148,15 +150,15 @@ const indiaGallery = [
       dispatch(clearSelectedCity());
 
     }
-    if(type === "India"){
-            setActiveCity(null);
+    if (type === "India") {
+      setActiveCity(null);
     }
     if (type === "animate") {
-         setCurrentIndex(null);
-            setActiveCity(null);
+      setCurrentIndex(null);
+      setActiveCity(null);
       console.log("resetAnimation");
       resetCards();
-        dispatch(clearSelectedCity());
+      dispatch(clearSelectedCity());
     }
     // resetCards();
 
@@ -203,81 +205,30 @@ const indiaGallery = [
       handleClick(0); // Animate the first button on mount
     }
   }, []);
-  // useEffect(() => {
-
-  //   if (mapRef.current) {
-  //     if (isFirstRender.current) {
-  //       gsap.set(mapRef.current, {
-  //         x: cities[currentIndex].x,
-  //         y: cities[currentIndex].y,
-  //       });
-  //     } else {
-  //       gsap.to(mapRef.current, {
-  //         x: cities[currentIndex].x,
-  //         y: cities[currentIndex].y,
-  //         duration: 1.3,
-  //         ease: "power2.out",
-  //       });
-  //     }
-  //   }
-  //   console.log("cardRef.current", cardRef.current);
-
-  //   cardRef.current.forEach((cityGroup, cityIndex) => {
-  //     const isActive = cityIndex === currentIndex;
-
-  //     // If the cityGroup is undefined (e.g. cardRef was never set), skip it
-  //     if (!cityGroup) return;
-
-  //     Object.values(cityGroup).forEach((cardEl) => {
-  //       if (!cardEl) return;
-
-  //       const animationProps = {
-  //         opacity: isActive ? 1 : 0,
-  //         scale: isActive ? 1 : 0.3,
-  //         y: isActive ? 0 : -100,
-  //         x: isActive ? 0 : -160,
-  //       };
-
-  //       if (isFirstRender.current) {
-  //         gsap.set(cardEl, animationProps);
-  //       } else {
-  //         gsap.to(cardEl, {
-  //           ...animationProps,
-  //           duration: 0.8,
-  //           ease: "power2.out",
-  //         });
-  //       }
-  //     });
-  //   });
-
-
-
-
-  //   isFirstRender.current = false;
-  // }, [currentIndex]);
+  
 
   useEffect(() => {
-  if (selectedCityIndex !== null && selectedCityIndex !== null) {
-    // Automatically re-trigger the city card animation or logic
-    setCurrentIndex(selectedCityIndex);
-    setActiveCity(selectedCityData)
-  }
-}, [selectedCityIndex]);
-
-  useEffect(() => {
-      if (mapRef.current && currentIndex !== null) {
-    const { x, y } = cities[currentIndex];
-    if (isFirstRender.current) {
-      gsap.set(mapRef.current, { x, y });
-    } else {
-      gsap.to(mapRef.current, {
-        x,
-        y,
-        duration: 1.3,
-        ease: "power2.out",
-      });
+    if (selectedCityIndex !== null && selectedCityIndex !== null) {
+      // Automatically re-trigger the city card animation or logic
+      setCurrentIndex(selectedCityIndex);
+      setActiveCity(selectedCityData)
     }
-  }
+  }, [selectedCityIndex]);
+
+  useEffect(() => {
+    if (mapRef.current && currentIndex !== null) {
+      const { x, y } = cities[currentIndex];
+      if (isFirstRender.current) {
+        gsap.set(mapRef.current, { x, y });
+      } else {
+        gsap.to(mapRef.current, {
+          x,
+          y,
+          duration: 1.3,
+          ease: "power2.out",
+        });
+      }
+    }
 
     cardRef.current.forEach((cityGroup, cityIndex) => {
       if (!cityGroup) return;
@@ -315,7 +266,7 @@ const indiaGallery = [
 
 
   const handleCityClick = (city) => {
-    if(activeIndex === 3) return;
+    if (activeIndex === 3) return;
     // If clicked again on the same city, close it
     if (activeCity?.id === city.id) {
       setActiveCity(null);
@@ -326,8 +277,9 @@ const indiaGallery = [
 
   useEffect(() => {
     if (currentIndex === null) return;
+    if(activeIndex !== 2)  setActiveCity(null);
     setCurrentIndex(0);
-     setActiveCity(null);
+   
   }, [activeIndex])
 
 
@@ -342,19 +294,19 @@ const indiaGallery = [
     if (currentIndex === cities.length - 1) return;
     setCurrentIndex((prev) => (prev === cities.length - 1 ? 0 : prev + 1));
   };
- const handlePresenceClick = (index, city) => {
-  const isSameCity = activeCity?.id === city.id;
+  const handlePresenceClick = (index, city) => {
+    const isSameCity = activeCity?.id === city.id;
 
-  if (isSameCity) {
-    setActiveCity(null);
-    setCurrentIndex(null);
-    return;
-  }
+    if (isSameCity) {
+      setActiveCity(null);
+      setCurrentIndex(null);
+      return;
+    }
 
-  setActiveCity(city);
-  setCurrentIndex(index);
-  dispatch(setSelectedCity({ index, city }));
-};
+    setActiveCity(city);
+    setCurrentIndex(index);
+    dispatch(setSelectedCity({ index, city }));
+  };
 
 
   const handleImageClick = (index, img) => {
@@ -368,42 +320,16 @@ const indiaGallery = [
   const pageId = 4;
   return (
     <div className=" relative">
-      {/* <Link to="/home">
-  <div className='absolute bottom-12 right-12 flex text-white z-30 cursor-pointer'style={{
-    clipPath: "polygon(0px 0px, 93% 0px, 100% 24%, 100% 100%, 6% 100%, 0px 73%)",
-  }}>  
-        <div className='flex gap-2 bg-[#acacac] p-2 items-center hover:bg-[#6c6a6a] transition-all'><FaChevronLeft />
-        <span className='text-[0.8rem]'>Previous</span></div>
-        <div className='flex items-center gap-2 bg-[#E11C37] p-2 hover:bg-[#781a26] transition-all'> <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="14"
-    height="16"
-    fill="none"
-    viewBox="0 0 14 16"
-  >
-    <path
-      fill="#fff"
-      d="M0 16V5.5L7 .212 14 5.5V16H8.808V9.616H5.192V16z"
-    ></path>
-  </svg><span className='text-[0.8rem]'>Home</span></div>
-      </div></Link> */}
+   
 
       <div className="w-screen h-[146px] relative z-30 flex justify-between px-16 items-center border-b border-transparent" style={{
         borderImageSource:
           "linear-gradient(90deg, rgba(0, 0, 0, 0.4) 2.52%, rgba(255, 255, 255, 0.4) 52.55%)",
         borderImageSlice: 1,
       }}>
-        {/* <img src={Logo} alt="homeLogo" /> */}
+
         <div className='flex justify-center items-center gap-8'>
-          {/* <Link to="/home">
-       <div id="app_closse_2"
-                  style={{
-                    clipPath:
-                      "polygon(50% 0%, 100% 0%, 100% 100%, 21% 100%, 0% 78%, 0% 0%)",
-                  }}
-                  className="cursor-pointer   w-[44px] h-[32px] bg-[#918F8F]   transition-all flex justify-center items-center text-white font-bold">
-        <img src={leftCropedArrow} alt="" />
-        </div></Link> */}
+     
           <h2 className='text-[2.1rem] font-[700] font-objektiv leading-[43px]'>Pratt & Whitney in India</h2>
         </div>
         <div className="flex justify-center items-center gap-4">
@@ -413,7 +339,7 @@ const indiaGallery = [
           </p>
           <Link to={`/home/${pageId}`}>
             <div
-             onClick={() => dispatch(clearSelectedCity())}
+              onClick={() => dispatch(clearSelectedCity())}
               id="app_close"
               className="cursor-pointer close_clip_path w-[44px] h-[32px] bg-[#918F8F] hover:bg-[#727272] flex justify-center items-center text-white font-bold"
             >
@@ -431,16 +357,16 @@ const indiaGallery = [
               style={{ clipPath: "polygon(50% 0%, 100% 0, 100% 90%, 87% 100%, 53% 100%, 0 100%, 0 0)" }}
             >
               <div className='w-[70%] m-auto pt-[80px] relative '>
-                  <p>
+                <p>
                   <span className='font-[700] font-objektiv text-[2.7rem] '>70 years </span>
 
                 </p>
                 <p className='leading-[50px]'>
                   <span className='font-[700] font-objektiv text-[2.7rem]'>of </span>
                   <span className='font-[700] font-objektiv text-[2.7rem] text-[#D91027]'> Powering</span>
-                    </p>
-                  <p className=' text-[2.7rem] font-objektiv font-[700] leading-[50px] block'>Indian Aviation</p>
-              
+                </p>
+                <p className=' text-[2.7rem] font-objektiv font-[700] leading-[50px] block'>Indian Aviation</p>
+
                 <div
                   className="pt-[30px] pl-[30px] flex flex-col justify-center gap-4 mt-10 border-t border-transparent"
                   style={{
@@ -644,18 +570,18 @@ const indiaGallery = [
             mapData[activeIndex]?.cities?.map((city, index) => (
               <div
                 key={index}
-            onClick={() => {
-  if (activeIndex === 0) {
-    handlePresenceClick(index,city); 
-  } else {
-     handleCityClick(city)
-  }
-}}
+                onClick={() => {
+                  if (activeIndex === 0) {
+                    handlePresenceClick(index, city);
+                  } else {
+                    handleCityClick(city)
+                  }
+                }}
                 className={`flex flex-col items-center absolute z-[99] ${city.cityPosition} cursor-pointer`}
               >
-  
-                  <ReddropSvg className={"z-[40px]"}/>
- 
+
+                <ReddropSvg className={"z-[40px]"} />
+
                 <div>
                   <h2 className="font-objektiv text-[0.8rem] font-semibold">{city.name}</h2>
                 </div>
@@ -763,7 +689,7 @@ const indiaGallery = [
 
                   <CommonSlideYearProduct
                     onImageClick={handleImageClick}
-                    gallery={ activeIndex === 2 ? rtxGallery : indiaGallery}
+                    gallery={activeIndex === 2 ? rtxGallery : indiaGallery}
                   />
 
                 </div>
@@ -810,30 +736,7 @@ const indiaGallery = [
         />
       )}
 
-      {/* --------------------------buttons------------ */}
-
-      {/* {activeIndex === 0 && (
-        <div className='absolute bottom-8 right-16 flex '>
-          <div
-            className={`left_arrow_clip_path cursor-pointer w-[60px] h-[40px] flex justify-center items-center  ${currentIndex === 0
-              ? 'bg-[#918F8F]'
-              : 'bg-[#D91027] hover:bg-[#742730]'
-              } text-white font-bold z-10`}
-            onClick={handlePrevClick}
-          >
-            <FaChevronLeft />
-          </div>
-          <div
-            className={`right_arrow_clip_path cursor-pointer w-[60px] h-[40px] flex justify-center items-center ${currentIndex === cities.length - 1
-              ? 'bg-[#918F8F]'
-              : 'bg-[#D91027] hover:bg-[#742730]'
-              } text-white font-bold z-10`}
-            onClick={handleNextClick}
-          >
-            <FaChevronRight />
-          </div>
-        </div>
-      )} */}
+      
 
 
       <div className="absolute grid grid-cols-2 bottom-8  z-40 left-12" style={{
