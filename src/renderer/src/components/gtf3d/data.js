@@ -24,7 +24,8 @@ const labelPositions = {
         label: 'Exhaust Case',
         position: [0.4, 0.6, -0.7],            
         rotation: [0, 0.7, 0],                 
-        target: [0.4, -0.2, -0.7] 
+        target: [0.4, -0.2, -0.7] ,
+         startOffset: [0, -0.1, 0],
       },
       TurbineCase: {
         label: 'Turbine Support Case',
@@ -36,7 +37,8 @@ const labelPositions = {
         label: 'Exhaust Cone',
         position: [0.9, -0.4, -1],
         rotation: [0.02, 1.54,0],
-        target: [0.7, 0.4, -1]  
+        target: [0.7, 0.4, -1],
+          
       },
       
     OliTank: {
@@ -50,7 +52,7 @@ const labelPositions = {
        position: [-0.3, 0.8, 0.6],            
         rotation: [0, -0.7, 0],                 
         target: [-0.3, 0.1, 0.6] ,
-      startOffset: [0, 0, 0],
+      startOffset: [0, -0.1, 0],
       },
        LPCompressor: {
         label: 'LP Compressor',
@@ -66,9 +68,7 @@ const labelPositions = {
         rotation: [0.02, 1.54,0],
         target: [0.1, 0.16, -0.5] ,
           startOffset: [0, 0, 0],
-        //    position: [0.3, 0, -1.6],
-        // rotation: [0.02, 1.54,0],
-        // target: [0.1, 0.3, -0.4]  
+      
       },
       
 

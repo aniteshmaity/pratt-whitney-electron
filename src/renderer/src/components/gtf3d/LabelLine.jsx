@@ -80,6 +80,7 @@ export default function LabelLine({
         ]}
         color="#710b0b"
         lineWidth={lineWidth}
+
       />
 
       <mesh
@@ -93,20 +94,32 @@ export default function LabelLine({
       </mesh>
       <mesh position={position} rotation={rotation} scale={[0.7, 0.2, 1]}>
         <planeGeometry />
-        <meshStandardMaterial color="#710b0b" />
+        <meshStandardMaterial color="#710b0b"
+          renderOrder={2} transparent
+          opacity={1}
+          depthTest={true}
+          depthWrite={true} />
         {/* <primitive object={shapeGeometry} /> */}
       </mesh>
       {/* Background for the label */}
       <mesh
         position={[position[0], position[1], position[2] + 0.001]}
         rotation={rotation}
+        renderOrder={3}
         scale={[0.68, 0.18, 1]}
       >
         <planeGeometry />
 
-        <meshStandardMaterial color="#1d1c1c" opacity={1} />
-        {/* <primitive object={shapeGeometry} /> */}
-        {/* <primitive object={createTrapezoidGeometry(1, 0.2, 0.1,0.05)} /> */}
+        <meshStandardMaterial color="#1d1c1c" opacity={1}
+
+          transparent
+          depthTest={true}
+          depthWrite={false}
+          polygonOffset={true}             //  enables offset
+          polygonOffsetFactor={-1}         //  pushes it back slightly
+          polygonOffsetUnits={-1}
+        />
+
       </mesh>
       {/* 3D Text Label */}
       <Text
@@ -117,9 +130,17 @@ export default function LabelLine({
         color="white" // Text color
         anchorX="center" // Anchor in the center
         anchorY="middle" // Anchor in the middle
-         maxWidth={0.5} // ✅ limits width and wraps text
-  lineHeight={1.1} // ✅ optional, adjust for vertical spacing
-   textAlign="center"
+        maxWidth={0.5} //  limits width and wraps text
+        lineHeight={1.1} // optional, adjust for vertical spacing
+        textAlign="center"
+        depthTest={true}          // disables depth buffer fight
+        depthWrite={false}
+        polygonOffset={true}              //  avoid z-fighting
+        polygonOffsetFactor={-2}
+        polygonOffsetUnits={-2}
+        transparent
+        renderOrder={4}
+
       >
         {label} {/* The label text */}
       </Text>
