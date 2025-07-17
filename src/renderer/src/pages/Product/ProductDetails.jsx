@@ -216,6 +216,7 @@ const ProductDetails = ({ onClose, engineData }) => {
     if (content) {
       content.addEventListener("scroll", handleScroll);
       checkOverflow(); // Check overflow when component mounts
+          content.scrollTop = 0;
     }
 
     return () => {
@@ -286,7 +287,9 @@ const ProductDetails = ({ onClose, engineData }) => {
       >
         <source src={allData?.bgvideo ?? videoUrl} type="video/mp4" />
         Your browser does not support the video tag.
+        
       </video>
+       <div className="absolute top-0 left-0 w-full h-full bg-black opacity-60 z-[-1]" />
 
       <div className="max-w-[1920px] w-[95%] m-auto relative">
         <div className="h-[146px] flex justify-between  items-center">
@@ -441,7 +444,7 @@ const ProductDetails = ({ onClose, engineData }) => {
                 </p>
               ) : (
                 <>
-                  <div className="relative w-[55%]">
+                  <div className="relative w-[55%] h-[108px]">
                     <div
                       className="absolute inset-0 bg-[#D91027] p-[1.9px]"
                       style={{
@@ -450,7 +453,7 @@ const ProductDetails = ({ onClose, engineData }) => {
                       }}
                     />
                     <div
-                      className="relative bg-[#393637] h-full w-full px-5 py-3"
+                      className="relative bg-[#393637] h-full w-full px-5 py-3 flex items-center"
                       style={{
                         clipPath:
                           "polygon(100% 0%, 100% 0%, 100% 50%, 90% 100%, 0% 100%, 0 0)",
@@ -459,9 +462,9 @@ const ProductDetails = ({ onClose, engineData }) => {
                       <h1 className="text-5xl font-bold text-white">
                         {allData?.title}
                       </h1>
-                      <p className="text-[#CE2028] font-medium pt-3">
+                      {/* <p className="text-[#CE2028] font-medium pt-3">
                         {allData?.subTitle}
-                      </p>
+                      </p> */}
                     </div>
                   </div>
                 </>
@@ -847,6 +850,7 @@ const ProductDetails = ({ onClose, engineData }) => {
                   <div className="bg-[#D9D9D9] w-0.5 right-3 top-[50px] h-[60%] translate-x-1/2 absolute">
                     <div
                       ref={redDotRef}
+                      
                       className="w-5 h-5 bg-[#D9D9D9] rounded-full absolute left-1/2 transform -translate-x-1/2 flex justify-center items-center"
                     >
                       <div className="bg-red-600 rounded-full w-2.5 h-2.5" />

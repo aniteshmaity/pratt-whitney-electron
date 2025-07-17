@@ -139,11 +139,12 @@ export const productEngine = [
     description: "A century of innovation",
     video:LegacyVideo,
     engines: [
+          { id: 'wasp', img: wasp, title: 'Wasp', description: "Pratt & Whitney’s first engine – and one of the most influential in history", details: engineDetails.legacy_engines.wasp },
         { id: 'Hornet', img: hornet, title: 'Hornet', description: "9-cylinder, air-cooled radial engine powering many iconic aircraft", details: engineDetails.legacy_engines.Hornet },
           { id: 'JT3D', img: jt3d, title: 'JT3D', description: "One of the first successful low-bypass turbofan engines, powered the dawn of the Jet Age", details: engineDetails.legacy_engines.JT3D },
       { id: 'JT8D', img: Jt8d, title: 'JT8D', description: "Powered some of the most successful commercial jets in history, including 727 and 737", details: engineDetails.legacy_engines.JT8D },
       { id: 'JT9D', img: Jt9d, title: 'JT9D', description: "Opened a new era in commercial aviation with the high-bypass-ratio engine", details: engineDetails.legacy_engines.JT9D },
-      { id: 'wasp', img: wasp, title: 'Wasp', description: "Pratt & Whitney’s first engine – and one of the most influential in history", details: engineDetails.legacy_engines.wasp },
+  
 
     ],
   },

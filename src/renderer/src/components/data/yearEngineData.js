@@ -413,9 +413,9 @@ export const yearEngineData = [
                 cloneTitle: slideData[9].innerSlidesData[0].cloneTitle,  
                 subtitle: slideData[9].innerSlidesData[0].subtitle,
                 description: slideData[9].innerSlidesData[0].description,
-
                 gallery: slideData[9].innerSlidesData[0].slideImages,
-                isExplore: false
+                  redirectLinkData:productEngine[1]?.engines[4]?.details,
+                isExplore: true
             },
             {
                 id: 2,

@@ -404,7 +404,7 @@ function Products({handleCurrentSlide}) {
                           activeIndex === index ? "opacity-100" : "opacity-100"
                         }`}
                       >
-                        <p className="text-[1.6rem] font-[900] text-[#D91027] leading-[28px] text-center mx-[30px]">{data.engine}</p>
+                        <p className="text-[1.2rem] font-[900] text-[#D91027] leading-[25px] text-center mx-[15px]">{data.engine}</p>
                   
                         <div
                           className={`text-center  ${
@@ -418,7 +418,7 @@ function Products({handleCurrentSlide}) {
       //     : "opacity-0 translate-x-[120px] scale-95 h-0 overflow-hidden"
       // }`}
     >
-      <p className="text-[0.95rem] font-[700] mt-2 mx-[30px] leading-5">{data.description}</p>
+      <p className="text-[0.80rem] font-[700] mt-2 mx-[30px] leading-4">{data.description}</p>
     </div>
                        
                       </div>
@@ -430,12 +430,12 @@ function Products({handleCurrentSlide}) {
          
          
         </div>
-        <div className='flex-grow'>
+        <div className='flex-grow h-[782px]'>
           <div className={`relative h-full last-field ${isAnimating ? 'opacity-0' : ''}`}>
           
-            <div className='main_box drop-shadow-2xl'>
-              <div className=' bg-white' style={{ clipPath: 'polygon(0% 0%, 100% 0%, 100% 85%, 90% 100%, 0% 100%)' }}>
-                <div className='relative w-full '>
+            <div className='main_box drop-shadow-2xl h-full'>
+              <div className=' bg-white h-full' style={{ clipPath: 'polygon(0% 0%, 100% 0%, 100% 80%, 90% 100%, 0% 100%)' }}>
+                <div className='relative w-full h-full'>
                   {/* <img
                     style={{ objectFit: 'cover' }}
                     className='w-full h-[400px]'
@@ -471,7 +471,7 @@ function Products({handleCurrentSlide}) {
         </div>
       </div>
       
-       <div className="absolute grid grid-cols-2 bottom-[50px] right-[54px] z-40"  style={{
+       <div className="absolute grid grid-cols-2 bottom-[43px] right-[54px] z-40"  style={{
                   clipPath:
                     "polygon(6% 0%, 100% 0%, 100% 64%, 94% 100%, 0% 100%, 0% 34%)",
                 }}>

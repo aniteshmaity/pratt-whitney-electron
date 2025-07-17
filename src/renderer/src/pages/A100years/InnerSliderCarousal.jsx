@@ -8,6 +8,7 @@ import { Navigation, Pagination, Scrollbar, A11y,Virtual } from "swiper/modules"
 import activeRedDot from "../../assets/100years/active-dot.png";
 import redDot from "../../assets/100years/non-active-dots.png";
 import { gsap } from "gsap";
+import VideoThumbnailGenerator from "../../components/VideoThumbnailGenerator";
 
 const InnerSliderCarousal = ({ images,onImageClick,type,combinedImages }) => {
   const [activeIndex,setActiveIndex] = useState(0)
@@ -78,12 +79,13 @@ const InnerSliderCarousal = ({ images,onImageClick,type,combinedImages }) => {
               ) : item.video ? (
        <div className="h-[60px] relative" onClick={() => {
                   onImageClick(index, images?.slice(1))}}>
-         <video
+         {/* <video
           preload="none"
   playsInline
           src={item.video}
           className="h-[60px] w-full object-cover cursor-pointer"
-        />
+        /> */}
+        <VideoThumbnailGenerator videoFile={item.video} />
        <div className="absolute inset-0 flex justify-center items-center cursor-pointer"><button className="bg-black bg-opacity-50 p-2 rounded-full text-white"><svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.752 11.168l-5.197-3.03A1 1 0 008 9.03v5.94a1 1 0 001.555.832l5.197-3.03a1 1 0 000-1.664z"></path></svg></button></div>
        </div>
       ) : null}

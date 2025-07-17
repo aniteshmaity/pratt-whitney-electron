@@ -28,7 +28,7 @@ const MapCard = ({cardclass,cityPositions ,city,onPrevClick, onNextClick,cardRef
      navigate("/products/productdetails", { state: { mapData: mapData } });
     })
   return (
-  <div className={` w-[560px] flex flex-col ${cardclass}`}   style={currentIndex === index ? { zIndex: 400 } : {}}>
+  <div className={` w-[600px] flex flex-col ${cardclass}`}   style={currentIndex === index ? { zIndex: 400 } : {}}>
       {data.map((entry, dataIndex) => (
         <div
           key={entry.id}
@@ -40,26 +40,28 @@ const MapCard = ({cardclass,cityPositions ,city,onPrevClick, onNextClick,cardRef
           // }}
         >
           <div className='w-[16px] h-[120px] absolute bg-[#E11C37] top-0 -left-[16px] ' />
-          <div className="flex h-[200px] w-full justify-center gap-4 items-center p-5 bg-white "
+          <div className="flex h-[205px] w-full justify-center  items-center p-5 bg-white "
            style={{ clipPath: "polygon(50% 0%, 100% 0px, 100% 57%, 85% 100%, 53% 100%, 0px 100%, 0px 0px)" }}>
-            <div className="relative flex-1 h-full rounded-full">
-              <img
-                className="w-full h-full object-cover rounded-full overflow-hidden"
-                style={{ boxShadow: "2px 3px 9px 1px #cbcbcb" }}
+            <div className="relative flex-1 h-full">
+              <div className='rounded-full w-[150px] h-[150px]' style={{ boxShadow: "2px 3px 9px 1px #cbcbcb" }}>
+                <img
+                className="w-full h-full object-contain rounded-full overflow-hidden "
+                
                 src={entry?.img}
                 alt="card"
               />
+              </div>
             </div>
-            <div className="w-full flex-[2] h-full flex flex-col justify-between">
+            <div className="w-full flex-[2.2] h-full flex flex-col justify-between">
               <div>
-                <h2 className="text-[1.1rem] font-[800] leading-[18px]">
+                <h2 className="text-[1.1rem] font-[900] leading-[18px]">
                   {entry.header1 || 'Header Title 1'}
                 </h2>
-                <h2 className="text-[1.1rem] font-[800]  text-[#D91027]">
+                <h2 className="text-[1.1rem] font-[900]  text-[#D91027]">
                   {entry.header2 || 'Header Title 2'}
                 </h2>
                 <p className="text-[0.8rem] font-[700] pt-2">{entry.subHeader}</p>
-                <p className="text-[0.7rem] font-[600] pt-1 w-[91%]">{entry.desc}</p>
+                <p className="text-[0.7rem] leading-[15px] font-[500] pt-1  pr-[20px] w-[91%]">{entry.desc}</p>
               </div>
               <button
               onClick={()=> handelExplore(dataIndex)}

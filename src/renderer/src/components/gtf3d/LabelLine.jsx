@@ -140,7 +140,6 @@ export default function LabelLine({
         polygonOffsetUnits={-2}
         transparent
         renderOrder={4}
-
       >
         {label} {/* The label text */}
       </Text>

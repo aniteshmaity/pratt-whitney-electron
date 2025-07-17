@@ -436,46 +436,7 @@ const MapScreen = () => {
 
 
         {/* svg dots */}
-        <div className='absolute top-[146px] left-[70px]'>
-          <div className='absolute top-0 translate-x-[-50%] translate-y-[-50%]'>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="18"
-              height="18"
-              fill="none"
-              viewBox="0 0 18 18"
-            >
-              <circle cx="9" cy="9" r="9" fill="#000" fillOpacity="0.1"></circle>
-              <circle cx="9" cy="9" r="5" fill="#B1B1B1"></circle>
-            </svg></div>
-
-          <div className='absolute bottom-0 translate-x-[-50%] translate-y-[50%]'>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="18"
-              height="18"
-              fill="none"
-              viewBox="0 0 18 18"
-            >
-              <circle
-                cx="9"
-                cy="9"
-                r="9"
-                fill="#000"
-                fillOpacity="0.1"
-                transform="rotate(90 9 9)"
-              ></circle>
-              <circle
-                cx="9"
-                cy="9"
-                r="5"
-                fill="#D91027"
-                transform="rotate(90 9 9)"
-              ></circle>
-            </svg>
-          </div>
-          <div className='w-[1px] h-[100px] bg-[#00000066]' />
-        </div>
+      
       </div>
 
 

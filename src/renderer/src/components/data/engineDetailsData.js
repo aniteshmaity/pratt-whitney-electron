@@ -442,6 +442,8 @@ import F135_6 from "../../assets/product/millitary/221205-RAYTHEON-FL-0621-1920x
 import F135_7 from "../../assets/product/millitary/F-35 variants.webp";
 import F135_8 from "../../assets/product/millitary/F-35-test-jet.webp";
 import F135_9 from "../../assets/product/millitary/F135 updated exhaust plug 1920x1080.webp";
+import F135_10 from "../../assets/product/millitary/Pratt & Whitney Military.webp";
+import F135_11 from "../../assets/product/millitary/6316582v2_201001_JHS_compress.webp";
 import F135_P_1 from "../../assets/product/millitary/F-35 Lightning II A_ (1).webp";
 import F135_P_2 from "../../assets/product/millitary/F-35 Lightning II B (1).webp";
 import F135_P_3 from "../../assets/product/millitary/F-35 Lightning II C (1).webp";
@@ -1217,6 +1219,8 @@ const engineDetails = {
         { img: F135_7 },
         { img: F135_8 },
         { img: F135_9 },
+        { img: F135_10 },
+        { img: F135_11 },
         { video: F135_V_1 },
         { video: F135_V_2 },
       ],

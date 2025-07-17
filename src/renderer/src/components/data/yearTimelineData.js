@@ -618,7 +618,7 @@ export const slideData = [
             { img: I_1966_2 },
             { img: I_1966_3 },
             { img: I_1966_4 },
-  {video:V_1966_1}
+  // {video:V_1966_1}
           ],
         },
         {id:6,
@@ -1228,7 +1228,7 @@ export const slideData = [
       ],
       timeline: [
         { year: "2020s", text: "Focus on the Future" },
-        { year: "2030s", text: "Advancing Innovation" },
+        // { year: "2030s", text: "Advancing Innovation" },
       ],
     },
   ];

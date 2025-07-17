@@ -276,7 +276,7 @@ const mapData = [
       },
       {
         id: 3,
-        name: "Bangalore",
+        name: "Bengaluru",
         x: "-20%",
         y: "-25%",
         position: "top-[35%] left-[45%]",
@@ -1255,7 +1255,7 @@ const mapData = [
       },
       {
         id: 3,
-        name: "Bangalore",
+        name: "Bengaluru",
         x: "-20%",
         y: "-30%",
         position: "top-[60%] left-[43%]",
@@ -1386,7 +1386,7 @@ const mapData = [
       },
       {
         id: 3,
-        name: "Bangalore",
+        name: "Bengaluru",
         x: "-20%",
         y: "-30%",
         position: "top-[65%] left-[50%]",
