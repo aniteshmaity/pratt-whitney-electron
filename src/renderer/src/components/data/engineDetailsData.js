@@ -2980,7 +2980,91 @@ const engineDetails = {
       subTitle: "For PW India Experience Center",
       description:
         "The PW4000 delivers 52,000 to 62,000 pounds of thrust across five major aircraft applications. Approved for 180-minute ETOPS, it offers flexibility and reliability. Advanced technologies like single-crystal superalloys and FADEC boost fuel efficiency and performance, with long on-wing times and low maintenance costs.",
+         logo: PW4_1,
       variants: [
+        {
+          img: PW4_1,
+          title: "PW4000 94-inch fan",
+          tabsData: [
+            {
+          title: "Platforms",
+          content: [
+            {
+              image:PW4_P_1_new,
+              enginetext: "Boeing 747-400",
+              description:
+                "The Boeing 747-400 is a large, long-range wide-body airliner developed by Boeing Commercial Airplanes as an advanced variant of the original 747.",
+            },
+            {
+                image:PW4_P_2_new,
+              enginetext: "Boeing 767",
+              description:
+                "The Boeing 767 is an American wide-body airliner developed and produced by Boeing Commercial Airplanes.",
+            },
+            {
+                image:PW4_P_3_new,
+              enginetext: "Boeing MD-11",
+              description:
+                "The McDonnell Douglas MD-11 is an American tri-jet wide-body airliner originally manufactured by McDonnell Douglas and later by Boeing.",
+            },
+            {
+                image:PW4_P_4_new,
+              enginetext: "Airbus A300",
+              description: `The Airbus A300, Airbus's first production aircraft, is the world's first twin-engine, double-aisle wide-body airliner, developed and manufactured by Airbus from 1971 to 2007`,
+            },
+            {
+                image:PW4_P_5_new,
+              enginetext: "Airbus A310",
+              description:
+                "The Airbus A310 is a wide-body aircraft which was developed to meet the demand for a smaller aircraft than the A300, Airbus first twin-jet wide-body.",
+            },
+          ],
+        },
+        {
+          title: "Specifications",
+          content: [
+            { image: V25_S_1, description: "52K – 62K pounds of thrust." },
+            { image: V25_S_5, description: "180-minutes ETOPS approved." },
+            {
+              image: V25_S_3,
+              description: "2M+ ETOPS flights with 38 airlines.",
+            },
+          ],
+        },
+        {
+          title: "Highlights",
+          content: [
+            {
+              image:PW4_H_1_new,
+              enginetext: "PW4000 94-inch-fan",
+              description:
+                "The PW4000 100-inch fan engine is offered as a complete propulsion system, featuring an advanced, lightweight nacelle and incorporating proven technologies in materials, aerodynamics, and controls to enhance performance, reliability, and durability.",
+            },
+            {
+              image: PW4_H_2,
+              enginetext: "ETOPS Certification",
+              description:
+                "Crucial for airlines operating Extended-range Twin-engine Operations (ETOPS) on Boeing 767s and Airbus A310/A300 aircraft, the PW4000 is certified for 180-minute ETOPS, allowing flights up to three hours from the nearest airport. It has completed over 2 million ETOPS flights with 38 airlines.",
+            },
+            {
+              image: PW4_H_1,
+              enginetext: "Advanced Technologies",
+              description:
+                "Incorporating advanced technologies such as single-crystal superalloys and Full-Authority Digital Electronic Control (FADEC), the PW4000 enhances fuel economy and reliability, while offering excellent performance retention and turbine durability.",
+            },
+          ],
+        },
+        {
+          title: "Customers",
+          content: [
+            { name: "American Airlines", image: AmericanAir },
+            { name: "Delta Airlines", image: DeltaAir },
+            { name: "United Airlines", image: UnitedAir },
+            { name: "Korean Air", image: korean },
+          ],
+        },
+          ],
+        },
         {
           img: PW4_100,
           title: "PW4000 100-inch fan",
@@ -3258,7 +3342,7 @@ const engineDetails = {
         { video: PW4000_V1 },
         { video: PW4000_V2 },
       ],
-      logo: PW4_1,
+     
     },
     PW2000: {
       title: "PW2000",
@@ -4195,17 +4279,17 @@ const engineDetails = {
             {
               image: Hernet_P_1,
               enginetext: "Boeing 247",
-              description: "An early American airliner.",
+              description: "A groundbreaking 1930s all-metal airliner that set the standard for modern passenger aircraft.",
             },
             {
               image: Hernet_P_2,
               enginetext: "Douglas DC-2",
-              description: "A precursor to the famous DC-3.",
+              description: "A twin-engine airliner that improved on the Boeing 247 and paved the way for the iconic DC-3.",
             },
             {
               image: Hernet_P_3,
               enginetext: "Curtiss P-6 Hawk (some variants)",
-              description: "Fighter biplane.",
+              description: "A sleek, fabric-covered biplane fighter used by the U.S. Army Air Corps in the early 1930s, known for its speed and agility.",
             },
           ],
         },
@@ -4268,17 +4352,17 @@ const engineDetails = {
             {
               image: Jt3d_P_1,
               enginetext: "Boeing 707",
-              description: "",
+              description: "The first successful American jetliner that ushered in the Jet Age of commercial air travel.",
             },
             {
               image: Hernet_P_2,
               enginetext: "Douglas DC-8",
-              description: "",
+              description: "Douglas’s first jet airliner, rival to the Boeing 707 in early jet-powered travel.",
             },
             {
               image: APS5000,
               enginetext: "KC-135 Stratotanker (military)",
-              description: "",
+              description: "A military aerial refueling aircraft based on the Boeing 707, critical for extending global air operations.",
             },
           ],
         },
@@ -4346,22 +4430,22 @@ const engineDetails = {
             {
               image: Jt8d_P_1,
               enginetext: "Boeing 727",
-              description: "",
+              description: "A trijet airliner designed for short to medium-haul routes with the ability to operate from shorter runways.",
             },
             {
               image: Jt3d_P_2,
               enginetext: "Boeing 737-100/-200",
-              description: "",
+              description: "The earliest versions of the world’s best-selling narrow-body jet, built for short-haul routes.",
             },
             {
               image: Jt3d_P_3,
               enginetext: "McDonnell Douglas DC-9",
-              description: "",
+              description: "A compact, twin-engine jet designed for frequent, short flights from smaller airports.",
             },
             {
               image: Jt3d_P_4,
               enginetext: "McDonnell Douglas MD-80 (with -200 series)",
-              description: "",
+              description: "A stretched and modernized version of the DC-9 with improved range and capacity.",
             },
           ],
         },
@@ -4427,18 +4511,18 @@ const engineDetails = {
             {
               image: Jt9d_P_1,
               enginetext: "Boeing 747",
-              description: "",
+              description: "The iconic wide-body “Jumbo Jet” that revolutionized long-haul international travel with its size and range.",
             },
             {
               image: Jt9d_P_2,
               enginetext: "McDonnell Douglas DC-10",
-              description: "",
+              description: " A three-engine wide-body jet designed for long-range flights with high passenger capacity.",
             },
 
             {
               image: Jt9d_P_3,
               enginetext: "Airbus A300",
-              description: "",
+              description: "The world’s first twin-engine wide-body jetliner, launching Airbus into the global aviation market.",
             },
           ],
         },
@@ -4504,12 +4588,12 @@ const engineDetails = {
             {
               image: wasp_P_1,
               enginetext: "North American T-6 Texan",
-              description: "",
+              description: "A widely used WWII-era trainer aircraft for Allied fighter pilots.",
             },
             {
               image: wasp_P_2,
               enginetext: "Douglas O-38",
-              description: "",
+              description: "A 1930s observation biplane used by the U.S. Army for reconnaissance and liaison duties.",
             },
           ],
         },

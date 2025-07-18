@@ -61,7 +61,7 @@ const CustomDialog =({ images, startIndex, onClose }) => {
     <div className="bg-white  rounded-lg w-[80%] max-w-5xl  relative border-2 border-black"      onClick={(e) => e.stopPropagation()} >
     <button
   onClick={onClose}
-  className="absolute top-2 z-40 right-2 text-black font-bold rounded-[5px] w-8 h-8 bg-gray-200 hover:bg-red-500 hover:text-white flex items-center justify-center transition-all"
+  className="absolute top-2 z-40 right-2  font-bold rounded-[5px] w-8 h-8 bg-[#E11C37] text-white flex items-center justify-center transition-all"
 >
   ✕
 </button>

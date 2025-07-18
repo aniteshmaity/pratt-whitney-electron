@@ -204,6 +204,23 @@ import V_2008_1 from "../../assets/100years/gallery/GTF Main video 1080p.mp4";
 import V_2021_1 from "../../assets/100years/gallery/Pratt & Whitney Canada Advances Sustainable Hybrid-Electric Propulsion Technology.mp4";
 import V_2022_1 from "../../assets/100years/gallery/Pratt & Whitney India Capability Center.mp4";
 import V_2023_1 from "../../assets/100years/gallery/PW127G powers the Indian Air Force's recently delivered C295.mp4";
+import V_2025_1 from "../../assets/100years/gallery/GTF_Advantage_Airbus_A320neo_First_Flight.mp4";
+import V_2025_2 from "../../assets/100years/gallery/Pratt_Whitney_GTF_Advantage_Engine.mp4";
+import V_2025_3 from "../../assets/100years/gallery/PW_XA103.mp4";
+import V_2025_4 from "../../assets/100years/gallery/Pratt_Whitney_100_Year_Anniversary.mp4";
+import V_2025_5 from "../../assets/100years/gallery/Patent_Perspectives_Breaking_Records.mp4";
+import V_2025_6 from "../../assets/100years/gallery/103-year-old WWII pilot ‘I owe my life to the Pratt & Whitney engine’.mp4";
+import I_2025_1 from "../../assets/100years/gallery/GTF Advantage-com.webp";
+import I_2025_2 from "../../assets/100years/gallery/NGAP_1920x1080.webp";
+import I_2025_3 from "../../assets/100years/gallery/100 years main image.webp";
+import I_2025_4 from "../../assets/100years/gallery/Eras of Innovation 1.webp";
+import I_2025_5 from "../../assets/100years/gallery/Eras of Innovation 2.webp";
+import I_2025_6 from "../../assets/100years/gallery/Eras of Innovation 3.webp";
+import I_2025_7 from "../../assets/100years/gallery/Eras of Innovation 4.webp";
+import I_2025_8 from "../../assets/100years/gallery/Eras of Innovation 5.webp";
+import I_2025_9 from "../../assets/100years/gallery/Eras of Innovation 6.webp";
+import I_2025_10 from "../../assets/100years/gallery/Eras of Innovation 7.webp";
+import I_2025_11 from "../../assets/100years/gallery/Eras of Innovation 8.webp";
 import V_2016_1 from "../../assets/100years/gallery/GTF engine in India.mp4";
 import V_2015_1 from "../../assets/100years/gallery/India Customer Training Center - Training on Pratt & Whitney’s most advanced aircraft engines.mp4";
 import V_2015_2 from "../../assets/100years/gallery/Percept Advancing Innovation.mp4";
@@ -1215,7 +1232,7 @@ export const slideData = [
              <p>By combining two Collins Aerospace megawatt-class electric motor generators within a Pratt & Whitney GTF™ engine, the hybrid-electric propulsion system aims to enhance engine efficiency across all phases of flight, offering the potential to reduce fuel burn and emissions for future short- and medium-range aircraft.</p>`,
           title: "Hybrid-electric GTF™ engine demonstrator",
           cloneTitle: "Hybrid-electric GTF™ engine demonstrator",
-          subtitle: "Pratt & Whitney powers IAF’s transport modernisation.",
+          subtitle: "Integrates Collins Aerospace generators with GTF.",
           image: S_2024_1,
           thumbnail:S_2024_1,
           slideImages: [
@@ -1225,6 +1242,69 @@ export const slideData = [
          
           ],
         },
+        {
+          id:5,
+          year: "2025",
+             description: `<p>Pratt & Whitney’s GTF Advantage engine receives FAA type certification for the Airbus A320neo family, marking a major milestone as the company celebrates 100 years. </p><br>
+             <p>The GTF Advantage offers 4–8% more takeoff thrust, improved fuel efficiency, lower CO₂ emissions, and enhanced durability. </p>
+             <p>It is fully interchangeable with existing GTF models, it features redesigned life-limited parts, advanced cooling technologies, and a more robust hot section for increased time on wing. </p>
+             <p>GTFA will be  100% Sustainable aviation fuel compatible and will be  the production standard. </p>`,
+          title: "GTF Advantage™ engine achieves FAA certification",
+          cloneTitle: "First engine deliveries start 2025 end-2026",
+          subtitle: "First engine deliveries start 2025 end-2026.",
+          image: I_2025_1,
+          thumbnail:I_2025_1,
+          slideImages: [
+            { img: I_2025_1 },
+            { video: V_2025_1 },
+            { video: V_2025_2 },
+         
+          ],
+        },
+        {
+          id:6,
+          year: "2025",
+             description: `<p>For 100 years, the people of Pratt & Whitney have pushed the boundaries of aviation to shape human flight. Pratt & Whitney’s history is a story of relentless grit and unwavering dedication, from developing era-defining engines in the early 20th century to unleashing new technologies that power the skies today.  </p><br>
+             <p>With more than 90,000 engines in service around the globe, we remain committed to connecting people, growing economies and defending freedom.</p>`,
+          title: "Pratt & Whitney Celebrates 100 years",
+          cloneTitle: "100 Years of Powering the Future",
+          subtitle: "100 Years of Powering the Future.",
+          image: I_2025_2,
+          thumbnail:I_2025_2,
+          slideImages: [
+            { img: I_2025_2 },
+            { video: V_2025_3 },
+         
+          ],
+        },
+        {
+          id:7,
+          year: "2025",
+             description: `<p>Pratt & Whitney's NGAP engine has an adaptive architecture, enabling its components to actively adjust for optimized fuel efficiency, survivability, and power and thermal management, surpassing the capabilities of fourth- and fifth-generation engines. This step change in engine capability will help ensure the U.S. Air Force maintains air superiority and deters pacing challenges. </p><br>
+          `,
+          title: "Next-Gen Adaptive Propulsion Offering",
+          cloneTitle: "Hardware procurement begins for XA103 prototype",
+          subtitle: "Hardware procurement begins for XA103 prototype.",
+          imageFit:"contain",
+          image: I_2025_3,
+          thumbnail:I_2025_3,
+          slideImages: [
+            { img: I_2025_3 },
+            { img: I_2025_4 },
+            { img: I_2025_5 },
+            { img: I_2025_6 },
+            { img: I_2025_7 },
+            { img: I_2025_8 },
+            { img: I_2025_9 },
+            { img: I_2025_10 },
+            { img: I_2025_11 },
+            { video: V_2025_4 },
+            { video: V_2025_5 },
+            { video: V_2025_6 },
+         
+          ],
+        },
+
       ],
       timeline: [
         { year: "2020s", text: "Focus on the Future" },

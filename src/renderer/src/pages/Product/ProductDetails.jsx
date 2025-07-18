@@ -810,7 +810,7 @@ const ProductDetails = ({ onClose, engineData }) => {
                 {/* Tabs Content */}
                 <div
                   ref={contentRef}
-                  className="relative mt-4 h-[calc(100%-52px)] w-[86%] pl-[30px] no-scrollbar  overflow-auto"
+                  className="relative mt-4 h-[calc(100%-52px)] w-[86%] pl-[30px] pb-[20px] no-scrollbar  overflow-auto"
                 >
                   {tabsData[activeTab]?.content.map((item, idx) =>
                     typeof item === "string" ? (

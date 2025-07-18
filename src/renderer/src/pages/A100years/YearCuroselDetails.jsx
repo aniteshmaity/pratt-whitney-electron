@@ -295,12 +295,14 @@ timeline.add(() => {
           },
         );
       }
+      const baseOffset = slideData[slideDataIndex].innerSlidesData.length > 6 ? 300 : 270;
+      console.log("based-item",slideData[slideDataIndex].innerSlidesData.length);
       // Ensure the DOM updates before animating the new nextContentClone
       setTimeout(() => {
         timeline.to(
           `.${currentClone.name}`,
           {
-            x:  `${-270 + (nextIndex  ) * 40}%`
+            x:  `${-baseOffset + (nextIndex  ) * 40}%`
   ,
             y: "100%",
             height: "80px",
@@ -738,23 +740,12 @@ timeline.add(() => {
                 <div className="main_box drop-shadow-2xl h-[430px] ">
                   <div className="main_box2 card_clip py-[30px] pl-[20px] pr-[30px] h-full bg-white">
 
-                    {/* <div
-                    id="app_closse_2"
-                    onClick={handleBackYears}
-                    style={{
-                      clipPath:
-                        "polygon(50% 0%, 100% 0%, 100% 100%, 21% 100%, 0% 78%, 0% 0%)",
-                    }}
-                    className="cursor-pointer absolute right-0 top-0 z-20  w-[44px] h-[32px] bg-[#716e6e2e] hover:bg-[#918F8F]  transition-all flex justify-center items-center text-white font-bold"
-                  >
-                    <img src={Close} alt="close_arrow" />
-                  </div> */}
                     <div className="relative w-full grid grid-cols-2">
                       <div>
                         <div className="w-[90%]">
                           <img
-                            style={{ objectFit: "cover" }}
-                            className="image w-full h-[200px] cursor-pointer"
+                       
+                            className={`image w-full h-[200px] ${slide?.innerSlidesData[currentInnerSlide]?.imageFit === "contain" ? "object-contain" : "object-cover"} cursor-pointer`}
                             onClick={() => onImageClick(0, slideImages)}
                             src={
                               innerSlideStatus
@@ -799,23 +790,7 @@ timeline.add(() => {
                                 : slide?.subtitle}
                             </span>
                           </p>
-                          {/* <p
-  className="text-[0.94rem] pb-5 font-[600] font-frutiger leading-tight no-scrollbar overflow-auto h-[80px]"
-  dangerouslySetInnerHTML={{
-    __html: innerSlideStatus
-      ? slide?.innerSlidesData[currentInnerSlide]?.description
-      : slide?.description,
-  }}
-  ></p>
-  <p className="text-[0.8rem]">
-        {isExpanded === index ? item.description : `${item.description.slice(0, 50)}...`}{" "}
-        <span
-          className="text-[#CE2028] text-[0.7rem] font-medium cursor-pointer block"
-          onClick={() => toggleDescription(index)}
-        >
-          {isExpanded === index ? "Tap to collapse" : "Tap for more"}
-        </span>
-      </p> */}
+             
                           <p className="text-[0.94rem] pb-5 font-[600] font-frutiger leading-tight no-scrollbar overflow-auto h-[110px] custom-description">
                             <span
                               dangerouslySetInnerHTML={{
@@ -842,18 +817,6 @@ timeline.add(() => {
 
                         <div className="flex mt-2 gap-4" onClick={crossLink}>
 
-                          {/* {yearName && yearId && isExplore ? (
-    <Link to={`/A100years/yearEngineDetails/${yearName}-${yearId}`}>
-      <SvgBtn
-        text="Explore"
-        height="38px"
-        width="120px"
-        textClass="font-[700] text-[0.8rem]"
-        type="small"
-        showArrow
-      />
-    </Link>
-  ) : null} */}
                           {yearName && yearId && isExplore ? (<SvgBtn
                             text="Explore"
                             height="38px"

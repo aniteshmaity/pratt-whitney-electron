@@ -6,7 +6,7 @@ import MapImage from "../assets/images/Map.svg"
 import { Link } from "react-router-dom";
 import { gsap } from 'gsap';
 import SvgBtn from '../components/buttons/SvgBtn'
-import MapGif from "../assets/images/home/plain animation 1 copy.gif"
+import MapGif from "../assets/images/home/plane_1_copy.gif"
 
 const StartFlash = () => {
   const img1Ref = useRef(null);

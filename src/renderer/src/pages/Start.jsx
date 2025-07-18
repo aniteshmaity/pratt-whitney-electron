@@ -7,7 +7,7 @@ import MapImage from "../assets/images/Map.svg"
 
 import { Link } from "react-router-dom";
 import SvgBtn from "../components/buttons/SvgBtn";
-import MapGif from "../assets/images/home/plain animation 1 copy.gif"
+import MapGif from "../assets/images/home/plane_1_copy.gif"
 import splashVideo from "../assets/images/video/splash-video.mp4"
 
 const TimelineAnimation = () => {
