@@ -79,6 +79,7 @@ const ProductDetails = ({ onClose, engineData }) => {
   const dispatch = useDispatch();
   const [isExpanded, setIsExpanded] = useState(null);
   const [isOverflowing, setIsOverflowing] = useState(false);
+
   const [showSlider, setShowSlider] = useState(false);
   const [isScrollableOverflowing, setIsScrollableOverflowing] = useState(false);
   // const [show3DModel, setShow3DModel] = useState(false)
@@ -170,17 +171,17 @@ const ProductDetails = ({ onClose, engineData }) => {
   ];
 
   const handleVariantClick = (index) => {
-  if (index === selectedVariant) {
-    setTabsData(alltabsData);
-    setSelectedVariant(null)
-  } else {
-    setTabsData(allData.variants[index]?.tabsData ?? []);
-    setSelectedVariant(index);
-  }
+    if (index === selectedVariant) {
+      setTabsData(alltabsData);
+      setSelectedVariant(null)
+    } else {
+      setTabsData(allData.variants[index]?.tabsData ?? []);
+      setSelectedVariant(index);
+    }
 
-  
-  setActiveTab(0); // Reset to the first tab when variant changes
-};
+
+    setActiveTab(0); // Reset to the first tab when variant changes
+  };
   useEffect(() => {
     gsap.fromTo(
       contentRef.current,
@@ -197,32 +198,91 @@ const ProductDetails = ({ onClose, engineData }) => {
       { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
     );
   }, [activeTab]);
-  useEffect(() => {
-    const content = contentRef.current;
+ 
+ useEffect(() => {
+  const content = contentRef.current;
+  const redDot = redDotRef.current;
 
-    const handleScroll = () => {
-      if (content && redDotRef.current) {
-        const scrollPercentage =
-          (content.scrollTop / (content.scrollHeight - content.clientHeight)) *
-          100;
-        redDotRef.current.style.top = `${scrollPercentage}%`;
-      }
-    };
-
-    const checkOverflow = () => {
-      setIsOverflowing(content.scrollHeight > content.clientHeight);
-    };
-
-    if (content) {
-      content.addEventListener("scroll", handleScroll);
-      checkOverflow(); // Check overflow when component mounts
-          content.scrollTop = 0;
+  const handleScroll = () => {
+    if (content && redDot) {
+      const scrollPercentage =
+        (content.scrollTop / (content.scrollHeight - content.clientHeight)) * 100;
+      redDot.style.top = `${scrollPercentage}%`;
     }
+  };
 
-    return () => {
-      if (content) content.removeEventListener("scroll", handleScroll);
-    };
-  }, [tabsData, activeTab]);
+  const checkOverflow = () => {
+    setIsOverflowing(content.scrollHeight > content.clientHeight);
+  };
+
+  // === Common drag logic ===
+  let startY = 0;
+  let startTop = 0;
+
+  const updateScroll = (clientY) => {
+    const deltaY = clientY - startY;
+    const trackHeight = content.clientHeight;
+    let newTop = startTop + (deltaY / trackHeight) * 100;
+    newTop = Math.max(0, Math.min(newTop, 100));
+    redDot.style.top = `${newTop}%`;
+    const scrollHeight = content.scrollHeight - content.clientHeight;
+    content.scrollTop = (newTop / 100) * scrollHeight;
+  };
+
+  // === Mouse drag ===
+  const handleMouseDown = (e) => {
+    e.preventDefault();
+    startY = e.clientY;
+    startTop = parseInt(redDot.style.top) || 0;
+    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mouseup", handleMouseUp);
+  };
+
+  const handleMouseMove = (e) => updateScroll(e.clientY);
+
+  const handleMouseUp = () => {
+    document.removeEventListener("mousemove", handleMouseMove);
+    document.removeEventListener("mouseup", handleMouseUp);
+  };
+
+  // === Touch drag ===
+  const handleTouchStart = (e) => {
+    startY = e.touches[0].clientY;
+    startTop = parseInt(redDot.style.top) || 0;
+    document.addEventListener("touchmove", handleTouchMove);
+    document.addEventListener("touchend", handleTouchEnd);
+  };
+
+  const handleTouchMove = (e) => {
+    updateScroll(e.touches[0].clientY);
+  };
+
+  const handleTouchEnd = () => {
+    document.removeEventListener("touchmove", handleTouchMove);
+    document.removeEventListener("touchend", handleTouchEnd);
+  };
+
+  if (content) {
+    content.addEventListener("scroll", handleScroll);
+    checkOverflow();
+    content.scrollTop = 0;
+  }
+  if (redDot) {
+    redDot.addEventListener("mousedown", handleMouseDown);
+    redDot.addEventListener("touchstart", handleTouchStart, { passive: false });
+  }
+
+  return () => {
+    if (content) content.removeEventListener("scroll", handleScroll);
+    if (redDot) {
+      redDot.removeEventListener("mousedown", handleMouseDown);
+      redDot.removeEventListener("touchstart", handleTouchStart);
+    }
+  };
+}, [tabsData, activeTab, isOverflowing]);
+
+
+
   const handleScroll1 = () => {
     const scrollableElement = scrollableRef.current;
     const redDot = redDot2Ref.current;
@@ -276,7 +336,7 @@ const ProductDetails = ({ onClose, engineData }) => {
   return (
     <div
       className="bg-cover bg-center h-screen"
-      // style={{ backgroundImage: `url(${imageUrl})` }}
+    // style={{ backgroundImage: `url(${imageUrl})` }}
     >
       <video
         autoPlay
@@ -287,9 +347,9 @@ const ProductDetails = ({ onClose, engineData }) => {
       >
         <source src={allData?.bgvideo ?? videoUrl} type="video/mp4" />
         Your browser does not support the video tag.
-        
+
       </video>
-       <div className="absolute top-0 left-0 w-full h-full bg-black opacity-60 z-[-1]" />
+      <div className="absolute top-0 left-0 w-full h-full bg-black opacity-60 z-[-1]" />
 
       <div className="max-w-[1920px] w-[95%] m-auto relative">
         <div className="h-[146px] flex justify-between  items-center">
@@ -658,7 +718,7 @@ const ProductDetails = ({ onClose, engineData }) => {
                               </p>
                             </div>
 
-                               <div className="flex-[2]">
+                            <div className="flex-[2]">
                               {item.content3 && (
                                 <>
                                   <div className="rounded-full scale-[0.9]  w-[68px] h-[68px] shadow-[2px_4px_8px_6px_#b1afaf3d] z-40 relative p-[4px] bg-white  flex flex-col ">
@@ -816,12 +876,12 @@ const ProductDetails = ({ onClose, engineData }) => {
                           ""
                         )}
                         {tabsData[activeTab]?.title !== "Specifications" &&
-                        tabsData[activeTab]?.title !== "Customers" ? (
+                          tabsData[activeTab]?.title !== "Customers" ? (
                           <div>
                             {item.description && (
                               <p className="text-[0.8rem]">
                                 {item.description.length <= 200 ||
-                                isExpanded === idx
+                                  isExpanded === idx
                                   ? item.description
                                   : `${item.description.slice(0, 200)}...`}
 
@@ -850,8 +910,8 @@ const ProductDetails = ({ onClose, engineData }) => {
                   <div className="bg-[#D9D9D9] w-0.5 right-3 top-[50px] h-[60%] translate-x-1/2 absolute">
                     <div
                       ref={redDotRef}
-                      
-                      className="w-5 h-5 bg-[#D9D9D9] rounded-full absolute left-1/2 transform -translate-x-1/2 flex justify-center items-center"
+
+                      className="w-5 h-5 bg-[#D9D9D9] rounded-full absolute left-1/2 transform -translate-x-1/2 flex justify-center items-center cursor-grab active:cursor-grabbing"
                     >
                       <div className="bg-red-600 rounded-full w-2.5 h-2.5" />
                     </div>
