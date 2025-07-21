@@ -14,7 +14,7 @@ console.log("Running in", isDev ? "Development" : "Production", "mode");
     width: 1920,
     height: 1080,
   fullscreen: !isDev,  
-  kiosk: !isDev,       
+  kiosk: isDev,       
   frame: isDev,        
     autoHideMenuBar: true,
     ...(process.platform === 'linux' ? { icon } : {}),

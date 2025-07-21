@@ -791,7 +791,7 @@ timeline.add(() => {
                             </span>
                           </p>
              
-                          <p className="text-[0.94rem] pb-5 font-[600] font-frutiger leading-tight no-scrollbar overflow-auto h-[110px] custom-description">
+                          <div className="text-[0.94rem] pb-5 font-[600] font-frutiger leading-tight no-scrollbar overflow-auto h-[110px] custom-description">
                             <span
                               dangerouslySetInnerHTML={{
                                 __html:
@@ -812,7 +812,7 @@ timeline.add(() => {
                             >
                               {isExpanded === index ? "Tap to collapse" : "Tap for more"}
                             </span>
-                          </p>
+                          </div>
                         </div>
 
                         <div className="flex mt-2 gap-4" onClick={crossLink}>

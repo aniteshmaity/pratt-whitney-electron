@@ -6,9 +6,20 @@ import { FaChevronLeft } from "react-icons/fa6";
 import { FaChevronRight } from "react-icons/fa6";
 import PDFViewer from './PDFViewer';
 const CustomDialog =({ images, startIndex, onClose }) => {
+  const pdfRefs = useRef([]);
+ 
   const videoRefs = useRef([]);
-    const scrollRefs = useRef([]);
   const [currentIndex, setCurrentIndex] = useState(startIndex);
+
+
+  // utils/resetScroll.js
+function resetPDFScroll() {
+  const pdfContainer = pdfRefs.current[currentIndex];
+  if (pdfContainer) {
+    pdfContainer.scrollTop = 0;
+  }
+}
+
    // Pause all videos on slide change
   const handleSlideChange = () => {
     videoRefs.current.forEach((video) => {
@@ -16,11 +27,17 @@ const CustomDialog =({ images, startIndex, onClose }) => {
         video.pause();
       }
     });
+    // Scroll PDF to top
+  resetPDFScroll()
   };
   const handlePrev = () => {
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 1);
     }
+           const pdfContainer = pdfRefs.current[currentIndex - 1];
+  if (pdfContainer) {
+    pdfContainer.scrollTop = 0;
+  }
   };
 
   // Handle the next button click
@@ -28,6 +45,15 @@ const CustomDialog =({ images, startIndex, onClose }) => {
     if (currentIndex < images.length - 1) {
       setCurrentIndex(currentIndex + 1);
     }
+     console.log("pdfrefs",pdfRefs);
+
+       const pdfContainer = pdfRefs.current[currentIndex + 1];
+       console.log("pdfContainer",pdfContainer);
+            console.log("pdfContainer-scrolltop",pdfContainer.scrollTop);
+  if (pdfContainer) {
+    pdfContainer.scrollTop = 0;
+  }
+    
   };
 
    useEffect(() => {
@@ -80,7 +106,7 @@ const CustomDialog =({ images, startIndex, onClose }) => {
         className="image-preview-swiper"
       >
         {images.map((item, index) => (
-          <SwiperSlide key={index}   ref={(el) => (scrollRefs.current[index] = el)}>
+          <SwiperSlide key={index} >
             {
               item.img ? (<img
               src={item.img}
@@ -104,14 +130,14 @@ const CustomDialog =({ images, startIndex, onClose }) => {
      
        </div>
       ) : item.pdf ? (
-       <div className="h-[600px] relative">
+       <div className="h-[600px] relative overflow-y-auto"   ref={(el) => (pdfRefs.current[index] = el)}>
         
              {/* <iframe
   src={item?.pdf}
   className="h-full w-full cursor-pointer"
   type="application/pdf"
 /> */}
-<PDFViewer  file = {item?.pdf} pdfClass={"h-[600px] flex flex-col items-center w-full overflow-y-auto"} />
+<PDFViewer  file = {item?.pdf} pdfClass={"h-[600px] flex flex-col items-center w-full "} />
      
        </div>
       ) : null}

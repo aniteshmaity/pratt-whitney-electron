@@ -1246,8 +1246,8 @@ export const slideData = [
           id:5,
           year: "2025",
              description: `<p>Pratt & Whitney’s GTF Advantage engine receives FAA type certification for the Airbus A320neo family, marking a major milestone as the company celebrates 100 years. </p><br>
-             <p>The GTF Advantage offers 4–8% more takeoff thrust, improved fuel efficiency, lower CO₂ emissions, and enhanced durability. </p>
-             <p>It is fully interchangeable with existing GTF models, it features redesigned life-limited parts, advanced cooling technologies, and a more robust hot section for increased time on wing. </p>
+             <p>The GTF Advantage offers 4–8% more takeoff thrust, improved fuel efficiency, lower CO₂ emissions, and enhanced durability. </p><br>
+             <p>It is fully interchangeable with existing GTF models, it features redesigned life-limited parts, advanced cooling technologies, and a more robust hot section for increased time on wing. </p><br>
              <p>GTFA will be  100% Sustainable aviation fuel compatible and will be  the production standard. </p>`,
           title: "GTF Advantage™ engine achieves FAA certification",
           cloneTitle: "First engine deliveries start 2025 end-2026",

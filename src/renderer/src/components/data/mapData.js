@@ -64,7 +64,7 @@ const mapData = [
         cityPosition: "top-[27%] left-[27%]",
         svgPosition: "top-[10%] left-[22%]",
         linePath: [
-          { x: 240, y: 380 }, { x: 350, y: 250 }, { x: 500, y: 250 }
+          { x: 240, y: 420 }, { x: 350, y: 250 }, { x: 500, y: 250 }
         ],
 
         data: [
@@ -154,7 +154,7 @@ const mapData = [
         cityPosition: "top-[60%] left-[27%]",
         svgPosition: "top-[40%] left-[27%]",
         linePath: [
-          { x: 100, y: 460 }, { x: 250, y: 250 }, { x: 500, y: 250 }
+          { x: 100, y: 480 }, { x: 250, y: 250 }, { x: 500, y: 250 }
         ],
         data: [
           {
@@ -281,7 +281,7 @@ const mapData = [
         y: "-25%",
         position: "top-[35%] left-[45%]",
         cityPosition: "top-[70%] left-[25%]",
-        svgPosition: "top-[55%] left-[28%]",
+        svgPosition: "top-[56%] left-[28%]",
         linePath: [
           { x: -500, y: 700 }, { x: 150, y: 250 }, { x: 500, y: 250 }
         ],
@@ -1200,7 +1200,7 @@ const mapData = [
         svgPosition: "top-[6%] left-[22%]",
         linePath:
 
-          [{ x: 220, y: 490 }, { x: 350, y: 250 }, { x: 500, y: 250 }], // angled + horizontal
+          [{ x: 220, y: 520 }, { x: 350, y: 250 }, { x: 500, y: 250 }], // angled + horizontal
 
         data: {
           img: PwInIndiaImage.image.Delhi,
@@ -1230,7 +1230,7 @@ const mapData = [
         cityPosition: "top-[60%] left-[27%]",
         svgPosition: "top-[40%] left-[24%]",
         linePath: [
-          { x: 185, y: 460 }, { x: 350, y: 250 }, { x: 500, y: 250 }
+          { x: 185, y: 480 }, { x: 350, y: 250 }, { x: 500, y: 250 }
         ],
         data: {
           img: PwInIndiaImage.image.hydrabad,
@@ -1262,7 +1262,7 @@ const mapData = [
         cityPosition: "top-[70%] left-[25%]",
         svgPosition: "top-[55%] left-[27%]",
         linePath: [
-          { x: 40, y: 350 }, { x: 300, y: 250 }, { x: 500, y: 250 }
+          { x: 40, y: 380 }, { x: 300, y: 250 }, { x: 500, y: 250 }
         ],
         // linePath: [
         //  { x: 500, y: 400 }, { x: 550, y: 350 } // horizontal

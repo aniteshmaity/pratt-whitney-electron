@@ -52,6 +52,9 @@ const TimelineAnimation = () => {
           autoAlpha: 1,
           y: (index) => (index === 0 ? -250 : 0), // img1 moves left (-300), img2 moves right (300)
           ease: "power2.inOut",
+            onStart: () => {
+      buttonRef.current.style.visibility = "visible"; // Ensures it's only made visible during animation
+    },
         }
       )
       .to(footerRef.current, {
@@ -88,7 +91,7 @@ const TimelineAnimation = () => {
           className="w-[421px] h-[100px] absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]"
         />
       </div>
-      <div className="absolute flex flex-col justify-center items-center gap-16 z-50" ref={buttonRef}>
+      <div className="absolute flex flex-col justify-center items-center gap-16 z-50" ref={buttonRef} style={{ visibility: "hidden" }}>
         <img src={IndiaInrective} className="w-[267px] h-[35px] " alt="india itrective" />
         <Link to="/home">
         <SvgBtn  text="Tap to Start" height="56px" width="386px" textClass="font-bold text-lg" />

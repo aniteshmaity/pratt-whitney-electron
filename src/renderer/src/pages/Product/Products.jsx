@@ -322,7 +322,7 @@ function Products({handleCurrentSlide}) {
           <div className='h-[2px] bg-gray-300 w-[20%] left-0  absolute -z-10 line-rotate-vertical'></div>
           <div className='h-[2px] bg-[#e11c3696] w-[6%]  absolute -z-10 line-rotate-vertical left-[20%]'></div>
      
-               <div className="slider-container-product comercial relative h-full w-full" style={sliderStyles}>
+               <div className="slider-container-product comercial relative h-[calc(100vh-194px)] w-full" style={sliderStyles}>
               <Slider ref={sliderRef} {...settings}>
                 {productEngine?.map((data, index) => {
                      
@@ -471,7 +471,7 @@ function Products({handleCurrentSlide}) {
         </div>
       </div>
       
-       <div className="absolute grid grid-cols-2 bottom-[43px] right-[94px] z-40"  style={{
+       <div className="absolute grid grid-cols-2 bottom-[8%] right-[94px] z-40"  style={{
                   clipPath:
                     "polygon(6% 0%, 100% 0%, 100% 64%, 94% 100%, 0% 100%, 0% 34%)",
                 }}>
