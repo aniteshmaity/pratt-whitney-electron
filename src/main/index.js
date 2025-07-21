@@ -7,11 +7,15 @@ import { spawn } from 'child_process';
 import { existsSync } from 'fs';
 function createWindow() {
 
+const isDev = !app.isPackaged; 
+console.log("Running in", isDev ? "Development" : "Production", "mode");
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     width: 1920,
     height: 1080,
-    show: false,
+  fullscreen: !isDev,  
+  kiosk: !isDev,       
+  frame: isDev,        
     autoHideMenuBar: true,
     ...(process.platform === 'linux' ? { icon } : {}),
     webPreferences: {
@@ -66,6 +70,7 @@ function createWindow() {
   }
 }
 
+app.commandLine.appendSwitch("touch-events", "enabled");
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.

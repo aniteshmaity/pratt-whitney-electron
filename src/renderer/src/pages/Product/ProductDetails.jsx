@@ -609,7 +609,7 @@ const ProductDetails = ({ onClose, engineData }) => {
                               <img
                                 src={item.img}
                                 alt=""
-                                className="h-full w-full object-cover object-center"
+                                className="h-full w-full object-contain object-center"
                               />
                             </div>
                             <p className="text-[12px] text-center mt-2 ">

@@ -288,7 +288,7 @@ const mapData = [
         data: [
           {
             id: 1,
-            img: PwInIndiaImage.image.Bangalore,
+            img: PwInIndiaImage.image.Bangalore_1,
             header1: "Pratt & Whitney India",
             header2: "Capability Center",
             subHeader: "First GCC for PW in India. Est. 2021",
@@ -418,7 +418,7 @@ const mapData = [
           },
           {
             id: 2,
-            img: PwInIndiaImage.image.Bangalore,
+            img: PwInIndiaImage.image.Bangalore_2,
             header1: "Pratt & Whitney India",
             header2: "Engineering Center",
             subHeader: "Working on PW's commercial engines portfolio",
@@ -525,7 +525,7 @@ const mapData = [
           },
           {
             id: 3,
-             img: PwInIndiaImage.image.Bangalore,
+             img: PwInIndiaImage.image.Bangalore_3,
             header1: "Pratt & Whitney India",
             header2: "Digital Capability Center",
             subHeader: "Accelerating Enterprise-wide digital transformation",

@@ -4,8 +4,10 @@ import "swiper/swiper-bundle.css";
 import { Navigation, Pagination } from "swiper/modules";
 import { FaChevronLeft } from "react-icons/fa6";
 import { FaChevronRight } from "react-icons/fa6";
+import PDFViewer from './PDFViewer';
 const CustomDialog =({ images, startIndex, onClose }) => {
   const videoRefs = useRef([]);
+    const scrollRefs = useRef([]);
   const [currentIndex, setCurrentIndex] = useState(startIndex);
    // Pause all videos on slide change
   const handleSlideChange = () => {
@@ -78,7 +80,7 @@ const CustomDialog =({ images, startIndex, onClose }) => {
         className="image-preview-swiper"
       >
         {images.map((item, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide key={index}   ref={(el) => (scrollRefs.current[index] = el)}>
             {
               item.img ? (<img
               src={item.img}
@@ -104,11 +106,12 @@ const CustomDialog =({ images, startIndex, onClose }) => {
       ) : item.pdf ? (
        <div className="h-[600px] relative">
         
-             <iframe
+             {/* <iframe
   src={item?.pdf}
   className="h-full w-full cursor-pointer"
   type="application/pdf"
-/>
+/> */}
+<PDFViewer  file = {item?.pdf} pdfClass={"h-[600px] flex flex-col items-center w-full overflow-y-auto"} />
      
        </div>
       ) : null}

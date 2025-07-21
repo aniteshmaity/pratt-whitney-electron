@@ -260,7 +260,7 @@ function Products({handleCurrentSlide}) {
 
   // Add this CSS inline to the slider container
   const sliderStyles = {
-    touchAction: 'pan-x', // Only allow horizontal touch actions
+    touchAction: 'pan-y', // Only allow horizontal touch actions
     userSelect: 'none',
     WebkitUserSelect: 'none',
   };
@@ -471,7 +471,7 @@ function Products({handleCurrentSlide}) {
         </div>
       </div>
       
-       <div className="absolute grid grid-cols-2 bottom-[43px] right-[54px] z-40"  style={{
+       <div className="absolute grid grid-cols-2 bottom-[43px] right-[94px] z-40"  style={{
                   clipPath:
                     "polygon(6% 0%, 100% 0%, 100% 64%, 94% 100%, 0% 100%, 0% 34%)",
                 }}>

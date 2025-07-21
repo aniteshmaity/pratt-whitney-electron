@@ -203,6 +203,9 @@ import Employees from "../../assets/images/pwInIndia/additionalBackups/img/Emplo
 import Delhi from "../../assets/images/pwInIndia/additionalBackups/img/Delhi.webp";
 import CH_47F from "../../assets/images/pwInIndia/additionalBackups/img/CH_47F.webp";
 import Bangalore from "../../assets/images/pwInIndia/additionalBackups/img/Bangalore.webp";
+import Bangalore_1 from "../../assets/images/pwInIndia/additionalBackups/img/ICC.webp";
+import Bangalore_2 from "../../assets/images/pwInIndia/additionalBackups/img/IEC.webp";
+import Bangalore_3 from "../../assets/images/pwInIndia/additionalBackups/img/IDCC.webp";
 import hydrabad from "../../assets/images/pwInIndia/additionalBackups/img/Hyderabad (1).webp";
 import AgstaWestlandAw109 from "../../assets/images/pwInIndia/additionalBackups/img/AgstaWestlandAw109.webp";
 import digitalCapabilityVideo from "../../assets/images/maps/extra/Pratt And Whitney  Event Highlights High Res.mp4";
@@ -317,6 +320,9 @@ export const PwInIndiaImage = {
     AdditionalAircraftandenginethumbnails,
     AgstaWestlandAw109,
     Bangalore,
+    Bangalore_1,
+    Bangalore_2,
+    Bangalore_3,
     CH_47F,
     Delhi,
     Employees,

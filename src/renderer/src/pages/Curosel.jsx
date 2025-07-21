@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 import yeargif from "../assets/images/home/100year-gif.gif";
 import productgif from "../assets/images/home/product-gif.gif";
 import aerospace3d from "../assets/images/home/aerospace3d.png";
-import groupAero from "../assets/images/home/plane-amination (1).gif"
+import groupAero from "../assets/images/home/plane_2_copy.gif"
 import bulding from "../assets/images/home/building.png"
 import inIndia from "../assets/images/home/In-India.png"
 import connectAeroVideo from "../assets/images/home/Connected Aerospace Loop.mp4";
@@ -293,7 +293,7 @@ if(triggerAnimation){
       <div className="w-screen fixed bottom-0 left-0 z-10">
         <img ref={imageRef} className=" w-full pointer-events-none select-none focus:outline-none"
  src={landscape} alt="trrain" />
-        <img src={groupAero} alt="" className="absolute  right-[8%] w-[45%] bottom-[21%] z-50"  />
+        <img src={groupAero} alt="" className="absolute  right-[8%] w-[45%] bottom-[20%] z-50"  />
         <img src={bulding} alt="building-1" className="absolute right-[20%] bottom-[25%] -z-10" />
                 <img src={bulding} alt="building-1" className="absolute right-[50%] bottom-[25%] -z-10" />
       </div>

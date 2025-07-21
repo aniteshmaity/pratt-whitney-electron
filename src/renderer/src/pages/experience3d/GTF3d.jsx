@@ -134,7 +134,7 @@ const isGtf = useParams().Isgtf === "true";
         <CameraUpdater cameraRef={cameraRef} controlsRef={controlsRef} cameraPosRef={cameraPosRef} />
 
         {/* <LabelLineDebugger name="Turbine-11" initialPosition={[1, 1, 1]} /> */}
-        {showInfo && Object.entries(labelPositions).map(([key, data]) => (
+        { Object.entries(labelPositions).map(([key, data]) => (
           <LabelLine
             key={key}
             position={data.position}
@@ -143,6 +143,7 @@ const isGtf = useParams().Isgtf === "true";
             label={data.label}
             lineLength={1}
             startOffset={data.startOffset}
+              show={showInfo}
           />
         ))}
         <  OrbitControls enableZoom={true} minDistance={8 * 0.60}// Minimum zoom distance
@@ -178,25 +179,7 @@ const isGtf = useParams().Isgtf === "true";
         </Link>
       </div>
 
-      {/* <button
-          className="absolute bottom-[22%] right-[60px] z-10 text-center bg-[#710b0b] text-white p-[2px]  w-[150px] rounded shadow-md transition"
-         onClick={goToGTF}
-          style={{
-            clipPath:
-              "polygon(5% 0%, 100% 0%, 100% 74%, 95% 100%, 0% 100%, 0% 24%)",
-          }}
-        >
-        <div className='w-full h-full pl-4 pr-6 py-2 flex justify-center items-center gap-2 bg-[#040404]'
-        style={{
-          clipPath:
-            "polygon(5% 0%, 100% 0%, 100% 74%, 95% 100%, 0% 100%, 0% 24%)",
-        }} >
-          GTF Engine
-       
-        </div>
-
-          
-        </button> */}
+   
       <button
         className="absolute bottom-[10%] right-[60px] z-10 text-center bg-[#710b0b]   text-white p-[2px]  w-[150px] rounded shadow-md transition"
         onClick={() => setAutoRotate((prev) => !prev)}
@@ -240,20 +223,11 @@ const isGtf = useParams().Isgtf === "true";
       <button
         className="absolute bottom-[16%] right-[60px] z-10 text-center bg-[#710b0b] text-white p-[2px]  w-[150px] rounded shadow-md transition"
         onClick={() => {
-          setShowInfo((prevInfo) => {
-            setShowList((prevList) => {
-              if (prevInfo === false) {
-                // If showInfo was false and we're about to make it true, don't toggle showList
-                return !prevList;
-              }
-              if (prevInfo && prevList === true) {
-                return !prevList;
-              }
-              // Otherwise, toggle showList
-              return prevList;
-            });
-            return !prevInfo;
-          });
+           setShowInfo(prev => {
+    const newVal = !prev;
+    setShowList(newVal); // sync both together
+    return newVal;
+  });
         }}
 
         style={{

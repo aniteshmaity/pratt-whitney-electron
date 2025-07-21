@@ -12,6 +12,7 @@ export default function LabelLine({
   target,
   lineWidth = 2,
   startOffset = [0, 0.09, 0],
+  show 
 }) {
   const { camera } = useThree();
   const textRef = useRef();
@@ -66,7 +67,7 @@ export default function LabelLine({
   }, [position, target]);
 
   return (
-    <group position={position} rotation={rotation}>
+    <group position={position} rotation={rotation} visible={show}>
       {/* Line connecting the label */}
       <Line
         ref={lineRef}

@@ -505,6 +505,42 @@ export const yearEngineData = [
                redirectLinkData:productEngine[4]?.engines[0]?.details,
                 isExplore: true
             },
+            {
+                id: 5,
+                year: slideData[10].innerSlidesData[4].year,
+                title: slideData[10].innerSlidesData[4].title,
+                cloneTitle: slideData[10].innerSlidesData[4].cloneTitle,
+                subtitle: slideData[10].innerSlidesData[4].subtitle,
+                description: slideData[10].innerSlidesData[4].description,
+
+                gallery: slideData[10].innerSlidesData[4].slideImages,
+               redirectLinkData:productEngine[4]?.engines[0]?.details,
+                isExplore: true
+            },
+            {
+                id: 6,
+                year: slideData[10].innerSlidesData[5].year,
+                title: slideData[10].innerSlidesData[5].title,
+                cloneTitle: slideData[10].innerSlidesData[5].cloneTitle,
+                subtitle: slideData[10].innerSlidesData[5].subtitle,
+                description: slideData[10].innerSlidesData[5].description,
+
+                gallery: slideData[10].innerSlidesData[5].slideImages,
+               redirectLinkData:productEngine[4]?.engines[0]?.details,
+                isExplore: false
+            },
+            {
+                id: 7,
+                year: slideData[10].innerSlidesData[6].year,
+                title: slideData[10].innerSlidesData[6].title,
+                cloneTitle: slideData[10].innerSlidesData[6].cloneTitle,
+                subtitle: slideData[10].innerSlidesData[6].subtitle,
+                description: slideData[10].innerSlidesData[6].description,
+
+                gallery: slideData[10].innerSlidesData[6].slideImages,
+               redirectLinkData:productEngine[4]?.engines[0]?.details,
+                isExplore: false
+            },
 
         ]
     }

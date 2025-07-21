@@ -494,6 +494,7 @@ import F100_H_2 from "../../assets/product/millitary/Performance and Capability 
 import F100_H_3 from "../../assets/product/millitary/Commitment to Excellence (1).webp";
 import F100_S_flight from "../../assets/product/millitary/30M+ flight hours (1).png";
 import F139_V1 from "../../assets/product/millitary/Pratt & Whitney Powers the USAF Next Generation Tanker.mp4";
+import F139_V2 from "../../assets/product/millitary/How_The_World_Most_Powerful_Fighter_JetEngine_Made.mp4";
 
 //legacy
 import Hernet_H_3 from "../../assets/product/legacy/hornet/Legacy and Impact.png";
@@ -1091,6 +1092,7 @@ const engineDetails = {
         { img: F139_10 },
         { pdf: Mil_pdf_1 },
         { video: F139_V1 },
+        { video: F139_V2 },
       ],
     },
     F135: {
@@ -1249,12 +1251,12 @@ const engineDetails = {
           content: [
             { image: thrust_new, description: "35K pounds of thrust. " },
             { image: F135_S_4, description: "2D pitch vectoring." },
-         
+
             {
               image: F135_S_3,
               description: "40% fewer parts than its F100 predecessor.",
             },
-               { image: F135_S_2, description: "5th generation stealth technologies." },
+            { image: F135_S_2, description: "5th generation stealth technologies." },
           ],
         },
         {
@@ -1694,7 +1696,7 @@ const engineDetails = {
         { img: Hel_PW200_3 },
         { img: Hel_PW200_4 },
         { img: Hel_PW200_5 },
-         { video: PW210_V_1 },
+        { video: PW210_V_1 },
       ],
     },
     PT6T: {
@@ -1827,7 +1829,7 @@ const engineDetails = {
         { img: PT6T_6 },
         { img: PT6T_7 },
         { video: PT6TV_1 },
-          { video: PW210_V_1 },
+        { video: PW210_V_1 },
       ],
     },
     PT6C: {
@@ -1944,7 +1946,7 @@ const engineDetails = {
         { img: PT6C_10 },
         { img: PT6C_11 },
         { pdf: Hel_pdf_2 },
-          { video: PW210_V_1 },
+        { video: PW210_V_1 },
       ],
     },
   },
@@ -1956,6 +1958,81 @@ const engineDetails = {
       description:
         "In service worldwide, the PT6 E-Series™ engine family continues to raise the bar in engine performance, control systems, data intelligence and service solutions. The E-Series provides better fuel efficiency, improved maintenance intervals, and optimized performance through real-time data monitoring.",
       variants: [
+          {
+          img: PT6E_2,
+          title: "PT6E",
+          tabsData: [
+            {
+          title: "Platforms",
+          content: [
+            {
+              image: PW210_P_1,
+              enginetext: "Daher TBM 960",
+              description:
+                "The TBM 960 is a high-performance single-engine turboprop designed for speed and efficiency. This aircraft is known for its advanced avionics and eco-conscious power management, making it suitable for both business and leisure flights.",
+            },
+            {
+              image: PW210_P_2,
+              enginetext: "Pilatus PC-12 NGX",
+              description:
+                "The PC-12 NGX is a versatile single-engine turboprop that combines performance with comfort. The aircraft is designed for various missions, including cargo transport and passenger flights, and features advanced digital engine controls for improved operational efficiency.",
+            },
+          ],
+        },
+        {
+          title: "Specifications",
+          content: [
+            { image: PW210_S_1, description: "1825 - 1844 Thermodynamic ESHP" },
+            {
+              image: PW210_S_2,
+              description: "40% reduction in scheduled maintenance.",
+            },
+            {
+              image: PW210_S_3,
+              description:
+                "100+ parameters monitored for optimum performance.  ",
+            },
+            { image: thrust_new, description: "Longer maintenance intervals. " },
+          ],
+        },
+        {
+          title: "Highlights",
+          content: [
+            {
+              image: PW210_H_1,
+              enginetext: "Enhanced Operational Efficiency",
+              description:
+                "The PT6 E-Series™ engine enables proactive maintenance planning, helping reduce costs and maximize uptime. Its advanced digital connectivity monitors over 100 parameters, optimizing power, speed, and fuel burn. Full-flight engine data is accessible on multiple platforms, including mobile devices, for rapid troubleshooting and enhanced service response.",
+            },
+            {
+              image: PW210_H_2,
+              enginetext: "Simplified Pilot Experience",
+              description:
+                "The PT6E-66XT engine offers intuitive features, including easy start/stop functionality, single-lever operation, precise control, and auto-throttle integration. Full digital envelope protection ensures predictable and safe engine management.",
+            },
+            {
+              image: PW210_H_3,
+              enginetext: "Sustainable and Efficient",
+              description:
+                "Certified for Sustainable Aviation Fuels (SAF), the engine includes an ecology system that recovers unburnt fuel during shutdown, improving efficiency and reducing emissions.",
+            },
+            {
+              image: PW210_H_4,
+              enginetext: "Advanced Performance",
+              description:
+                "With power optimization throughout all flight phases, the PT6 E-Series™ delivers increased takeoff and climb power. Its Single Crystal Compressor Turbine (CT) blades and optimized turbine cooling enhance durability and performance.",
+            },
+          ],
+        },
+        {
+          title: "Customers",
+          content: [
+            { name: "Daher", image: Daher },
+            { name: "Pilatus ", image: Pilatus },
+          ],
+        },
+          ],
+        },
         {
           img: PT6E_66XT,
           title: "PT6E-66XT",
@@ -2065,7 +2142,7 @@ const engineDetails = {
                   image: PW210_S_2,
                   description: "40% reduction in scheduled maintenance.",
                 },
- 
+
               ],
             },
             {
@@ -2089,7 +2166,7 @@ const engineDetails = {
                   description:
                     "Engine data is wirelessly downloaded after landing, providing valuable insights into performance and health. This supports informed decision-making and proactive maintenance.",
                 },
-               
+
               ],
             },
             {
@@ -2187,20 +2264,7 @@ const engineDetails = {
             { name: "Pilatus ", image: Pilatus },
           ],
         },
-        // {
-        //   title: "History",
-        //   content: [
-        //    {
-
-        //        enginetext:"N/A",
-        //        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,'
-        //      },
-        //      {
-        //        enginetext:"N/A",
-        //        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,'
-        //      },
-        //   ],
-        // },
+       
       ],
       gallery: [
         // { img: PW210_1 },
@@ -2219,7 +2283,7 @@ const engineDetails = {
         { video: PW210V_3 },
         { pdf: gen_Pdf_1 },
       ],
-   
+
     },
     PT6A: {
       title: "PT6A",
@@ -2268,7 +2332,7 @@ const engineDetails = {
               description:
                 "These agricultural aircraft are specifically designed for crop dusting and aerial application of fertilizers and pesticides. Models like the AT-502B are known for their high payload capacity.",
             },
-            
+
             {
               image: PT6A_P_7,
               enginetext: "T-6 Texan II",
@@ -2297,25 +2361,25 @@ const engineDetails = {
           title: "Highlights",
           content: [
             {
-              image:PT6A_H_1,
+              image: PT6A_H_1,
               enginetext: "Engine of Choice for High-Demand Applications",
               description:
                 "The PT6A engine is known for its versatility and performance, making it ideal for high-cycle, high-power applications in single- and twin-engine aircraft. It’s also the only engine certified for Single Engine IFR passenger operations in North America, Australia, Europe, and New Zealand.",
             },
             {
-              image:PT6A_H_2,
+              image: PT6A_H_2,
               enginetext: "Flexible Architecture for Easy Integration",
               description:
                 "The PT6A’s modular reverse-flow design allows for seamless installation in a variety of aircraft and propeller configurations, offering flexibility across different platforms.",
             },
             {
-              image:PT6A_H_3,
+              image: PT6A_H_3,
               enginetext: "Simplified Maintenance",
               description:
                 "With most tasks performed on-wing, the PT6A reduces downtime and eliminates the need for frequent shop visits, unlike other engines.",
             },
             {
-              image:PT6A_H_4,
+              image: PT6A_H_4,
               enginetext: "Power and Advanced Materials",
               description:
                 "Delivering over 1,900 thermal shp with gearbox options from 700 to 1,700 shp, the PT6A features an OPR of 12:1, efficient gas paths, and advanced single-crystal materials and coatings for enhanced durability and corrosion protection.",
@@ -2373,6 +2437,121 @@ const engineDetails = {
       variants: [
         {
           img: gtf,
+          title: "GTF Engine",
+          tabsData: [
+             {
+          title: "Platforms",
+          content: [
+            {
+              image: GTF_P_1,
+              enginetext: "Airbus A320neo family",
+              description:
+                "With 3x3 seating typically up to 220 passengers, the A320neo family saves 16% per trip vs. prior-generation aircraft",
+            },
+            {
+              image: GTF_P_2,
+              enginetext: "Airbus A220",
+              description:
+                "With 3x2 seating typically up to 150 passengers, the A220 family saves up to 25% per seat vs. prior-generation aircraft.",
+            },
+            {
+              image: GTF_P_3,
+              enginetext: "Embraer E-Jets E2",
+              description:
+                "With 2x2 seating typically up to 120 passengers, the E2 family saves up to 25% per seat vs. prior-generation aircraft.",
+            },
+          ],
+        },
+        {
+          title: "Specifications",
+          content: [
+            {
+              image: GTF_S_1,
+              description:
+                "20% Fuel and CO2 savings possible per trip with GTF-powered aircraft.",
+            },
+            {
+              image: GTF_S_2,
+              description:
+                "1.7B Gallons of fuel saved, equivalent to nearly 6 billion liters",
+            },
+            {
+              image: GTF_S_3,
+              description: "17M Metric tons of CO2 emissions avoided.",
+            },
+            {
+              image: GTF_S_4,
+              description:
+                "75% Smaller noise footprint, for happier passengers and communities.",
+            },
+            {
+              image: GTF_S_5,
+              description:
+                "100% Certified for operation on 50% SAF. Successfully tested on 100%.",
+            },
+            {
+              image: GTF_S_6,
+              description:
+                "31M Hours of experience, with 1.1 billion passengers carried.",
+            },
+            {
+              image: GTF_S_7,
+              description:
+                "2,000+ Aircraft with 80+ operators.",
+
+            },
+            {
+              image: GTF_S_8,
+              description:
+                "11,000+ engines ordered by 90+ customers.",
+
+            },
+          ],
+        },
+        {
+          title: "Highlights",
+          content: [
+            {
+              image: GTF_H_1,
+              enginetext: "Geared for Efficiency",
+              description:
+                "The GTF engine family is the quietest, most efficient, and eco-friendly in its class, offering the lowest fuel consumption and CO2 emissions for single-aisle aircraft.",
+            },
+            {
+              image: GTF_H_2,
+              enginetext: "Geared for Business",
+              description:
+                "With superior fuel efficiency, payload, and range, GTF engines enable airlines to open new routes, flying farther with less fuel.",
+            },
+            {
+              image: GTF_H_new,
+              enginetext: "Geared for the Future",
+              description:
+                "The geared fan is the foundation for future sustainable propulsion. GTF engines, with GTF Advantage for the A320neo family, are already delivering next-generation benefits.",
+            },
+            {
+              image: GTF_H_4,
+              enginetext: "Unmatched After-Sales Support",
+              description:
+                "The GTF MRO network has ten active facilities worldwide, with more coming soon. GTF operators are supported by over 120 field representatives, a 24/7 Global Operations Center, and Customer Training Centers in the U.S., India, and China, with remote training available.",
+            },
+          ],
+        },
+        {
+          title: "Customers",
+          content: [
+            { name: "IndiGo", image: IndiGo },
+            { name: "China Airlines", image: ChinaAir },
+            { name: "Cebu Pacific", image: CebuSpecific },
+            { name: "Wizz Air", image: wizz },
+            { name: "United Airlines", image: UnitedAir },
+            { name: "SKY Airlines", image: SkyAir },
+          ],
+        },
+          ]
+        },
+        {
+          img: gtf,
           title: "PW1100G-JM",
           tabsData: [
             {
@@ -2391,7 +2570,7 @@ const engineDetails = {
               content: [
                 { image: fanDiameter, description: "81” fan diameter. " },
                 { image: thrust_new, description: "24K-34K pounds of thrust." },
-        
+
                 {
                   image: GTF_V1_S_1,
                   description:
@@ -2477,7 +2656,7 @@ const engineDetails = {
               content: [
                 { image: fanDiameter, description: "73” fan diameter." },
                 { image: thrust_new, description: "19K-25K pounds of thrust. " },
-           
+
                 {
                   image: GTF_V1_S_1,
                   description:
@@ -2562,7 +2741,7 @@ const engineDetails = {
               content: [
                 { image: fanDiameter, description: "73” fan diameter." },
                 { image: thrust_new, description: "19K-23K pounds of thrust. " },
-                
+
                 {
                   image: GTF_V1_S_1,
                   description:
@@ -2688,13 +2867,13 @@ const engineDetails = {
               image: GTF_S_7,
               description:
                 "2,000+ Aircraft with 80+ operators.",
-                
+
             },
-              {
+            {
               image: GTF_S_8,
               description:
                 "11,000+ engines ordered by 90+ customers.",
-               
+
             },
           ],
         },
@@ -2790,6 +2969,93 @@ const engineDetails = {
       description:
         "With enhanced service options to meet evolving customer needs, the V2500™ engine is built for maximum time on wing, offering top-tier fuel efficiency, reduced noise, and lower emissions. Renowned for its reliability, the V2500 continues production with a robust supply chain, ensuring long-term operational support. Having powered the Airbus A320ceo family for decades, it now also supports the first A321 passenger-to-cargo conversion and the Embraer C-390 Millennium Military Transport Aircraft.",
       variants: [
+         {
+          img: V25_1,
+          title: "V2500",
+          tabsData: [
+             {
+          title: "Platforms",
+          content: [
+            {
+              image: V25_P_1,
+              enginetext: "Airbus A320ceo Family",
+              description:
+                "Launched in 1984 and entering service in 1988, the Airbus A320ceo is a medium-sized, twin-engine airliner renowned for its efficiency on short and medium-haul routes. It remains a popular choice for commercial airlines.",
+            },
+            {
+              image: V25_P_2,
+              enginetext: "Embraer C-390 Millennium",
+              description:
+                "This next-generation military transport aircraft offers exceptional mobility and operational flexibility. It delivers high availability and productivity, providing a cost-effective solution for air forces.",
+            },
+            {
+              image: V25_P_3,
+              enginetext: "Airbus A320/A321 Cargo Conversion",
+              description:
+                "The A321 converted freighter carries up to 3.5 tons more cargo than the 737-800 freighter and saves 240 gallons of fuel per trip compared to the 757-200/RB211. The A320 freighter offers similar capacity to the 737-800 with up to 2% lower fuel burn.",
+            },
+          ],
+        },
+        {
+          title: "Specifications",
+          content: [
+            { image: V25_S_1, description: "22K-33K pounds of thrust. " },
+            { image: V25_S_2, description: "3% fuel burn advantage." },
+            { image: V25_S_3, description: "275M+ flight hours. " },
+            { image: V25_S_4, description: "7,800 engines produced." },
+            {
+              image: V25_S_5,
+              description: "3,000 aircraft with 170 operators.",
+            },
+          ],
+        },
+        {
+          title: "Highlights",
+          content: [
+            {
+              image: V25_H_1,
+              enginetext: "Industry-Leading Efficiency and Performance",
+              description:
+                "The V2500 engine remains the quietest and most fuel-efficient option for the Airbus A320ceo family, delivering over 3% better fuel burn, lower emissions, and a significant payload-range advantage. Its proven reliability makes it a top choice for commercial, cargo, and military applications.",
+            },
+            {
+              image: V25_H_2,
+              enginetext: "Versatility Across Platforms",
+              description:
+                "With up to 33,000 pounds of thrust and more than 275 million flight hours, the V2500 powers nearly 3,000 aircraft worldwide. Trusted by over 170 operators, it consistently delivers reliable performance across diverse global operations.",
+            },
+            {
+              image: V25_H_3,
+              enginetext: "Tailored Service Solutions",
+              description:
+                "As engines progress through their life cycles, we collaborate closely with customers to provide customized service solutions that ensure peak performance and maximize uptime.",
+            },
+            {
+              image: V25_H_4,
+              enginetext: "Global Maintenance Network",
+              description:
+                "Supported by 17 global facilities, the V2500 benefits from a robust maintenance infrastructure offering comprehensive maintenance, repair, and overhaul (MRO) services for long-term operational efficiency.",
+            },
+          ],
+        },
+        {
+          title: "Customers",
+          content: [
+            { name: "IndiGo", image: IndiGo },
+            { name: "American Airlines", image: AmericanAir },
+            { name: "United Airlines", image: UnitedAir },
+            { name: "Delta Airlines", image: DeltaAir },
+            { name: "Brazilian Air Force", image: BarazilianAir },
+            { name: "Portuguese Air Force", image: PortugeseAir },
+            { name: "Hungarian Air Force", image: HungaryAir },
+            { name: "Royal Netherlands Air Force", image: NetherlandAir },
+            { name: "Qantas", image: Qantas },
+            { name: "Titan Airways", image: TitanAir },
+           
+          ],
+        },
+          ],
+        },
         {
           img: V25_E5_H_2,
           title: "V2500-E5",
@@ -2980,89 +3246,89 @@ const engineDetails = {
       subTitle: "For PW India Experience Center",
       description:
         "The PW4000 delivers 52,000 to 62,000 pounds of thrust across five major aircraft applications. Approved for 180-minute ETOPS, it offers flexibility and reliability. Advanced technologies like single-crystal superalloys and FADEC boost fuel efficiency and performance, with long on-wing times and low maintenance costs.",
-         logo: PW4_1,
+      logo: PW4_1,
       variants: [
         {
           img: PW4_1,
           title: "PW4000 94-inch fan",
           tabsData: [
             {
-          title: "Platforms",
-          content: [
-            {
-              image:PW4_P_1_new,
-              enginetext: "Boeing 747-400",
-              description:
-                "The Boeing 747-400 is a large, long-range wide-body airliner developed by Boeing Commercial Airplanes as an advanced variant of the original 747.",
+              title: "Platforms",
+              content: [
+                {
+                  image: PW4_P_1_new,
+                  enginetext: "Boeing 747-400",
+                  description:
+                    "The Boeing 747-400 is a large, long-range wide-body airliner developed by Boeing Commercial Airplanes as an advanced variant of the original 747.",
+                },
+                {
+                  image: PW4_P_2_new,
+                  enginetext: "Boeing 767",
+                  description:
+                    "The Boeing 767 is an American wide-body airliner developed and produced by Boeing Commercial Airplanes.",
+                },
+                {
+                  image: PW4_P_3_new,
+                  enginetext: "Boeing MD-11",
+                  description:
+                    "The McDonnell Douglas MD-11 is an American tri-jet wide-body airliner originally manufactured by McDonnell Douglas and later by Boeing.",
+                },
+                {
+                  image: PW4_P_4_new,
+                  enginetext: "Airbus A300",
+                  description: `The Airbus A300, Airbus's first production aircraft, is the world's first twin-engine, double-aisle wide-body airliner, developed and manufactured by Airbus from 1971 to 2007`,
+                },
+                {
+                  image: PW4_P_5_new,
+                  enginetext: "Airbus A310",
+                  description:
+                    "The Airbus A310 is a wide-body aircraft which was developed to meet the demand for a smaller aircraft than the A300, Airbus first twin-jet wide-body.",
+                },
+              ],
             },
             {
-                image:PW4_P_2_new,
-              enginetext: "Boeing 767",
-              description:
-                "The Boeing 767 is an American wide-body airliner developed and produced by Boeing Commercial Airplanes.",
+              title: "Specifications",
+              content: [
+                { image: V25_S_1, description: "52K – 62K pounds of thrust." },
+                { image: V25_S_5, description: "180-minutes ETOPS approved." },
+                {
+                  image: V25_S_3,
+                  description: "2M+ ETOPS flights with 38 airlines.",
+                },
+              ],
             },
             {
-                image:PW4_P_3_new,
-              enginetext: "Boeing MD-11",
-              description:
-                "The McDonnell Douglas MD-11 is an American tri-jet wide-body airliner originally manufactured by McDonnell Douglas and later by Boeing.",
+              title: "Highlights",
+              content: [
+                {
+                  image: PW4_H_1_new,
+                  enginetext: "PW4000 94-inch-fan",
+                  description:
+                    "The PW4000 100-inch fan engine is offered as a complete propulsion system, featuring an advanced, lightweight nacelle and incorporating proven technologies in materials, aerodynamics, and controls to enhance performance, reliability, and durability.",
+                },
+                {
+                  image: PW4_H_2,
+                  enginetext: "ETOPS Certification",
+                  description:
+                    "Crucial for airlines operating Extended-range Twin-engine Operations (ETOPS) on Boeing 767s and Airbus A310/A300 aircraft, the PW4000 is certified for 180-minute ETOPS, allowing flights up to three hours from the nearest airport. It has completed over 2 million ETOPS flights with 38 airlines.",
+                },
+                {
+                  image: PW4_H_1,
+                  enginetext: "Advanced Technologies",
+                  description:
+                    "Incorporating advanced technologies such as single-crystal superalloys and Full-Authority Digital Electronic Control (FADEC), the PW4000 enhances fuel economy and reliability, while offering excellent performance retention and turbine durability.",
+                },
+              ],
             },
             {
-                image:PW4_P_4_new,
-              enginetext: "Airbus A300",
-              description: `The Airbus A300, Airbus's first production aircraft, is the world's first twin-engine, double-aisle wide-body airliner, developed and manufactured by Airbus from 1971 to 2007`,
+              title: "Customers",
+              content: [
+                { name: "American Airlines", image: AmericanAir },
+                { name: "Delta Airlines", image: DeltaAir },
+                { name: "United Airlines", image: UnitedAir },
+                { name: "Korean Air", image: korean },
+              ],
             },
-            {
-                image:PW4_P_5_new,
-              enginetext: "Airbus A310",
-              description:
-                "The Airbus A310 is a wide-body aircraft which was developed to meet the demand for a smaller aircraft than the A300, Airbus first twin-jet wide-body.",
-            },
-          ],
-        },
-        {
-          title: "Specifications",
-          content: [
-            { image: V25_S_1, description: "52K – 62K pounds of thrust." },
-            { image: V25_S_5, description: "180-minutes ETOPS approved." },
-            {
-              image: V25_S_3,
-              description: "2M+ ETOPS flights with 38 airlines.",
-            },
-          ],
-        },
-        {
-          title: "Highlights",
-          content: [
-            {
-              image:PW4_H_1_new,
-              enginetext: "PW4000 94-inch-fan",
-              description:
-                "The PW4000 100-inch fan engine is offered as a complete propulsion system, featuring an advanced, lightweight nacelle and incorporating proven technologies in materials, aerodynamics, and controls to enhance performance, reliability, and durability.",
-            },
-            {
-              image: PW4_H_2,
-              enginetext: "ETOPS Certification",
-              description:
-                "Crucial for airlines operating Extended-range Twin-engine Operations (ETOPS) on Boeing 767s and Airbus A310/A300 aircraft, the PW4000 is certified for 180-minute ETOPS, allowing flights up to three hours from the nearest airport. It has completed over 2 million ETOPS flights with 38 airlines.",
-            },
-            {
-              image: PW4_H_1,
-              enginetext: "Advanced Technologies",
-              description:
-                "Incorporating advanced technologies such as single-crystal superalloys and Full-Authority Digital Electronic Control (FADEC), the PW4000 enhances fuel economy and reliability, while offering excellent performance retention and turbine durability.",
-            },
-          ],
-        },
-        {
-          title: "Customers",
-          content: [
-            { name: "American Airlines", image: AmericanAir },
-            { name: "Delta Airlines", image: DeltaAir },
-            { name: "United Airlines", image: UnitedAir },
-            { name: "Korean Air", image: korean },
-          ],
-        },
           ],
         },
         {
@@ -3073,7 +3339,7 @@ const engineDetails = {
               title: "Platforms",
               content: [
                 {
-                  image:PW4_100,
+                  image: PW4_100,
                   enginetext: "Airbus A330",
                   description:
                     "The Airbus A330 is a versatile twin-engine wide-body airliner designed for medium to long-haul flights. It offers excellent fuel efficiency, advanced technology, and a range of passenger and cargo configurations.",
@@ -3083,35 +3349,35 @@ const engineDetails = {
             {
               title: "Specifications",
               content: [
-                {image:thrust_new, description: "64.5K – 70K pounds of takeoff thrust." },
-                {image:redCraft, description: "10M+ hours of revenue service. " },
-                {image:V25_S_3, description: "180-minute ETOPS approval." },
-                { image:Talon,description: "TALON II low emissions combustor." },
+                { image: thrust_new, description: "64.5K – 70K pounds of takeoff thrust." },
+                { image: redCraft, description: "10M+ hours of revenue service. " },
+                { image: V25_S_3, description: "180-minute ETOPS approval." },
+                { image: Talon, description: "TALON II low emissions combustor." },
               ],
             },
             {
               title: "Highlights",
               content: [
                 {
-                 image:PW4_H_1_new,
-              enginetext: "PW4000 100-inch-fan",
+                  image: PW4_H_1_new,
+                  enginetext: "PW4000 100-inch-fan",
                   description:
                     "The PW4000 100-inch fan engine is offered as a complete propulsion system, featuring an advanced, lightweight nacelle and incorporating proven technologies in materials, aerodynamics, and controls to enhance performance, reliability, and durability.",
                 },
                 {
-                  image:PW4_H_2,
+                  image: PW4_H_2,
                   enginetext: "ETOPS Certification and Compliance",
                   description:
                     "This engine was the first in aviation history to qualify for Extended-range Twin-engine Operations (ETOPS) before entering service, complying with all current and anticipated noise and exhaust emissions regulations.",
                 },
                 {
-                  image:PW4_100,
+                  image: PW4_100,
                   enginetext: "Performance and Value",
                   description:
                     "As of May 2010, the PW4000 100-inch fan engines have accumulated over 10 million hours of revenue service on the A330. Its design is built for maximum value, evidenced by its strong service record in the A330 market.",
                 },
                 {
-                  image:V25_H_3,
+                  image: V25_H_3,
                   enginetext: "Support and Services",
                   description:
                     "Pratt & Whitney’s Global Service Partners network provides a comprehensive range of fleet management, line maintenance, and repair services for the PW4000 engine family.",
@@ -3153,7 +3419,7 @@ const engineDetails = {
               title: "Platforms",
               content: [
                 {
-                  image:PW4_P_2_new,
+                  image: PW4_P_2_new,
                   enginetext: "Boeing 777",
                   description:
                     "The Boeing 777 is a long-range, twin-engine wide-body airliner designed for efficiency and comfort. Known for its advanced technology and spacious cabin, it accommodates various configurations for passengers and cargo. The 777 is widely used in international aviation, offering reliable performance on long-haul routes.",
@@ -3163,11 +3429,11 @@ const engineDetails = {
             {
               title: "Specifications",
               content: [
-                
-                {image:thrust_new, description: "74K - 98K pounds of thrust. " },
-                {image:V25_S_5, description: "207-minute ETOPS approval" },
+
+                { image: thrust_new, description: "74K - 98K pounds of thrust. " },
+                { image: V25_S_5, description: "207-minute ETOPS approval" },
                 {
-                  image:roter,
+                  image: roter,
                   description:
                     "Diameter as wide as the fuselage of a Boeing 737 ",
                 },
@@ -3177,8 +3443,8 @@ const engineDetails = {
               title: "Highlights",
               content: [
                 {
-                     image:PW4_H_1_new,
-              enginetext: "PW4000 112-inch-fan",
+                  image: PW4_H_1_new,
+                  enginetext: "PW4000 112-inch-fan",
                   description:
                     "The PW4000 112-inch fan engine, designed for the Boeing 777-200/-200ER/-300, delivers 74,000 to 98,000 pounds of thrust. It was the launch engine for the 777, entering service in 1995",
                 },
@@ -3189,13 +3455,13 @@ const engineDetails = {
                     "The PW4084 variant provides 84,000 pounds of thrust and was the first engine approved for 180-minute ETOPS, later upgraded to 207 minutes. The PW4090 offers 90,000 pounds for increased-gross-weight models, while the PW4098 supports takeoff weights up to 660,000 pounds",
                 },
                 {
-                  image:PW4_112,
+                  image: PW4_112,
                   enginetext: "Design and Efficiency",
                   description:
                     "As Pratt & Whitney's largest commercial engine, the PW4000 features hollow titanium, shroudless fan blades for high efficiency, low noise, and enhanced resistance to foreign object damage.",
                 },
                 {
-                  image:F117_H_1,
+                  image: F117_H_1,
                   enginetext: "Reliability and Leadership",
                   description:
                     "The PW4000-112 has best-in-class reliability, backed by extensive market experience and a robust design validation methodology.",
@@ -3229,37 +3495,37 @@ const engineDetails = {
             // },
           ],
         },
-       
+
       ],
       defaultTabsData: [
         {
           title: "Platforms",
           content: [
             {
-              image:PW4_P_1_new,
+              image: PW4_P_1_new,
               enginetext: "Boeing 747-400",
               description:
                 "The Boeing 747-400 is a large, long-range wide-body airliner developed by Boeing Commercial Airplanes as an advanced variant of the original 747.",
             },
             {
-                image:PW4_P_2_new,
+              image: PW4_P_2_new,
               enginetext: "Boeing 767",
               description:
                 "The Boeing 767 is an American wide-body airliner developed and produced by Boeing Commercial Airplanes.",
             },
             {
-                image:PW4_P_3_new,
+              image: PW4_P_3_new,
               enginetext: "Boeing MD-11",
               description:
                 "The McDonnell Douglas MD-11 is an American tri-jet wide-body airliner originally manufactured by McDonnell Douglas and later by Boeing.",
             },
             {
-                image:PW4_P_4_new,
+              image: PW4_P_4_new,
               enginetext: "Airbus A300",
               description: `The Airbus A300, Airbus's first production aircraft, is the world's first twin-engine, double-aisle wide-body airliner, developed and manufactured by Airbus from 1971 to 2007`,
             },
             {
-                image:PW4_P_5_new,
+              image: PW4_P_5_new,
               enginetext: "Airbus A310",
               description:
                 "The Airbus A310 is a wide-body aircraft which was developed to meet the demand for a smaller aircraft than the A300, Airbus first twin-jet wide-body.",
@@ -3281,7 +3547,7 @@ const engineDetails = {
           title: "Highlights",
           content: [
             {
-              image:PW4_H_1_new,
+              image: PW4_H_1_new,
               enginetext: "PW4000 94-inch-fan",
               description:
                 "The PW4000 100-inch fan engine is offered as a complete propulsion system, featuring an advanced, lightweight nacelle and incorporating proven technologies in materials, aerodynamics, and controls to enhance performance, reliability, and durability.",
@@ -3342,7 +3608,7 @@ const engineDetails = {
         { video: PW4000_V1 },
         { video: PW4000_V2 },
       ],
-     
+
     },
     PW2000: {
       title: "PW2000",
@@ -3430,8 +3696,8 @@ const engineDetails = {
         { img: PW2_1 },
         { img: PW2_2 },
         { img: PW2_3 },
-        { img: PW2_4},
-        { pdf: PW2_pdf_1},
+        { img: PW2_4 },
+        { pdf: PW2_pdf_1 },
         // { img: PW2_5},
         // { img: PW2_6},
         // { img: PW2_7},
@@ -3446,7 +3712,7 @@ const engineDetails = {
       variants: [
         // { img: gtf, title: "N/A" },
       ],
-      logo:GP700,
+      logo: GP700,
       defaultTabsData: [
         {
           title: "Platforms",
@@ -3514,8 +3780,8 @@ const engineDetails = {
         // },
       ],
       gallery: [{ img: P7200_1 }, { img: P7200_2 }, { img: P7200_3 },
-        {pdf:P7200_pdf_1},
-        {video:P7200_V1},
+      { pdf: P7200_pdf_1 },
+      { video: P7200_V1 },
       ],
     },
   },
@@ -3715,7 +3981,7 @@ const engineDetails = {
         //   ],
         // },
       ],
-      gallery: [{ img: PW600_1 }, { img: PW600_2 }, { img: PW600_3 },{pdf:PW600_pdf_1}],
+      gallery: [{ img: PW600_1 }, { img: PW600_2 }, { img: PW600_3 }, { pdf: PW600_pdf_1 }],
       logo: PW600_1,
     },
     PW500: {
@@ -3745,7 +4011,7 @@ const engineDetails = {
         {
           title: "Specifications",
           content: [
-       
+
             {
               image: PW500_S_2,
               description: "2,900 to over 4,500 pounds of thrust. ",
@@ -3920,7 +4186,7 @@ const engineDetails = {
         { img: PW300_2 },
         { img: PW300_3 },
         { img: PW300_4 },
-           { pdf: PW300_pdf_1 },
+        { pdf: PW300_pdf_1 },
       ],
       logo: PW300_1,
     },
@@ -3998,8 +4264,8 @@ const engineDetails = {
       description:
         "The Pratt & Whitney APS5000 APU is the industry's first all-electric APU for large commercial aircraft. The APS5000 APU was designed exclusively for the Boeing 787 Dreamliner.",
       variants: [],
-       
-    
+
+
       defaultTabsData: [
         {
           title: "Platforms",
@@ -4051,7 +4317,7 @@ const engineDetails = {
         //   ],
         // },
       ],
-       logo:APS5000_main,
+      logo: APS5000_main,
       gallery: [
         { img: APS5000_1 },
         { img: APS5000_2 },
@@ -4117,7 +4383,7 @@ const engineDetails = {
           ],
         },
       ],
-      gallery: [{ img: APS3200_1 }, { img: APS3200_2 }, { img: APS3200_3 },{img:APS3200_4},{img:APS3200_5},{pdf:APS3200_pdf_1}],
+      gallery: [{ img: APS3200_1 }, { img: APS3200_2 }, { img: APS3200_3 }, { img: APS3200_4 }, { img: APS3200_5 }, { pdf: APS3200_pdf_1 }],
     },
     APS1000: {
       title: "APS1000",
@@ -4271,7 +4537,7 @@ const engineDetails = {
       description:
         "The Pratt & Whitney R-1690 Hornet is a 9-cylinder, air-cooled radial engine first developed in the 1920s. It was one of the early engines designed by Pratt & Whitney and played a significant role in advancing commercial and military aviation. Known for its robust construction and reliable performance, the Hornet powered many iconic aircraft of the interwar period and into World War II.",
       variants: [],
-      logo: hornet_1 ,
+      logo: hornet_1,
       defaultTabsData: [
         {
           title: "Platforms",
@@ -4336,7 +4602,7 @@ const engineDetails = {
           ],
         },
       ],
-      gallery: [{ img: hornet_1 }, { img: hornet_2 }, { img: hornet_3 },{ img: hornet_4 }],
+      gallery: [{ img: hornet_1 }, { img: hornet_2 }, { img: hornet_3 }, { img: hornet_4 }],
     },
     JT3D: {
       title: "JT3D",
@@ -4344,7 +4610,7 @@ const engineDetails = {
       description:
         "The JT3D is a turbofan engine developed as an improvement over the JT3C turbojet, incorporating a fan for better fuel efficiency and lower noise. It was one of the first successful low-bypass turbofan engines and powered early jet airliners during the dawn of the Jet Age in the 1960s.",
       variants: [],
-      logo:Jt3d_1,
+      logo: Jt3d_1,
       defaultTabsData: [
         {
           title: "Platforms",

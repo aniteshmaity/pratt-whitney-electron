@@ -1034,10 +1034,10 @@ timeline.add(() => {
                       <div className="w-28 h-28 bg-white  rounded-full p-2  left-1/2 transform -translate-x-1/2 shadow-[0px_3px_5px_5px_#dddddd80] cursor-pointer" onClick={slideYear === normalizedTimelineYear ? undefined : handleNextClick}>
                         <div className=" rounded-full w-full h-full  bg-white flex justify-center items-center shadow-[0px_3px_6px_3px_#f5f2f2c2]">
                           <div className="p-1">
-                            <h2 className="text-red-400 font-[700] text-[24px] text-center">
+                            <h2 className="text-red-400 font-[700] text-[23px] text-center">
                               {timeline.year}
                             </h2>
-                            <p className="text-[0.6rem] text-center">
+                            <p className="text-[0.56rem] leading-[11px] font-[600] text-center font-objektiv text-black/80">
                               {timeline.text}
                             </p>
                           </div>
