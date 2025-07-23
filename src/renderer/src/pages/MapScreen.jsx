@@ -527,7 +527,7 @@ const MapScreen = () => {
           </div>
 
           {/* //logo with city */}
-          {(activeIndex === 0 || activeIndex === 2 || activeIndex === 3) &&
+          {(activeIndex === 0 || activeIndex === 2 ) &&
             mapData[activeIndex]?.cities?.map((city, index) => (
               <div
                 key={index}

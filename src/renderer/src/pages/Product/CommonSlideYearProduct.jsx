@@ -13,7 +13,7 @@ import layer2 from "../../assets/100years/layer-2.png";
 import layer3 from "../../assets/100years/layer-3.png";
 import layer4 from "../../assets/100years/machine-1.png";
 const CommonSlideYearProduct = ({gallery,onImageClick}) => {
-  console.log("gallery",gallery);
+  console.log("gallery",gallery.length);
   const cards = [
     { id: 1, img: layer1, description: "Lorem ipsum dolor" },
     { id: 2, img: layer2, description: "Lorem ipsum dolor" },
@@ -140,7 +140,7 @@ console.log("activeindex",activeIndex);
          <div className="absolute top-[30%] transform  left-0 z-10">
         <button
           onClick={handlePrev}
-          className="bg-[#CE2028] text-black px-[2px] left_arrow_clip_path  shadow-md hover:bg-red-500 transition"
+          className={`${activeIndex === 1 ? "bg-[#918F8F]" : "bg-[#CE2028]"}  text-white px-[2px] left_arrow_clip_path  shadow-md`}
         >
          <GrFormPrevious className="w-4 h-4" />
         </button>
@@ -148,7 +148,7 @@ console.log("activeindex",activeIndex);
       <div className="absolute top-[30%] transform  right-0 z-10">
         <button
           onClick={handleNext}
-          className="bg-[#CE2028] text-black px-[2px]   shadow-md hover:bg-red-500 transition"
+          className={`${activeIndex === gallery.length - 4  ? "bg-[#918F8F]" : "bg-[#CE2028]"}  text-white px-[2px]   shadow-md `}
           style={{
             clipPath:
               "polygon(100% 0%, 100% 0%, 100% 80%, 80% 100%, 10% 100%, 0% 100%, 0% 0%)",

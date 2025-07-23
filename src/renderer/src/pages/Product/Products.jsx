@@ -30,6 +30,7 @@ function Products({handleCurrentSlide}) {
     const [activeEngineIndex, setActiveEngineIndex] = useState(0);
   const [loading, setLoading] = useState(true);
   const sliderRef = useRef(null);
+    const sliderDOMRef = useRef(null);
   const detailsRef = useRef(null);
   const descRefs = useRef([]);
   // console.log("REFS", descRefs.current);
@@ -179,7 +180,7 @@ function Products({handleCurrentSlide}) {
   
       // Loop through all slides and add appropriate classes
       document.querySelectorAll(".slick-slide").forEach((slide) => {
-        console.log("slide",slide);
+        // console.log("slide",slide);
         const index = parseInt(slide.getAttribute("data-index"), 10);
         if (index === activeIndex + 1 || index === activeIndex || index === activeIndex - 1) {
         
@@ -198,64 +199,45 @@ function Products({handleCurrentSlide}) {
     }, [activeIndex]);
 
   // Replace the existing scroll handling useEffect with this simpler version
-  useEffect(() => {
-    const handleScroll = (e) => {
-      e.preventDefault();
-        setActiveEngineIndex(0)
-      // Debounce the scroll
-      if (isAnimating) return;
-      
-      // Check if scroll is primarily vertical
-      const isVerticalScroll = Math.abs(e.deltaY) > Math.abs(e.deltaX);
-      
-      if (!isVerticalScroll) return;
-      const totalSlides = productEngine.length;
-      if (e.deltaY > 0) {
-        // Scroll down – only if not on the last slide
-        if (activeIndex < totalSlides - 3) {
+ useEffect(() => {
+    const sliderDOM = sliderDOMRef.current;
+    if (!sliderDOM) return;
+
+    let startY = 0;
+    let currentY = 0;
+
+    const handleTouchStart = (e) => {
+      console.log("is here touch statrt");
+      startY = e.touches[0].clientY;
+      currentY = startY;
+    };
+
+    const handleTouchMove = (e) => {
+      console.log('Touch Move')
+      currentY = e.touches[0].clientY;
+    };
+
+    const handleTouchEnd = () => {
+      const deltaY = currentY - startY;
+      if (Math.abs(deltaY) > 50) {
+        if (deltaY < 0) {
           sliderRef.current?.slickNext();
-        }
-      } else {
-        // Scroll up – only if not on the first slide
-        if (activeIndex > 0) {
+        } else if (deltaY > 0) {
           sliderRef.current?.slickPrev();
         }
       }
     };
-    
-  const handleTouchStart = (e) => {
-    startX = e.touches[0].clientX;
-  };
 
-  const handleTouchEnd = (e) => {
-    const endX = e.changedTouches[0].clientX;
-    const deltaX = endX - startX;
-
-    const totalSlides = productEngine.length;
-
-    if (Math.abs(deltaX) > 50) {
-      if (deltaX < 0 && activeIndex < totalSlides - 3) {
-        sliderRef.current?.slickNext();
-      } else if (deltaX > 0 && activeIndex > 0) {
-        sliderRef.current?.slickPrev();
-      }
-    }
-  };
-
-    const sliderElement = document.querySelector('.slider-container-product');
-    if (sliderElement) {
-      sliderElement.addEventListener('wheel', handleScroll, { passive: false });
-      sliderElement.addEventListener('touchstart', handleTouchStart, { passive: true });
-      sliderElement.addEventListener('touchend', handleTouchEnd, { passive: true });
-    }
+    sliderDOM.addEventListener("touchstart", handleTouchStart, { passive: true });
+    sliderDOM.addEventListener("touchmove", handleTouchMove, { passive: true });
+    sliderDOM.addEventListener("touchend", handleTouchEnd);
 
     return () => {
-      if (sliderElement) {
-        sliderElement.removeEventListener('wheel', handleScroll);
-        sliderElement.removeEventListener('touchstart', handleTouchStart);
-        sliderElement.removeEventListener('touchend', handleTouchEnd);
-      }
+      sliderDOM.removeEventListener("touchstart", handleTouchStart);
+      sliderDOM.removeEventListener("touchmove", handleTouchMove);
+      sliderDOM.removeEventListener("touchend", handleTouchEnd);
     };
+
   }, [isAnimating]);
 
   // Add this CSS inline to the slider container
@@ -322,7 +304,7 @@ function Products({handleCurrentSlide}) {
           <div className='h-[2px] bg-gray-300 w-[20%] left-0  absolute -z-10 line-rotate-vertical'></div>
           <div className='h-[2px] bg-[#e11c3696] w-[6%]  absolute -z-10 line-rotate-vertical left-[20%]'></div>
      
-               <div className="slider-container-product comercial relative h-[calc(100vh-194px)] w-full" style={sliderStyles}>
+               <div className="slider-container-product comercial relative h-[calc(100vh-194px)] w-full" ref={sliderDOMRef} style={sliderStyles}>
               <Slider ref={sliderRef} {...settings}>
                 {productEngine?.map((data, index) => {
                      

@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 
-export default function VideoThumbnailGenerator({ videoFile }) {
+const VideoThumbnailGenerator = React.memo(({ videoFile }) => {
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
   const [thumbnail, setThumbnail] = useState(null);
@@ -77,4 +77,6 @@ export default function VideoThumbnailGenerator({ videoFile }) {
          <div className="absolute inset-0 flex justify-center items-center cursor-pointer"><button className="bg-black bg-opacity-50 p-2 rounded-full text-white"><svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.752 11.168l-5.197-3.03A1 1 0 008 9.03v5.94a1 1 0 001.555.832l5.197-3.03a1 1 0 000-1.664z"></path></svg></button></div></>)}
     </div>
   );
-}
+});
+
+export default VideoThumbnailGenerator;

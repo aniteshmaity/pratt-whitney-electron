@@ -46,7 +46,7 @@ function YearCurosel() {
   const parsedYear = parseInt(rawYear);
 
   const yeardata = useSelector((state) => state.year);
-  // console.log("year-slideinner", yeardata);
+  console.log("year-slideinner", yeardata);
   const year = isNaN(parsedYear) ? null : parsedYear;
   let baseYear = null;
   if (year !== null) {
@@ -451,9 +451,13 @@ function YearCurosel() {
   }
 
   useEffect(() => {
+       const delay = yeardata?.year === "2020" ? 4000 : 2500;
+      //  console.log("delay-",delay);
+       
     const timeout = setTimeout(() => {
+     
       dispatch(setShowLoader(false));
-    }, 2500); // or any duration you prefer
+    }, delay); 
 
     return () => clearTimeout(timeout); // cleanup
   }, [])

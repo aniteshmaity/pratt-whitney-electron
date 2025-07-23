@@ -78,6 +78,7 @@ const ProductDetails = ({ onClose, engineData }) => {
   const redDot2Ref = useRef(null);
   const dispatch = useDispatch();
   const [isExpanded, setIsExpanded] = useState(null);
+    const [imageLoading, setImageLoading] = useState(true);
   const [isOverflowing, setIsOverflowing] = useState(false);
 
   const [showSlider, setShowSlider] = useState(false);
@@ -377,13 +378,14 @@ const ProductDetails = ({ onClose, engineData }) => {
         >
           <div className=" border border-[#D91027]">
             <div className="relative overflow-hidden h-[50%] z-20 bg-white">
-              {/* <img ref={gtfImageRef} src={gtfimage} alt="" /> */}
-              {/* <video ref={gtfImageRef} className="w-full h-full object-cover "  muted loop playsInline >
-        <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
-      </video> */}
+          {imageLoading && (
+        <div className="absolute top-0 left-0 w-full h-full bg-gray-200 animate-pulse z-10" />
+      )}
               <img
                 src={allData?.logo || engineParamData?.logo || machine1}
+                     onLoad={() => setImageLoading(false)}
                 className="w-full h-full object-contain absolute top-0 left-0"
+                 style={{ opacity: imageLoading ? 0 : 1 }}
                 alt=""
               />
             </div>

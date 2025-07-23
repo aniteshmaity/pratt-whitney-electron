@@ -758,6 +758,7 @@ timeline.add(() => {
                         <div className="  pt-3 w-[90%]">
                           <InnerSliderCarousal
                             onImageClick={onImageClick}
+                            currentInnerSlide={currentInnerSlide}
                             images={
                               slide?.innerSlidesData[currentInnerSlide]
                                 ?.slideImages || slide?.slideImages

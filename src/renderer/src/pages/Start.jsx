@@ -43,6 +43,9 @@ const TimelineAnimation = () => {
           autoAlpha: 1,
           x: (index) => (index === 0 ? -230 : 70), // img1 moves left (-300), img2 moves right (300)
           ease: "power2.inOut",
+          onStart: () => {
+      img2Ref.current.style.visibility = "visible";
+    },
         }
       )
       .to(
@@ -61,6 +64,9 @@ const TimelineAnimation = () => {
         duration: 2, // 3 seconds
         autoAlpha: 1, // full rotation
         ease: "power2.inOut", // easing
+        onStart: () => {
+    footerRef.current.style.visibility = "visible";
+  },
       });
         // Then fade in all gifs
         timeline.to(gifsRef.current, {
@@ -89,6 +95,7 @@ const TimelineAnimation = () => {
           src={NameLogo}
           ref={img2Ref}
           className="w-[421px] h-[100px] absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]"
+            style={{ visibility: "hidden" }}
         />
       </div>
       <div className="absolute flex flex-col justify-center items-center gap-16 z-50" ref={buttonRef} style={{ visibility: "hidden" }}>
@@ -105,7 +112,7 @@ const TimelineAnimation = () => {
           </div>
         </Link> */}
       </div>
-      <div ref={footerRef} className="absolute -bottom-[0px] w-full z-10">
+      <div ref={footerRef} className="absolute -bottom-[0px] w-full z-10 opacity-0"   style={{ visibility: "hidden" }}>
         <img src={MapImage} alt="map images" className="w-screen h-full " />
         {/* <video className="absolute bottom-0" src={MapVideo} muted loop autoPlay></video> */}
       </div>
@@ -114,7 +121,7 @@ const TimelineAnimation = () => {
                  { className: 'w-[350px] h-[200px] bottom-[22%] right-[22%]' },
                  { className: 'w-[350px] h-[200px] bottom-[16%] right-[14%]' },
                  { className: 'w-[300px] h-[150px] bottom-[30%] left-[24%]' },
-                 { className: ' w-[300px] h-[150px] bottom-[29%] left-[22%]' },
+                 { className: 'w-[300px] h-[150px] bottom-[29%] left-[22%]' },
       ].map((style, i) => (
         <div
           key={i}

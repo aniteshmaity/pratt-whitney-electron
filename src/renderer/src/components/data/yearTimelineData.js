@@ -349,7 +349,7 @@ export const slideData = [
       year: "1930",
       title: "Twin Wasp R-1830 Debuts",
       cloneTitle: "Twin Wasp R-1830 Debuts",
-      subtitle: " Becomes the most-produced aircraft engine in history",
+      subtitle: " Becomes the most-produced aircraft engine in history.",
       description:
         `<p>The R-1830 Twin Wasp powers iconic aircraft, including the Douglas DC-3 and B-24 Liberator. With over 173,000 units produced, it becomes the world’s most widely used aircraft engine. 
 </p><br> <p>Its reliability and efficiency establish Pratt & Whitney as a dominant force in aviation propulsion. </p><br> <p>Mostly retired today, the R-1830 is still used on Douglas DC-3 and various museum aircraft and warbirds seen at airshows.</p>`,
@@ -644,7 +644,7 @@ export const slideData = [
           <br><p>Pratt & Whitney’s  fuell cells were only the world’s second practical fuel cell design, the first having been invented for NASA’s Gemini missions, which were preparation for the Apollo Moon shot.</p>`,
           title: "P&W Fuel cells take man to the moon",
           cloneTitle: "P&W Fuel cells take man to the moon",
-          subtitle: "Fuel cells that power mankind’s giant leap ",
+          subtitle: "Fuel cells that power mankind’s giant leap. ",
           image: I_1969_1,
           thumbnail:I_1969_1,
           slideImages: [   
@@ -946,7 +946,7 @@ export const slideData = [
              description: "The formal launch of a full-scale technology demonstrator, the PW625F, is launched. The PW600 engine family is the preferred engine family for a new generation of light jets in the 900 to 3,000 pound thrust class. It is compact, fuel efficient, clean and delivers excellent operating economics.",
           title: "Launch of the PW600",
           cloneTitle: "Launch of the PW600",
-          subtitle: "Introduced for the very light & light jet market",
+          subtitle: "Introduced for the very light & light jet market.",
           image: PW600_2000_1,
           thumbnail:PW600_2000_1,
           slideImages: [
@@ -1077,7 +1077,7 @@ export const slideData = [
              <p>The center has imparted training to more than 60 operators representing over 40 nationalities.</p>`,
           title: "India Customer Training Center is established",
           cloneTitle: "India Customer Training Center is established",
-          subtitle: "Global hub for critical entry-into-service trainings",
+          subtitle: "Global hub for critical entry-into-service trainings.",
           image: C_2015_1,
           thumbnail:C_2015_1,
           // video:V_2015_1,

@@ -10,8 +10,21 @@ import redDot from "../../assets/100years/non-active-dots.png";
 import { gsap } from "gsap";
 import VideoThumbnailGenerator from "../../components/VideoThumbnailGenerator";
 
-const InnerSliderCarousal = ({ images,onImageClick,type,combinedImages }) => {
-  const [activeIndex,setActiveIndex] = useState(0)
+const InnerSliderCarousal = ({ images,onImageClick,type,combinedImages,currentInnerSlide }) => {
+  const [activeIndex,setActiveIndex] = useState(0);
+  const [showThumbnail, setShowThumbnail] = useState(false);
+  console.log("showthumbnail--",showThumbnail);
+
+useEffect(() => {
+  setShowThumbnail(false); // reset first
+
+  const timer = setTimeout(() => {
+    setShowThumbnail(true); 
+  }, 500); 
+
+  return () => clearTimeout(timer); 
+}, [currentInnerSlide]);
+
   // console.log("type",type);
   // console.log("haldeclick",onImageClick);
   // console.log("images",images);
@@ -24,6 +37,12 @@ const InnerSliderCarousal = ({ images,onImageClick,type,combinedImages }) => {
   const handleNextClick = () => {
     swiperInnerRef.current.swiper.slideNext(); // Go to next slide
   };
+useEffect(() => {
+  if (currentInnerSlide && swiperInnerRef.current?.swiper) {
+    swiperInnerRef.current.swiper.slideTo(0);
+    setActiveIndex(0);
+  }
+}, [currentInnerSlide]);
   return (
     <>
       <div className="relative">
@@ -54,12 +73,7 @@ const InnerSliderCarousal = ({ images,onImageClick,type,combinedImages }) => {
           virtual //Only render what's visible in the viewport.
           className="my-swiper innerSlideSwiper"
         >
-            {/* <div
-          className={`h-full w-full z-30 bg-slate-500 absolute top-0 ${images?.length > 7 ? 'opacity-100' : 'opacity-0'} `}
-          style={{
-            background: "linear-gradient(270deg, #f3f3f3, transparent)",
-          }}
-        ></div> */}
+       
           {images?.slice(1).map((item, index) => (
             <SwiperSlide key={index}>
               {item.img ? (
@@ -85,7 +99,12 @@ const InnerSliderCarousal = ({ images,onImageClick,type,combinedImages }) => {
           src={item.video}
           className="h-[60px] w-full object-cover cursor-pointer"
         /> */}
-        <VideoThumbnailGenerator videoFile={item.video} />
+        {showThumbnail  ? (
+          <VideoThumbnailGenerator videoFile={item.video} />
+            
+        ) : (
+ <div className="h-[60px] w-full bg-gray-300 animate-pulse" />
+        )}
       
        </div>
       ) : null}
