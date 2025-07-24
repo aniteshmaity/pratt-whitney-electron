@@ -259,6 +259,7 @@ function YearCurosel() {
   // };
 
   const handleExplore = () => {
+     
     setYearDetails("view");
     setTimeout(() => {
       navigate('/A100years/yearCourasal', { replace: true });
@@ -647,17 +648,21 @@ function YearCurosel() {
           "polygon(6% 0%, 100% 0%, 100% 64%, 94% 100%, 0% 100%, 0% 34%)",
       }}>
 
-        <div onClick={yearDetails === "" ? handleClose : handleTimeClose} className="bg-[#918F8F] text-white flex justify-center items-center px-3 py-2 gap-1 hover:bg-[#656363]">
+        <div onClick={yearDetails === "" ? handleClose : handleTimeClose} className="bg-[#918F8F] text-white flex justify-center items-center px-3 py-2 gap-1 cursor-pointer hover:bg-[#656363]">
           <BiSolidChevronLeft className="h-full w-[20px]" />
           <p className="text-[1rem]">Previous</p>
         </div>
 
-        <Link to={`/home`}>
-          <div onClick={""} className="bg-[#CE2028] text-white flex justify-center items-center px-3 py-2 gap-2 hover:bg-red-800">
+    
+          <div onClick={()=> {
+               dispatch(resetYearState());
+                 dispatch(resetNavigation());
+                navigate(`/home`);
+          }} className="bg-[#CE2028] text-white flex justify-center items-center px-3 py-2 gap-2 cursor-pointer hover:bg-red-800">
             <BiHomeAlt2 className="h-full w-[20px]" />
             <p className="text-[1rem]">Home</p>
           </div>
-        </Link>
+   
       </div>
 
 

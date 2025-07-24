@@ -16,6 +16,9 @@ import { productEngine } from '../../components/data/productEngineData';
 import SvgBtn from '../../components/buttons/SvgBtn';
 import { BiHomeAlt2 } from "react-icons/bi";
 import { BiSolidChevronLeft } from "react-icons/bi";
+import { resetYearState } from "../../features/yearSlice";
+import { resetNavigation } from "../../features/navigationSlice";
+import { useDispatch } from 'react-redux'
 const CameraUpdater = ({ controlsRef, cameraPosRef, cameraRef }) => {
 
   const { camera } = useThree()
@@ -34,6 +37,7 @@ const CameraUpdater = ({ controlsRef, cameraPosRef, cameraRef }) => {
 }
 
 const GTF3d = () => {
+     const dispatch = useDispatch();
   const location = useLocation();
   const { Isgtf } = useParams();
 const isGtf = useParams().Isgtf === "true";
@@ -98,14 +102,18 @@ const isGtf = useParams().Isgtf === "true";
           </button>
 
         ) : (
-          <Link to={`/home/${id}`}>
+         
             <button
-
+onClick={()=> {
+     dispatch(resetYearState());
+       dispatch(resetNavigation());
+      navigate(`/home/${id}`);
+}}
               className="z-[99999] cursor-pointer close_clip_path w-[44px] h-[32px] bg-[#828080] flex justify-center items-center text-white font-bold absolute top-[55px] right-[60px]"
             >
               <img src={Close} alt="close_arrow" />
             </button>
-          </Link>
+     
         )
       }
 
@@ -165,14 +173,19 @@ const isGtf = useParams().Isgtf === "true";
         clipPath:
           "polygon(6% 0%, 100% 0%, 100% 64%, 94% 100%, 0% 100%, 0% 34%)",
       }}>
-        <Link to={`/home/${pageId}`}>
-          <div className="bg-[#918F8F] text-white flex justify-center items-center px-3 py-2 gap-1 hover:bg-[#656363]">
+        {/* <Link to={`/home/${pageId}`}> */}
+          <div onClick={()=> {
+            isGtf ? 
+            goToGTF2() : navigate(`/home/${pageId}`)
+            
+          }} className="bg-[#918F8F] text-white flex justify-center items-center px-3 py-2 gap-1 cursor-pointer hover:bg-[#656363]">
             <BiSolidChevronLeft className="h-full w-[20px]" />
             <p className="text-[1rem]">Previous</p>
-          </div></Link>
+          </div>
+          {/* </Link> */}
 
         <Link to={`/home/${pageId}`}>
-          <div onClick={""} className="bg-[#CE2028] text-white flex justify-center items-center px-3 py-2 gap-2 hover:bg-red-800">
+          <div onClick={""} className="bg-[#CE2028] text-white flex justify-center items-center px-3 py-2 gap-2 cursor-pointer hover:bg-red-800">
             <BiHomeAlt2 className="h-full w-[20px]" />
             <p className="text-[1rem]">Home</p>
           </div>

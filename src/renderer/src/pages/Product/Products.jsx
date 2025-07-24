@@ -62,7 +62,7 @@ function Products({handleCurrentSlide}) {
     },
   };
   const handleExploreClick = (engineDetails) => {
-    console.log("clicked -details",engineDetails);
+    // console.log("clicked -details",engineDetails);
     setIsDetailsVisible(true);
     setSelectedEngineDetails(engineDetails);
     

@@ -14,10 +14,12 @@ import { BiHomeAlt2 } from "react-icons/bi";
 import { BiSolidChevronLeft } from "react-icons/bi";
 import SvgBtn from "../../components/buttons/SvgBtn";
 import Logo from "../../components/Logo";
-
+import { resetYearState } from "../../features/yearSlice";
+import { resetNavigation } from "../../features/navigationSlice";
+import { useDispatch } from "react-redux";
 gsap.registerPlugin(CustomEase);
 const Home100Years = () => {
-   
+     const dispatch = useDispatch();
   const divRefs = useRef([]);
   const logoRef = useRef(null);
   const textRef = useRef(null);
@@ -274,7 +276,10 @@ growing economies and defending freedom.
           </div>
 
           <div
-            onClick={goToYearCourasal}
+            onClick={() => {
+              goToYearCourasal();
+              dispatch(resetYearState());
+            }}
            className="mt-3"
           >
           
@@ -286,17 +291,21 @@ growing economies and defending freedom.
                     "polygon(6% 0%, 100% 0%, 100% 64%, 94% 100%, 0% 100%, 0% 34%)",
                 }}>
                  
-                  <div  onClick={ handleClose } className="bg-[#918F8F] text-white flex justify-center items-center px-3 py-2 gap-1 hover:bg-[#656363]">
+                  <div  onClick={ handleClose } className="bg-[#918F8F] text-white flex justify-center items-center px-3 py-2 gap-1 cursor-pointer hover:bg-[#656363]">
                     <BiSolidChevronLeft className="h-full w-[20px]" />
                     <p className="text-[1rem]">Previous</p>
                   </div>
                 
-                    <Link to={`/home`}>
-                 <div onClick={""} className="bg-[#CE2028] text-white flex justify-center items-center px-3 py-2 gap-2 hover:bg-red-800">
+                   
+                 <div onClick={() => {
+                    dispatch(resetYearState());
+                         dispatch(resetNavigation());
+                  navigate("/home")
+                 }} className="bg-[#CE2028] text-white flex justify-center items-center px-3 py-2 gap-2 cursor-pointer hover:bg-red-800">
                     <BiHomeAlt2 className="h-full w-[20px]" />
                     <p className="text-[1rem]">Home</p>
                   </div>
-                  </Link>
+              
                 </div>
 
 
@@ -315,201 +324,7 @@ growing economies and defending freedom.
   Your browser does not support the video tag.
 </video>
        </div>
-      {/* <div className="relative flex-1 w-full overflow-hidden bg-green-600 opacity-0">
-        {[0, 1, 2].map((_, index) => {
-          const className =
-            index === 0 ? "first" : index === 1 ? "second" : "third";
-
-          const videoUrl =
-            index === 0
-              ? "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-              : index === 1
-                ? "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
-                : "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4";
-          const imageUrl =
-            index === 0 ? FirstImg : index === 1 ? SecondImg : ThirdImg;
-          const paragraph = [
-            {
-              heading: "Passion",
-              paragraphs:
-                "The passion of P&W people is what turns the possibilities of flight into reality for our customers. The success of the past 100 years would not have been possible without the generations of individuals who helped make Pratt & Whitney what it is today..",
-            },
-            {
-              heading: "Performance",
-              paragraphs:
-                "Pratt & Whitney continues to transform the aerospace industry. Every step of the process is powered by our innovators, visionaries, and engineers with exacting precision to innovate a new and exciting future. We are powering the horizon of aerospace with the most",
-            },
-            {
-              heading: "Possibilities",
-              paragraphs:
-                "Pratt & Whitney is focused on powering the future and the limitless potential that lies ahead of us. We are at the forefront of revolutionary advancements in aircraft propulsion technology and advancing sustainable aviation by working smarter, cleaner, & greener. service, the best-positioned",
-            },
-          ];
-          const paragrapModalOpen = [
-            {
-              heading: "Passion",
-              paragraphs1:
-                "The passion of P&W people is what turns the possibilities of flight into reality for our customers. The success of the past 100 years would not have been possible without the generations of individuals who helped make Pratt & Whitney what it is today..",
-              paragraphs2:
-                "The passion of P&W people is what turns the possibilities of flight into reality for our customers. The success of the past 100 years would not have been possible without the generations of individuals who helped make Pratt & Whitney what it is today..",
-              paragraphs3:
-                "The passion of P&W people is what turns the possibilities of flight into reality for our customers. The success of the past 100 years would not have been possible without the generations of individuals who helped make Pratt & Whitney what it is today..",
-            },
-            {
-              heading: "Performance",
-              paragraphs1:
-                "Pratt & Whitney continues to transform the aerospace industry. Every step of the process is powered by our innovators, visionaries, and engineers with exacting precision to innovate a new and exciting future. We are powering the horizon of aerospace with the most",
-              paragraphs2:
-                "Pratt & Whitney continues to transform the aerospace industry. Every step of the process is powered by our innovators, visionaries, and engineers with exacting precision to innovate a new and exciting future. We are powering the horizon of aerospace with the most",
-              paragraphs3:
-                "Pratt & Whitney continues to transform the aerospace industry. Every step of the process is powered by our innovators, visionaries, and engineers with exacting precision to innovate a new and exciting future. We are powering the horizon of aerospace with the most",
-            },
-            {
-              heading: "Possibilities",
-              paragraphs1:
-                "Pratt & Whitney is focused on powering the future and the limitless potential that lies ahead of us. We are at the forefront of revolutionary advancements in aircraft propulsion technology and advancing sustainable aviation by working smarter, cleaner, & greener. service, the best-positioned",
-              paragraphs2:
-                "Pratt & Whitney is focused on powering the future and the limitless potential that lies ahead of us. We are at the forefront of revolutionary advancements in aircraft propulsion technology and advancing sustainable aviation by working smarter, cleaner, & greener. service, the best-positioned",
-              paragraphs3:
-                "Pratt & Whitney is focused on powering the future and the limitless potential that lies ahead of us. We are at the forefront of revolutionary advancements in aircraft propulsion technology and advancing sustainable aviation by working smarter, cleaner, & greener. service, the best-positioned",
-             
-            },
-          ];
-          const paragraphShows = paragraph[index];
-          const paragraphShowsModalOpen = paragrapModalOpen[index];
-
-          return (
-            <div
-              key={index}
-              ref={(el) => (divRefs.current[index] = el)}
-              className={`${className} absolute flex inset-0 items-center bg-black bg-opacity-100 justify-center h-full w-full`}
-              style={{
-                transform:
-                  index === 0
-                    ? "translateX(0)"
-                    : index === 1
-                      ? "translateX(33.33%)"
-                      : "translateX(66.33%)",
-              }}
-            >
-              <div className="absolute inset-0 z-[100]">
-                <div
-                  className={`para para${index} z-[100] absolute w-[253px] h-[350px] opacity-100 bottom-10 text-white left-6`}
-                >
-                  <h3 className="text-white text-4xl font-[800] pb-3">
-                    {paragraphShows.heading}
-                  </h3>
-                  <p className="text-lg font-normal text-white leading-[21px]">
-                  {`${paragraphShows.paragraphs.slice(0, 220)}...`}
-                  </p>
-                  <div
-                    onClick={() => handleMoreClick(index)}
-                    className="mt-4"
-                  >
-                    <SvgBtn  text="More" height="38px" width="108px" textClass=" font-[700] text-[15px]" type="small" showArrow />
-                  </div>
-                </div>
-                <div
-                  className={`para-2 para-2-${index} absolute w-[653px] opacity-0 -bottom-[10%] text-white left-6`}
-                >
-                  <h3 className="text-white text-4xl font-[800] pb-3">
-                    {paragraphShowsModalOpen.heading}
-                  </h3>
-                  <p className="text-lg font-normal text-white leading-[21px] pb-3">
-                    {paragraphShowsModalOpen.paragraphs1}
-                  </p>
-                  <p className="text-lg font-normal text-white leading-[21px] pb-3">
-                    {paragraphShowsModalOpen.paragraphs2}
-                  </p>
-                  <p className="text-lg font-normal text-white leading-[21px]">
-                    {paragraphShowsModalOpen.paragraphs3}
-                  </p>
-                  <p className="text-lg font-normal text-white leading-[21px]">
-                    {paragraphShowsModalOpen?.paragraphs4}
-                  </p>
-                  <div className="relative flex items-center gap-4 mt-4 z-[100]">
-                    <div
-                      onClick={() => handleMoreClick(index - 1)}
-                      style={{
-                        clipPath:
-                          "polygon(0 0, 100% 0, 100% 100%, 18% 100%, 0 78%)",
-                      }}
-                      className={`cursor-pointer w-[40px] h-[37px]  ${index === 1 || index === 2 ? "bg-[#D91027]" : "bg-[#988A8A]"} flex justify-center items-center`}
-                    >
-                      <svg
-                        width="10"
-                        height="16"
-                        viewBox="0 0 10 16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M8 16L-3.49691e-07 8L8 -3.49691e-07L10 2L4 8L10 14L8 16Z"
-                          fill="white"
-                        />
-                      </svg>
-                    </div>
-                    <div
-                      onClick={() => handleMoreClick(index + 1)}
-                      style={{
-                        clipPath:
-                          "polygon(100% 0, 100% 81%, 78% 100%, 0 100%, 0 0%)",
-                      }}
-                      className={`cursor-pointer w-[40px] h-[37px]  ${index === 1 || index === 0 ? "bg-[#D91027]" : "bg-[#988A8A]"} flex justify-center items-center`}
-                    >
-                      <svg
-                        width="10"
-                        height="16"
-                        viewBox="0 0 10 16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M2 3.49691e-07L10 8L2 16L6.11959e-07 14L6 8L8.74228e-08 2L2 3.49691e-07Z"
-                          fill="white"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                style={{
-                  clipPath:
-                    "polygon(100% 0, 100% 21%, 100% 66%, 79% 100%, 25% 100%, 0 100%, 0 0)",
-                }}
-                onClick={closeHandle}
-                className="absolute top-4 right-[220px] z-[100] w-[44px] bg-[#918F8F] cursor-pointer h-[32px] flex justify-center items-center"
-              >
-                <div className="w-3 h-3 absolute -bottom-1.5 -right-1.5 bg-transparent" />
-                <img src={crossIcon} alt="iconsclose" />
-              </div>
-
-              <div className="absolute inset-0 bg-black bg-opacity-40 z-10"></div>
-              {activeIndex === index ? (
-                <video
-                  src={videoUrl}
-                  className={`absolute inset-0 object-cover w-full h-full`}
-                  autoPlay={true}
-                  loop
-                  muted
-                />
-              ) : (
-                <img
-                  src={imageUrl}
-                  style={{ objectFit: "fill" }}
-                  className={`absolute inset-0 h-full w-full`}
-                />
-              )}
-            </div>
-          );
-        })}
-      </div> */}
+     
     </div>
   );
 };

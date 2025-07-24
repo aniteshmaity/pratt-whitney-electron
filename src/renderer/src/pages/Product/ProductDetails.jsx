@@ -30,7 +30,8 @@ import { BiHomeAlt2 } from "react-icons/bi";
 import { BiSolidChevronLeft } from "react-icons/bi";
 
 import { useDispatch, useSelector } from "react-redux";
-import { setShowLoader } from "../../features/yearSlice";
+import { setShowLoader,resetYearState } from "../../features/yearSlice";
+import { resetNavigation } from "../../features/navigationSlice";
 // function Model({ url }) {
 //   const group = useRef()
 //   const { scene } = useGLTF(url)
@@ -56,7 +57,7 @@ const ProductDetails = ({ onClose, engineData }) => {
   const allData = engineParamData
     ? engineParamData
     : mapData
-      ? mapData
+      ? mapData  
       : engineData;
   const alltabsData = engineParamData
     ? engineParamData?.defaultTabsData
@@ -115,22 +116,20 @@ const ProductDetails = ({ onClose, engineData }) => {
     setIsDialogOpen(true);
     console.log("handleclick");
   };
-  console.log("tabsdata", tabsData);
+  // console.log("tabsdata", tabsData);
   // const load3DModel = () => {
   //   setShow3DModel(true)
   // }
   const onBack = () => {
     dispatch(setShowLoader(true));
-
-    if (engineParamSlug) {
-      console.log("inside eingien param page");
-      navigate(-1);
-    }
-    if (yearParamSlug || lastVisited === "years") {
-      navigate(`/A100years/yearCourasal/${yearParamName}`);
-    } else {
-      navigate("/products");
-    }
+  if (engineParamSlug) {
+    console.log("inside engine param page");
+    navigate("/experience3d/GTF3d");
+  } else if (yearParamSlug || lastVisited === "years") {
+    navigate(`/A100years/yearCourasal/${yearParamName}`);
+  } else {
+    navigate("/products");
+  }
   };
   const onMapPage = () => {
     navigate("/map");
@@ -933,21 +932,25 @@ const ProductDetails = ({ onClose, engineData }) => {
         >
           <div
             onClick={engineParamData ? onBack : mapData ? onMapPage : onClose}
-            className="bg-[#918F8F] text-white flex justify-center items-center px-3 py-1 gap-1 hover:bg-[#656363]"
+            className="bg-[#918F8F] text-white flex justify-center items-center px-3 py-1 gap-1 cursor-pointer hover:bg-[#656363]"
           >
             <BiSolidChevronLeft className="h-full w-[25px]" />
             <p className="text-[1rem]">Previous</p>
           </div>
 
-          <Link to={`/home/${homeId}`}>
+          
             <div
-              onClick={""}
-              className="bg-[#CE2028] text-white flex justify-center items-center px-3 py-1 gap-2 hover:bg-red-800"
+              onClick={() => {
+                navigate(`/home/${homeId}`);
+                    dispatch(resetYearState());
+                    dispatch(resetNavigation());
+              }}
+              className="bg-[#CE2028] text-white flex justify-center items-center px-3 py-1 gap-2 cursor-pointer hover:bg-red-800"
             >
               <BiHomeAlt2 className="h-full w-[25px]" />
               <p className="text-[1rem]">Home</p>
             </div>
-          </Link>
+        
         </div>
       </div>
       {isDialogOpen && (
