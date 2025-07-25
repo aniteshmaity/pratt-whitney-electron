@@ -38,6 +38,7 @@ import Logo from "../../components/Logo";
 import { useDispatch, useSelector } from "react-redux";
 import { resetYearState, setShowLoader } from "../../features/yearSlice";
 import { resetNavigation } from "../../features/navigationSlice";
+import BackHomeButtons from "../../components/buttons/BackHomeButtons";
 
 function YearCurosel() {
   const dispatch = useDispatch();
@@ -641,9 +642,9 @@ function YearCurosel() {
 
 
 
+      <BackHomeButtons onPrevious={yearDetails === "" ? handleClose : handleTimeClose} onHome={()=>  navigate("/home")}   containerClassName="bottom-8 right-12" />
 
-
-      <div className="absolute grid grid-cols-2 bottom-8  z-40 right-12" style={{
+      {/* <div className="absolute grid grid-cols-2 bottom-8  z-40 right-12" style={{
         clipPath:
           "polygon(6% 0%, 100% 0%, 100% 64%, 94% 100%, 0% 100%, 0% 34%)",
       }}>
@@ -663,7 +664,7 @@ function YearCurosel() {
             <p className="text-[1rem]">Home</p>
           </div>
    
-      </div>
+      </div> */}
 
 
 

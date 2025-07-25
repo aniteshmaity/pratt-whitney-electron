@@ -17,6 +17,7 @@ import Logo from "../../components/Logo";
 import { resetYearState } from "../../features/yearSlice";
 import { resetNavigation } from "../../features/navigationSlice";
 import { useDispatch } from "react-redux";
+import BackHomeButtons from "../../components/buttons/BackHomeButtons";
 gsap.registerPlugin(CustomEase);
 const Home100Years = () => {
      const dispatch = useDispatch();
@@ -283,10 +284,11 @@ growing economies and defending freedom.
            className="mt-3"
           >
           
-          <SvgBtn text="Begin Interactive" height="50px" width="280px" textClass=" font-[700] text-[15px]"  showArrow />
+          <SvgBtn text="Begin Interactive" height="45px" width="280px" textClass=" font-[700] text-[15px]"  showArrow />
           </div>
         </div>
-<div className="absolute grid grid-cols-2 bottom-8  z-40 left-16"  style={{
+        <BackHomeButtons onPrevious={handleClose} onHome={()=>  navigate("/home")}   containerClassName="bottom-8 left-16" />
+{/* <div className="absolute grid grid-cols-2 bottom-8  z-40 left-16"  style={{
                   clipPath:
                     "polygon(6% 0%, 100% 0%, 100% 64%, 94% 100%, 0% 100%, 0% 34%)",
                 }}>
@@ -306,7 +308,7 @@ growing economies and defending freedom.
                     <p className="text-[1rem]">Home</p>
                   </div>
               
-                </div>
+                </div> */}
 
 
       </div>

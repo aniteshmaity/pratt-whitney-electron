@@ -21,6 +21,7 @@ import { BiSolidChevronLeft } from "react-icons/bi";
 import { clearSelectedCity, setSelectedCity } from '../features/presenceSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { PwInIndiaImage } from '../components/data/pwInIndiaImage';
+import BackHomeButtons from '../components/buttons/BackHomeButtons';
 const MapScreen = () => {
   const buttonsRef = useRef([]);
   const spansRef = useRef([]);
@@ -141,8 +142,8 @@ const MapScreen = () => {
 
 
     }
-    if(type === "RTX") {
-      setActiveCity( mapData[2]?.cities[0])
+    if (type === "RTX") {
+      setActiveCity(mapData[2]?.cities[0])
     }
     if (type === "RTX" || type === "India") {
       console.log("Triggering GSAP showCards");
@@ -205,7 +206,7 @@ const MapScreen = () => {
       handleClick(0); // Animate the first button on mount
     }
   }, []);
-  
+
 
   useEffect(() => {
     if (selectedCityIndex !== null && selectedCityIndex !== null) {
@@ -277,9 +278,9 @@ const MapScreen = () => {
 
   useEffect(() => {
     if (currentIndex === null) return;
-    if(activeIndex !== 2)  setActiveCity(null);
+    if (activeIndex !== 2) setActiveCity(null);
     setCurrentIndex(0);
-   
+
   }, [activeIndex])
 
 
@@ -320,7 +321,7 @@ const MapScreen = () => {
   const pageId = 4;
   return (
     <div className=" relative">
-   
+
 
       <div className="w-screen h-[146px] relative z-30 flex justify-between px-16 items-center border-b border-transparent" style={{
         borderImageSource:
@@ -329,7 +330,7 @@ const MapScreen = () => {
       }}>
 
         <div className='flex justify-center items-center gap-8'>
-     
+
           <h2 className='text-[2.1rem] font-[700] font-objektiv leading-[43px]'>Pratt & Whitney in India</h2>
         </div>
         <div className="flex justify-center items-center gap-4">
@@ -391,14 +392,23 @@ const MapScreen = () => {
                         xmlns="http://www.w3.org/2000/svg"
                         className="absolute inset-0 w-full h-full z-0"
                         fill="none"
-                        viewBox="0 0 282 52"
+                        viewBox="0 0 300 60"
                         preserveAspectRatio="none"
                       >
                         <path
                           fill={activeIndex === index ? "#D91027" : "#FFFFFF"}
                           stroke="#A20000"
                           strokeWidth={activeIndex === index ? "0.5" : "0"}
-                          d="M280 .75H14.962a1.25 1.25 0 0 0-1 .501L.998 18.584a1.25 1.25 0 0 0-.249.749V50c0 .69.56 1.25 1.25 1.25h265.921c.404 0 .783-.195 1.017-.523l12.079-16.913c.152-.212.233-.467.233-.727V2c0-.69-.56-1.25-1.25-1.25Z"
+                          d="
+                              M20,0       
+                              H300     
+                              V40      
+                              L280,60  
+                              H0       
+                              V20      
+                              L20,0    
+                              Z        
+                                "
                         />
                       </svg>
 
@@ -436,7 +446,7 @@ const MapScreen = () => {
 
 
         {/* svg dots */}
-      
+
       </div>
 
 
@@ -527,7 +537,7 @@ const MapScreen = () => {
           </div>
 
           {/* //logo with city */}
-          {(activeIndex === 0 || activeIndex === 2 ) &&
+          {(activeIndex === 0 || activeIndex === 2) &&
             mapData[activeIndex]?.cities?.map((city, index) => (
               <div
                 key={index}
@@ -697,10 +707,10 @@ const MapScreen = () => {
         />
       )}
 
-      
 
 
-      <div className="absolute grid grid-cols-2 bottom-8  z-40 left-12" style={{
+      <BackHomeButtons onPrevious={() => navigate(`/home/${pageId}`)} onHome={() => navigate(`/home/${pageId}`)} containerClassName="bottom-8 left-12" />
+      {/* <div className="absolute grid grid-cols-2 bottom-8  z-40 left-12" style={{
         clipPath:
           "polygon(6% 0%, 100% 0%, 100% 64%, 94% 100%, 0% 100%, 0% 34%)",
       }}>
@@ -716,7 +726,7 @@ const MapScreen = () => {
             <p className="text-[1rem]">Home</p>
           </div>
         </Link>
-      </div>
+      </div> */}
     </div>
 
 

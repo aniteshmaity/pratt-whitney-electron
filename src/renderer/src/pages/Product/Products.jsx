@@ -9,19 +9,14 @@ import { FaChevronLeft } from "react-icons/fa6";
 import ProductCard from './ProductCard';
 import comercialImg from "../../assets/100years/comercial-engine-img.png"
 import ProductDetails from './ProductDetails';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { productEngine } from '../../components/data/productEngineData';
 import { BiHomeAlt2 } from "react-icons/bi";
 import { BiSolidChevronLeft } from "react-icons/bi";
 import Logo from '../../components/Logo';
+import BackHomeButtons from '../../components/buttons/BackHomeButtons';
 function Products({handleCurrentSlide}) {
-  // const Engine = [
-  //   { engine: "Military Engines", description: "This is the description " },
-  //   { engine: "Pratt Engines", description: "This is the description" },
-  //   { engine: "Commercial Engines", description: "This is the description " },
-  //   { engine: "Auxilary Engines", description: "This is the description" },
-  //   { engine: "Aftermart", description: "This is the description " },
-  // ];
+ const navigate = useNavigate();
   const [isDetailsVisible, setIsDetailsVisible] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0); // Middle card active by default
   const [direction, setDirection] = useState(""); // To track the direction of slide change
@@ -452,8 +447,9 @@ function Products({handleCurrentSlide}) {
           </div>
         </div>
       </div>
+       <BackHomeButtons onPrevious={()=>  navigate(`/home/${id}`)} onHome={()=>  navigate(`/home/${id}`)}   containerClassName="bottom-[8%] right-[94px]" />
       
-       <div className="absolute grid grid-cols-2 bottom-[8%] right-[94px] z-40"  style={{
+       {/* <div className="absolute grid grid-cols-2 bottom-[8%] right-[94px] z-40"  style={{
                   clipPath:
                     "polygon(6% 0%, 100% 0%, 100% 64%, 94% 100%, 0% 100%, 0% 34%)",
                 }}>
@@ -469,7 +465,7 @@ function Products({handleCurrentSlide}) {
                     <p className="text-[1rem]">Home</p>
                   </div>
                   </Link>
-                </div>
+                </div> */}
       
        {/* Product Details Section */}
        {isDetailsVisible   && (

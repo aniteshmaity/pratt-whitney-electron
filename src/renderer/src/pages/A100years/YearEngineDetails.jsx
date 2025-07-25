@@ -21,6 +21,7 @@ import layer2 from "../../assets/100years/layer-2.png";
 import layer3 from "../../assets/100years/layer-3.png";
 import Logo from "../../components/Logo";
 import useVideoThumbnail from "../../hooks/useVideoThumbnail";
+import BackHomeButtons from "../../components/buttons/BackHomeButtons";
 const YearEngineDetails = () => {
   const { yearParam } = useParams();
   const navigate = useNavigate();
@@ -230,7 +231,8 @@ const YearEngineDetails = () => {
           </div>
         </div>
         <div className="relative ">
-          <div className="absolute grid grid-cols-2 bottom-0 right-0 z-40" style={{
+           <BackHomeButtons onPrevious={navigate(`/A100years/yearCourasal/${yearParam}`)} onHome={goHomePage}   containerClassName="bottom-0 right-0" />
+          {/* <div className="absolute grid grid-cols-2 bottom-0 right-0 z-40" style={{
             clipPath:
               "polygon(6% 0%, 100% 0%, 100% 64%, 94% 100%, 0% 100%, 0% 34%)",
           }}>
@@ -244,7 +246,7 @@ const YearEngineDetails = () => {
               <BiHomeAlt2 className="h-full w-[25px]" />
               <p className="text-[1rem]">Home</p>
             </div>
-          </div>
+          </div> */}
           <div
             className="grid grid-cols-2 h-[calc(100vh-180px)]  "
             style={{

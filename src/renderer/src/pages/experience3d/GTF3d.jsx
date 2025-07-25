@@ -19,6 +19,7 @@ import { BiSolidChevronLeft } from "react-icons/bi";
 import { resetYearState } from "../../features/yearSlice";
 import { resetNavigation } from "../../features/navigationSlice";
 import { useDispatch } from 'react-redux'
+import BackHomeButtons from '../../components/buttons/BackHomeButtons'
 const CameraUpdater = ({ controlsRef, cameraPosRef, cameraRef }) => {
 
   const { camera } = useThree()
@@ -168,12 +169,12 @@ onClick={()=> {
         )
       }
 
-
-      <div className="absolute grid grid-cols-2 bottom-8  z-40 left-12" style={{
+<BackHomeButtons onPrevious={()=>   isGtf ? goToGTF2() : navigate(`/home/${pageId}`)} onHome={()=>  navigate(`/home/${pageId}`)}   containerClassName="bottom-8 left-12" />
+      {/* <div className="absolute grid grid-cols-2 bottom-8  z-40 left-12" style={{
         clipPath:
           "polygon(6% 0%, 100% 0%, 100% 64%, 94% 100%, 0% 100%, 0% 34%)",
       }}>
-        {/* <Link to={`/home/${pageId}`}> */}
+      
           <div onClick={()=> {
             isGtf ? 
             goToGTF2() : navigate(`/home/${pageId}`)
@@ -182,7 +183,6 @@ onClick={()=> {
             <BiSolidChevronLeft className="h-full w-[20px]" />
             <p className="text-[1rem]">Previous</p>
           </div>
-          {/* </Link> */}
 
         <Link to={`/home/${pageId}`}>
           <div onClick={""} className="bg-[#CE2028] text-white flex justify-center items-center px-3 py-2 gap-2 cursor-pointer hover:bg-red-800">
@@ -190,7 +190,7 @@ onClick={()=> {
             <p className="text-[1rem]">Home</p>
           </div>
         </Link>
-      </div>
+      </div> */}
 
    
       <button

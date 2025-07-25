@@ -32,6 +32,7 @@ import { BiSolidChevronLeft } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux";
 import { setShowLoader,resetYearState } from "../../features/yearSlice";
 import { resetNavigation } from "../../features/navigationSlice";
+import BackHomeButtons from "../../components/buttons/BackHomeButtons";
 // function Model({ url }) {
 //   const group = useRef()
 //   const { scene } = useGLTF(url)
@@ -923,7 +924,8 @@ const ProductDetails = ({ onClose, engineData }) => {
           </div>
         </div>
 
-        <div
+ <BackHomeButtons onPrevious={engineParamData ? onBack : mapData ? onMapPage : onClose} onHome={()=>  navigate(`/home/${homeId}`)}   containerClassName="bottom-[0%] right-[10px]" buttonPadding="py-1" />
+        {/* <div
           className="absolute grid grid-cols-2 bottom-[0px] right-[10px] z-40"
           style={{
             clipPath:
@@ -951,7 +953,8 @@ const ProductDetails = ({ onClose, engineData }) => {
               <p className="text-[1rem]">Home</p>
             </div>
         
-        </div>
+        </div> */}
+
       </div>
       {isDialogOpen && (
         <CustomDialog
