@@ -24,7 +24,7 @@ export const yearEngineData = [
                 subtitle: slideData[0].innerSlidesData[1].subtitle,
                 description: slideData[0].innerSlidesData[1].description,
                 gallery: slideData[0].innerSlidesData[1].slideImages,
-                 redirectLinkData:productEngine[7]?.engines[4]?.details,
+                 redirectLinkData:productEngine[7]?.engines[0]?.details,
                 isExplore: true
             },
             {
@@ -35,7 +35,7 @@ export const yearEngineData = [
                 subtitle: slideData[0].innerSlidesData[2].subtitle,
                 description: slideData[0].innerSlidesData[2].description,
                 gallery: slideData[0].innerSlidesData[2].slideImages,
-                redirectLinkData:productEngine[7]?.engines[0]?.details,
+                redirectLinkData:productEngine[7]?.engines[1]?.details,
                 isExplore: true
             },
             {
@@ -130,7 +130,7 @@ export const yearEngineData = [
                 subtitle: slideData[3].innerSlidesData[1].subtitle,
                 description: slideData[3].innerSlidesData[1].description,
                 gallery: slideData[3].innerSlidesData[1].slideImages,
-                   redirectLinkData:productEngine[7]?.engines[1]?.details,
+                   redirectLinkData:productEngine[7]?.engines[2]?.details,
                 isExplore: true
             },
 
@@ -172,7 +172,7 @@ export const yearEngineData = [
                 description: slideData[4].innerSlidesData[2].description,
 
                 gallery: slideData[4].innerSlidesData[2].slideImages,
-                     redirectLinkData:productEngine[7]?.engines[1]?.details,
+                     redirectLinkData:productEngine[7]?.engines[2]?.details,
                 isExplore: true
             },
             {
@@ -184,7 +184,7 @@ export const yearEngineData = [
                 description: slideData[4].innerSlidesData[3].description,
 
                 gallery: slideData[4].innerSlidesData[3].slideImages,
-                 redirectLinkData:productEngine[7]?.engines[2]?.details,
+                 redirectLinkData:productEngine[7]?.engines[3]?.details,
                 isExplore: true
             },
              {
@@ -224,7 +224,7 @@ export const yearEngineData = [
                 description: slideData[5].innerSlidesData[0].description,
 
                 gallery: slideData[5].innerSlidesData[0].slideImages,
-                    redirectLinkData:productEngine[7]?.engines[3]?.details,
+                    redirectLinkData:productEngine[7]?.engines[4]?.details,
                 isExplore: true
             },
             {

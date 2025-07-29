@@ -208,7 +208,7 @@ const YearCuroselDetails = ({ Year, animateAirplanes, handleChangeYearFlag, setI
     });
     const currentActualIndex = slideDataIndexRef.current;
     const specificSlide = slideData[currentActualIndex];
-    console.log("specificslide", specificSlide);
+    // console.log("specificslide", specificSlide);
     if (direction === "next") {
       // console.log("💥 Prev clones at animation time:", prevContentClones);
       // console.log("💥 CurrentInner id", innerSlideRef.current);

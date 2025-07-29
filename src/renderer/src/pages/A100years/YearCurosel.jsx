@@ -260,7 +260,7 @@ function YearCurosel() {
   // };
 
   const handleExplore = () => {
-     
+
     setYearDetails("view");
     setTimeout(() => {
       navigate('/A100years/yearCourasal', { replace: true });
@@ -453,13 +453,19 @@ function YearCurosel() {
   }
 
   useEffect(() => {
-       const delay = yeardata?.year === "2020" ? 4000 : 2500;
-      //  console.log("delay-",delay);
-       
+    const delayMap = {
+      "1960": 3000,
+      "2020": 4000,
+    };
+
+    const delay = delayMap[yeardata?.year] ?? 2500;
+
+    //  console.log("delay-",delay);
+
     const timeout = setTimeout(() => {
-     
+
       dispatch(setShowLoader(false));
-    }, delay); 
+    }, delay);
 
     return () => clearTimeout(timeout); // cleanup
   }, [])
@@ -537,8 +543,8 @@ function YearCurosel() {
                           ) : null}
                           <div
                             className={`flex flex-col justify-center items-center rounded-full w-full h-full transition-all duration-300 shadow-[1px_0px_11px_8px_#b9b7b730] ease-in-out bg-white ${activeIndex === index
-                                ? "opacity-100"
-                                : "bg-white text-black opacity-80"
+                              ? "opacity-100"
+                              : "bg-white text-black opacity-80"
                               }`}
                           >
                             <p className="text-[3.6rem] font-[800] text-[#D91027] font-objektiv">
@@ -642,7 +648,7 @@ function YearCurosel() {
 
 
 
-      <BackHomeButtons onPrevious={yearDetails === "" ? handleClose : handleTimeClose} onHome={()=>  navigate("/home")}   containerClassName="bottom-8 right-12" />
+      <BackHomeButtons onPrevious={yearDetails === "" ? handleClose : handleTimeClose} onHome={() => navigate("/home")} containerClassName="bottom-8 right-12" />
 
       {/* <div className="absolute grid grid-cols-2 bottom-8  z-40 right-12" style={{
         clipPath:
