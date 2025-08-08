@@ -94,7 +94,7 @@ const ProductCard = ({onExploreClick,engines,activeEngineIndex, setActiveEngineI
   }, [engines]);
 
   return (
-    <div className="flex gap-8 items-start justify-start pl-[40px] py-[20px] max-w-[1080px] no-scrollbar overflow-auto">
+    <div className={`flex gap-8 items-start justify-start pl-[40px] py-[20px] ${engines?.length > 6 ? "max-w-[1120px]" : ""}  no-scrollbar overflow-auto`}>
       {/* Engines with Content in Rows */}
       {engines.map((engine, index) => (
         <div

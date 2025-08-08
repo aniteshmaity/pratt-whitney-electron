@@ -163,8 +163,8 @@ import PW800_S_2 from "../../assets/product/bussiness/PW 800  GTF Like.webp";
 import PW800_S_3 from "../../assets/product/bussiness/PW 800  Less Maintainance.webp";
 import PW800_S_4 from "../../assets/product/bussiness/PW 800  30 min spare.webp";
 import PW800_S_5 from "../../assets/product/bussiness/PW 800  Talon X combustor.webp";
-import PW800_H_1 from "../../assets/product/bussiness/PW 800 Sustainable.png";
-import PW800_H_2 from "../../assets/product/bussiness/PW 800 Efficient and Easy Maintenance.png";
+import PW800_H_1 from "../../assets/product/helicopter/Low env.webp";
+import PW800_H_2 from "../../assets/product/bussiness/PW500 Proven Durability and Reliability.webp";
 import PW800_pdf_1 from "../../assets/product/bussiness/21-0327 PW800 Fact Sheet_compressed.pdf";
 import PW800_pdf_2 from "../../assets/product/bussiness/22-0464 PW800 Engine Brochure_compressed.pdf";
 import PW800_pdf_3 from "../../assets/product/bussiness/PW800 ESP Fact Sheet_compressed.pdf";
@@ -588,13 +588,13 @@ import Azuel from "../../assets/product/commercial/Azul.webp";
 import Helvetic from "../../assets/product/commercial/Helvetic.webp";
 import wider from "../../assets/product/commercial/Wideroe.webp";
 import AmericanAir from "../../assets/product/commercial/American Airlines.webp";
-import BarazilianAir from "../../assets/product/commercial/Brazilinan Air Force.webp";
+import BarazilianAir from "../../assets/product/commercial/Brazilinan Air Force.jpg";
 import DeltaAir from "../../assets/product/commercial/Delta Airline.webp";
-import HungaryAir from "../../assets/product/commercial/Hungarian Air Force.webp";
-import PortugeseAir from "../../assets/product/commercial/Portugese Air Force.webp";
-import Qantas from "../../assets/product/commercial/Quantas.webp";
-import NetherlandAir from "../../assets/product/commercial/royal Netherlands Air Force.webp";
-import TitanAir from "../../assets/product/commercial/Titan Airways.webp";
+import HungaryAir from "../../assets/product/commercial/Hungarian Air Force.jpg";
+import PortugeseAir from "../../assets/product/commercial/Portugese Air Force.jpg";
+import Qantas from "../../assets/product/commercial/Quantas.jpg";
+import NetherlandAir from "../../assets/product/commercial/royal Netherlands Air Force.jpg";
+import TitanAir from "../../assets/product/commercial/Titan Airways.jpg";
 import Alaska from "../../assets/product/commercial/Alaska.webp";
 import IcelandAir from "../../assets/product/commercial/Iceland Air_.webp";
 import TUI from "../../assets/product/commercial/TUI.webp";
@@ -3044,7 +3044,7 @@ const engineDetails = {
             { name: "IndiGo", image: IndiGo },
             { name: "American Airlines", image: AmericanAir },
             { name: "United Airlines", image: UnitedAir },
-            { name: "Delta Airlines", image: DeltaAir },
+            { name: "Delta Airlines", image: Delta },
             { name: "Brazilian Air Force", image: BarazilianAir },
             { name: "Portuguese Air Force", image: PortugeseAir },
             { name: "Hungarian Air Force", image: HungaryAir },
@@ -3189,7 +3189,7 @@ const engineDetails = {
             { name: "IndiGo", image: IndiGo },
             { name: "American Airlines", image: AmericanAir },
             { name: "United Airlines", image: UnitedAir },
-            { name: "Delta Airlines", image: DeltaAir },
+            { name: "Delta Airlines", image: Delta },
             //  { name: "Singapore Airlines (SilkAir)", image: gtf },
             { name: "Brazilian Air Force", image: BarazilianAir },
             { name: "Portuguese Air Force", image: PortugeseAir },
@@ -3324,7 +3324,7 @@ const engineDetails = {
               title: "Customers",
               content: [
                 { name: "American Airlines", image: AmericanAir },
-                { name: "Delta Airlines", image: DeltaAir },
+                { name: "Delta Airlines", image: Delta },
                 { name: "United Airlines", image: UnitedAir },
                 { name: "Korean Air", image: korean },
               ],
@@ -3388,7 +3388,7 @@ const engineDetails = {
               title: "Customers",
               content: [
                 { name: "American Airlines", image: AmericanAir },
-                { name: "Delta Airlines", image: DeltaAir },
+                { name: "Delta Airlines", image: Delta },
                 { name: "Etihad Airways", image: Etihad },
                 { name: "Korean Air", image: korean },
                 { name: "Vietnam Airlines", image: VietnumAir },
@@ -3570,7 +3570,7 @@ const engineDetails = {
           title: "Customers",
           content: [
             { name: "American Airlines", image: AmericanAir },
-            { name: "Delta Airlines", image: DeltaAir },
+            { name: "Delta Airlines", image: Delta },
             { name: "United Airlines", image: UnitedAir },
             { name: "Korean Air", image: korean },
           ],
@@ -3671,7 +3671,7 @@ const engineDetails = {
           content: [
             { name: "American Airlines", image: AmericanAir },
             { name: "United Airlines", image: UnitedAir },
-            { name: "Delta Airlines", image: DeltaAir },
+            { name: "Delta Airlines", image: Delta },
             { name: "Icelandair", image: IcelandAir },
             { name: "TUI Airways", image: TUI },
             { name: "Alaska Airlines", image: Alaska },
