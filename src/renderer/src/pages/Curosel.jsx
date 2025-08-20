@@ -293,7 +293,7 @@ if(triggerAnimation){
       <div className="w-screen fixed bottom-0 left-0 z-10">
         <img ref={imageRef} className=" w-full pointer-events-none select-none focus:outline-none"
  src={landscape} alt="trrain" />
-        <img src={groupAero} alt="" className="absolute  right-[8%] w-[45%] bottom-[20%] z-50"  />
+        {/* <img src={groupAero} alt="" className="absolute  right-[8%] w-[45%] bottom-[20%] z-50"  /> */}
         <img src={bulding} alt="building-1" className="absolute right-[20%] bottom-[25%] -z-10" />
                 <img src={bulding} alt="building-1" className="absolute right-[50%] bottom-[25%] -z-10" />
       </div>

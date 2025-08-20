@@ -924,7 +924,7 @@ const ProductDetails = ({ onClose, engineData }) => {
           </div>
         </div>
 
- <BackHomeButtons onPrevious={engineParamData ? onBack : mapData ? onMapPage : onClose} onHome={()=>  navigate(`/home/${homeId}`)}   containerClassName="bottom-[0%] right-[10px]" buttonPadding="py-1" />
+ <BackHomeButtons onPrevious={engineParamData ? onBack : mapData ? onMapPage : onClose} onHome={()=>  navigate(`/home/${homeId}`)}   containerClassName="bottom-[0%] right-[10px]" buttonPadding="py-2" />
         {/* <div
           className="absolute grid grid-cols-2 bottom-[0px] right-[10px] z-40"
           style={{

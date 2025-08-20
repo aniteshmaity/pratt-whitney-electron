@@ -2437,7 +2437,7 @@ const engineDetails = {
       variants: [
         {
           img: gtf,
-          title: "GTF Engine",
+          title: "GTF Family",
           tabsData: [
              {
           title: "Platforms",

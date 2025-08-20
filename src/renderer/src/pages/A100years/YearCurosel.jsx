@@ -16,7 +16,7 @@ import airplaneImage1 from "../../assets/images/100years/1930.webp";
 import airplaneImage2 from "../../assets/images/100years/1940.webp";
 import airplaneImage3 from "../../assets/images/100years/1950.webp";
 import airplaneImage4 from "../../assets/images/100years/1960.webp";
-import airplaneImage5 from "../../assets/images/100years/1970.webp";
+import airplaneImage5 from "../../assets/images/100years/1970-new.png";
 import airplaneImage6 from "../../assets/images/100years/1980.webp";
 import airplaneImage7 from "../../assets/images/100years/1990.webp";
 import airplaneImage8 from "../../assets/images/100years/2000.webp";
@@ -636,7 +636,7 @@ function YearCurosel() {
               ref={(el) => (airplaneRefs.current[index] = el)} // Attach ref for animation
               src={airplane}
               alt={`airplane-${index}`}
-              className="w-[75px] opacity-0"
+              className="w-[75px]   opacity-0"
               style={{
                 transform: `translateX(-130px)`,
               }}
