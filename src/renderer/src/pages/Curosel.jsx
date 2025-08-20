@@ -18,7 +18,7 @@ import bulding from "../assets/images/home/building.png"
 import inIndia from "../assets/images/home/In-India.png"
 import connectAeroVideo from "../assets/images/home/Connected Aerospace Loop.mp4";
 import ourProductVideo from "../assets/images/home/Our Products Loop.mp4";
-import GTf3dVideo from "../assets/images/home/GTF 3D experience.mp4";
+import GTf3dVideo from "../assets/images/home/GTF-3D-experience-new.mp4";
 import pwIndiaVideo from "../assets/images/home/PW in India.mp4";
 import pw100YearsVideo from "../assets/images/home/PW100 Years Interactive.mp4";
 import { FaChevronLeft } from "react-icons/fa6";
