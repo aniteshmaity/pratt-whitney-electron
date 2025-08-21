@@ -11,17 +11,20 @@ import { BiHomeAlt2 } from "react-icons/bi";
 import { BiSolidChevronLeft } from "react-icons/bi";
 import { gsap } from "gsap";
 // Import local images
-import airplaneImage0 from "../../assets/images/100years/1960.webp";
+// import airplaneImage0 from "../../assets/images/100years/1960.webp";
 import airplaneImage1 from "../../assets/images/100years/1930.webp";
 import airplaneImage2 from "../../assets/images/100years/1940.webp";
 import airplaneImage3 from "../../assets/images/100years/1950.webp";
-import airplaneImage4 from "../../assets/images/100years/1960.webp";
-import airplaneImage5 from "../../assets/images/100years/1970-new.png";
-import airplaneImage6 from "../../assets/images/100years/1980.webp";
-import airplaneImage7 from "../../assets/images/100years/1990.webp";
-import airplaneImage8 from "../../assets/images/100years/2000.webp";
-import airplaneImage9 from "../../assets/images/100years/2010.webp";
-import airplaneImage10 from "../../assets/images/100years/2020.webp";
+import airplaneImage4 from "../../assets/images/100years/1950_a_new.png";
+import airplaneImage5 from "../../assets/images/100years/1960.webp";
+import airplaneImage6 from "../../assets/images/100years/1970_a_new.png";
+import airplaneImage7 from "../../assets/images/100years/1970_new.png";
+import airplaneImage8 from "../../assets/images/100years/1980.webp";
+import airplaneImage9 from "../../assets/images/100years/1990.webp";
+import airplaneImage10 from "../../assets/images/100years/2000.webp";
+import airplaneImage11 from "../../assets/images/100years/2010.webp";
+import airplaneImage12 from "../../assets/images/100years/2020.webp";
+
 import redStrap from "../../assets/images/100years/red-border-2.png";
 import bracketImage from "../../assets/100years/bracket-image.png";
 import { Link, useNavigate } from "react-router-dom";
@@ -127,7 +130,6 @@ function YearCurosel() {
 
   ];
   const airplaneImages = [
-    airplaneImage0,
     airplaneImage1,
     airplaneImage2,
     airplaneImage3,
@@ -138,7 +140,8 @@ function YearCurosel() {
     airplaneImage8,
     airplaneImage9,
     airplaneImage10,
-    airplaneImage3,
+    airplaneImage11,
+    airplaneImage12,
 
   ];
 
@@ -636,7 +639,7 @@ function YearCurosel() {
               ref={(el) => (airplaneRefs.current[index] = el)} // Attach ref for animation
               src={airplane}
               alt={`airplane-${index}`}
-              className="w-[75px]   opacity-0"
+              className="w-[75px] h-[30px]  opacity-0"
               style={{
                 transform: `translateX(-130px)`,
               }}
