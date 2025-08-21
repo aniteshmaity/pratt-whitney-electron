@@ -198,13 +198,13 @@ onClick={()=> {
         onClick={() => setAutoRotate((prev) => !prev)}
         style={{
           clipPath:
-            "polygon(5% 0%, 100% 0%, 100% 74%, 95% 100%, 0% 100%, 0% 24%)",
+            "polygon(8% 0%, 100% 0%, 100% 68%, 92% 100%, 0% 100%, 0% 32%)",
         }}
       >
-        <div className='w-full h-full pl-4 pr-6 py-2 bg-[#1d1c1c]'
+        <div className='w-full h-full pl-4 pr-6 py-2 rounded bg-[#1d1c1c]'
           style={{
             clipPath:
-              "polygon(5% 0%, 100% 0%, 100% 74%, 95% 100%, 0% 100%, 0% 24%)",
+              "polygon(8% 0%, 100% 0%, 100% 68%, 92% 100%, 0% 100%, 0% 32%)",
           }} >
           {autoRotate ? (
             <>
@@ -245,13 +245,13 @@ onClick={()=> {
 
         style={{
           clipPath:
-            "polygon(5% 0%, 100% 0%, 100% 74%, 95% 100%, 0% 100%, 0% 24%)",
+            "polygon(8% 0%, 100% 0%, 100% 68%, 92% 100%, 0% 100%, 0% 32%)",
         }}
       >
-        <div className='w-full h-full pl-4 pr-6 py-2  bg-[#1d1c1c]'
+        <div className='w-full h-full pl-4 pr-6 py-2 rounded bg-[#1d1c1c]'
           style={{
             clipPath:
-              "polygon(5% 0%, 100% 0%, 100% 74%, 95% 100%, 0% 100%, 0% 24%)",
+              "polygon(8% 0%, 100% 0%, 100% 68%, 92% 100%, 0% 100%, 0% 32%)",
           }} >
           {!showInfo ? " Show Info" : "Hide Info"}
 
@@ -270,13 +270,13 @@ onClick={()=> {
         }}
         style={{
           clipPath:
-            "polygon(5% 0%, 100% 0%, 100% 74%, 95% 100%, 0% 100%, 0% 24%)",
+            "polygon(8% 0%, 100% 0%, 100% 68%, 92% 100%, 0% 100%, 0% 32%)",
         }}
       >
-        <div className='w-full h-full pl-4 pr-6 py-2 flex justify-center items-center gap-2 bg-[#040404]'
+        <div className='w-full h-full pl-4 pr-6 py-2 flex justify-center items-center gap-2 rounded bg-[#040404]'
           style={{
             clipPath:
-              "polygon(5% 0%, 100% 0%, 100% 74%, 95% 100%, 0% 100%, 0% 24%)",
+              "polygon(8% 0%, 100% 0%, 100% 68%, 92% 100%, 0% 100%, 0% 32%)",
           }} >
           Reset
           <GrPowerReset />

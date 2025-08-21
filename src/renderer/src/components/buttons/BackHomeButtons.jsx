@@ -9,7 +9,7 @@ function BackHomeButtons({ onPrevious, onHome, containerClassName = "",  buttonP
   return (
     <div className={`absolute grid grid-cols-2  z-40  ${containerClassName}`} style={{
       clipPath:
-        "polygon(6% 0%, 100% 0%, 100% 64%, 94% 100%, 0% 100%, 0% 34%)",
+        "polygon(5% 0%, 100% 0%, 100% 64%, 95% 100%, 0% 100%, 0% 34%)",
     }}>
 
       <div onClick={onPrevious} className={`bg-[#918F8F] text-white flex justify-center items-center px-3 ${buttonPadding} gap-1 cursor-pointer hover:bg-[#656363]`}>

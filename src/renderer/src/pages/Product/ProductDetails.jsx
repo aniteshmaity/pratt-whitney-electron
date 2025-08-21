@@ -30,7 +30,7 @@ import { BiHomeAlt2 } from "react-icons/bi";
 import { BiSolidChevronLeft } from "react-icons/bi";
 
 import { useDispatch, useSelector } from "react-redux";
-import { setShowLoader,resetYearState } from "../../features/yearSlice";
+import { setShowLoader, resetYearState } from "../../features/yearSlice";
 import { resetNavigation } from "../../features/navigationSlice";
 import BackHomeButtons from "../../components/buttons/BackHomeButtons";
 // function Model({ url }) {
@@ -58,7 +58,7 @@ const ProductDetails = ({ onClose, engineData }) => {
   const allData = engineParamData
     ? engineParamData
     : mapData
-      ? mapData  
+      ? mapData
       : engineData;
   const alltabsData = engineParamData
     ? engineParamData?.defaultTabsData
@@ -80,7 +80,7 @@ const ProductDetails = ({ onClose, engineData }) => {
   const redDot2Ref = useRef(null);
   const dispatch = useDispatch();
   const [isExpanded, setIsExpanded] = useState(null);
-    const [imageLoading, setImageLoading] = useState(true);
+  const [imageLoading, setImageLoading] = useState(true);
   const [isOverflowing, setIsOverflowing] = useState(false);
 
   const [showSlider, setShowSlider] = useState(false);
@@ -123,14 +123,14 @@ const ProductDetails = ({ onClose, engineData }) => {
   // }
   const onBack = () => {
     dispatch(setShowLoader(true));
-  if (engineParamSlug) {
-    console.log("inside engine param page");
-    navigate("/experience3d/GTF3d");
-  } else if (yearParamSlug || lastVisited === "years") {
-    navigate(`/A100years/yearCourasal/${yearParamName}`);
-  } else {
-    navigate("/products");
-  }
+    if (engineParamSlug) {
+      console.log("inside engine param page");
+      navigate("/experience3d/GTF3d");
+    } else if (yearParamSlug || lastVisited === "years") {
+      navigate(`/A100years/yearCourasal/${yearParamName}`);
+    } else {
+      navigate("/products");
+    }
   };
   const onMapPage = () => {
     navigate("/map");
@@ -199,88 +199,88 @@ const ProductDetails = ({ onClose, engineData }) => {
       { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
     );
   }, [activeTab]);
- 
- useEffect(() => {
-  const content = contentRef.current;
-  const redDot = redDotRef.current;
 
-  const handleScroll = () => {
-    if (content && redDot) {
-      const scrollPercentage =
-        (content.scrollTop / (content.scrollHeight - content.clientHeight)) * 100;
-      redDot.style.top = `${scrollPercentage}%`;
+  useEffect(() => {
+    const content = contentRef.current;
+    const redDot = redDotRef.current;
+
+    const handleScroll = () => {
+      if (content && redDot) {
+        const scrollPercentage =
+          (content.scrollTop / (content.scrollHeight - content.clientHeight)) * 100;
+        redDot.style.top = `${scrollPercentage}%`;
+      }
+    };
+
+    const checkOverflow = () => {
+      setIsOverflowing(content.scrollHeight > content.clientHeight);
+    };
+
+    // === Common drag logic ===
+    let startY = 0;
+    let startTop = 0;
+
+    const updateScroll = (clientY) => {
+      const deltaY = clientY - startY;
+      const trackHeight = content.clientHeight;
+      let newTop = startTop + (deltaY / trackHeight) * 100;
+      newTop = Math.max(0, Math.min(newTop, 100));
+      redDot.style.top = `${newTop}%`;
+      const scrollHeight = content.scrollHeight - content.clientHeight;
+      content.scrollTop = (newTop / 100) * scrollHeight;
+    };
+
+    // === Mouse drag ===
+    const handleMouseDown = (e) => {
+      e.preventDefault();
+      startY = e.clientY;
+      startTop = parseInt(redDot.style.top) || 0;
+      document.addEventListener("mousemove", handleMouseMove);
+      document.addEventListener("mouseup", handleMouseUp);
+    };
+
+    const handleMouseMove = (e) => updateScroll(e.clientY);
+
+    const handleMouseUp = () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseup", handleMouseUp);
+    };
+
+    // === Touch drag ===
+    const handleTouchStart = (e) => {
+      startY = e.touches[0].clientY;
+      startTop = parseInt(redDot.style.top) || 0;
+      document.addEventListener("touchmove", handleTouchMove);
+      document.addEventListener("touchend", handleTouchEnd);
+    };
+
+    const handleTouchMove = (e) => {
+      updateScroll(e.touches[0].clientY);
+    };
+
+    const handleTouchEnd = () => {
+      document.removeEventListener("touchmove", handleTouchMove);
+      document.removeEventListener("touchend", handleTouchEnd);
+    };
+
+    if (content) {
+      content.addEventListener("scroll", handleScroll);
+      checkOverflow();
+      content.scrollTop = 0;
     }
-  };
-
-  const checkOverflow = () => {
-    setIsOverflowing(content.scrollHeight > content.clientHeight);
-  };
-
-  // === Common drag logic ===
-  let startY = 0;
-  let startTop = 0;
-
-  const updateScroll = (clientY) => {
-    const deltaY = clientY - startY;
-    const trackHeight = content.clientHeight;
-    let newTop = startTop + (deltaY / trackHeight) * 100;
-    newTop = Math.max(0, Math.min(newTop, 100));
-    redDot.style.top = `${newTop}%`;
-    const scrollHeight = content.scrollHeight - content.clientHeight;
-    content.scrollTop = (newTop / 100) * scrollHeight;
-  };
-
-  // === Mouse drag ===
-  const handleMouseDown = (e) => {
-    e.preventDefault();
-    startY = e.clientY;
-    startTop = parseInt(redDot.style.top) || 0;
-    document.addEventListener("mousemove", handleMouseMove);
-    document.addEventListener("mouseup", handleMouseUp);
-  };
-
-  const handleMouseMove = (e) => updateScroll(e.clientY);
-
-  const handleMouseUp = () => {
-    document.removeEventListener("mousemove", handleMouseMove);
-    document.removeEventListener("mouseup", handleMouseUp);
-  };
-
-  // === Touch drag ===
-  const handleTouchStart = (e) => {
-    startY = e.touches[0].clientY;
-    startTop = parseInt(redDot.style.top) || 0;
-    document.addEventListener("touchmove", handleTouchMove);
-    document.addEventListener("touchend", handleTouchEnd);
-  };
-
-  const handleTouchMove = (e) => {
-    updateScroll(e.touches[0].clientY);
-  };
-
-  const handleTouchEnd = () => {
-    document.removeEventListener("touchmove", handleTouchMove);
-    document.removeEventListener("touchend", handleTouchEnd);
-  };
-
-  if (content) {
-    content.addEventListener("scroll", handleScroll);
-    checkOverflow();
-    content.scrollTop = 0;
-  }
-  if (redDot) {
-    redDot.addEventListener("mousedown", handleMouseDown);
-    redDot.addEventListener("touchstart", handleTouchStart, { passive: false });
-  }
-
-  return () => {
-    if (content) content.removeEventListener("scroll", handleScroll);
     if (redDot) {
-      redDot.removeEventListener("mousedown", handleMouseDown);
-      redDot.removeEventListener("touchstart", handleTouchStart);
+      redDot.addEventListener("mousedown", handleMouseDown);
+      redDot.addEventListener("touchstart", handleTouchStart, { passive: false });
     }
-  };
-}, [tabsData, activeTab, isOverflowing]);
+
+    return () => {
+      if (content) content.removeEventListener("scroll", handleScroll);
+      if (redDot) {
+        redDot.removeEventListener("mousedown", handleMouseDown);
+        redDot.removeEventListener("touchstart", handleTouchStart);
+      }
+    };
+  }, [tabsData, activeTab, isOverflowing]);
 
 
 
@@ -378,14 +378,14 @@ const ProductDetails = ({ onClose, engineData }) => {
         >
           <div className=" border border-[#D91027]">
             <div className="relative overflow-hidden h-[50%] z-20 bg-white">
-          {imageLoading && (
-        <div className="absolute top-0 left-0 w-full h-full bg-gray-200 animate-pulse z-10" />
-      )}
+              {imageLoading && (
+                <div className="absolute top-0 left-0 w-full h-full bg-gray-200 animate-pulse z-10" />
+              )}
               <img
                 src={allData?.logo || engineParamData?.logo || machine1}
-                     onLoad={() => setImageLoading(false)}
+                onLoad={() => setImageLoading(false)}
                 className="w-full h-full object-contain absolute top-0 left-0"
-                 style={{ opacity: imageLoading ? 0 : 1 }}
+                style={{ opacity: imageLoading ? 0 : 1 }}
                 alt=""
               />
             </div>
@@ -506,19 +506,19 @@ const ProductDetails = ({ onClose, engineData }) => {
                 </p>
               ) : (
                 <>
-                  <div className="relative w-[55%] h-[108px]">
+                  <div className="relative w-[55%] h-[108px] ">
                     <div
                       className="absolute inset-0 bg-[#D91027] p-[1.9px]"
                       style={{
                         clipPath:
-                          "polygon(100% 0%, 100% 0%, 100% 50%, 90% 100%, 0% 100%, 0 0)",
+                          "polygon(100% 0%, 100% 0%, 100% 50%, 92% 100%, 0% 100%, 0 0)",
                       }}
                     />
                     <div
                       className="relative bg-[#393637] h-full w-full px-5 py-3 flex items-center"
                       style={{
                         clipPath:
-                          "polygon(100% 0%, 100% 0%, 100% 50%, 90% 100%, 0% 100%, 0 0)",
+                          "polygon(100% 0%, 100% 0%, 100% 50%, 92% 100%, 0% 100%, 0 0)",
                       }}
                     >
                       <h1 className="text-5xl font-bold text-white">
@@ -653,7 +653,7 @@ const ProductDetails = ({ onClose, engineData }) => {
       `}
                         style={{
                           clipPath:
-                            "polygon(10% 0%, 100% 0%, 100% 65%, 90% 100%, 0% 100%, 0% 35%)",
+                            "polygon(8% 0%, 100% 0%, 100% 65%, 92% 100%, 0% 100%, 0% 35%)",
                           zIndex: activeTab === index ? 2 : 1,
                           transform: `translateX(${-(15 * index) + 1}px)`,
                         }}
@@ -799,7 +799,7 @@ const ProductDetails = ({ onClose, engineData }) => {
       `}
                       style={{
                         clipPath:
-                          "polygon(10% 0%, 100% 0%, 100% 65%, 90% 100%, 0% 100%, 0% 35%)",
+                          "polygon(8% 0%, 100% 0%, 100% 65%, 92% 100%, 0% 100%, 0% 35%)",
                         zIndex: activeTab === index ? 2 : 1,
                         transform: `translateX(${-(15 * index) + 1}px)`,
                       }}
@@ -924,7 +924,7 @@ const ProductDetails = ({ onClose, engineData }) => {
           </div>
         </div>
 
- <BackHomeButtons onPrevious={engineParamData ? onBack : mapData ? onMapPage : onClose} onHome={()=>  navigate(`/home/${homeId}`)}   containerClassName="bottom-[0%] right-[10px]" buttonPadding="py-2" />
+        <BackHomeButtons onPrevious={engineParamData ? onBack : mapData ? onMapPage : onClose} onHome={() => navigate(`/home/${homeId}`)} containerClassName="bottom-[0%] right-[10px]" buttonPadding="py-2" />
         {/* <div
           className="absolute grid grid-cols-2 bottom-[0px] right-[10px] z-40"
           style={{
