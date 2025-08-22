@@ -129,7 +129,8 @@ const ProductDetails = ({ onClose, engineData }) => {
     } else if (yearParamSlug || lastVisited === "years") {
       navigate(`/A100years/yearCourasal/${yearParamName}`);
     } else {
-      navigate("/products");
+      
+      navigate("/products?slideId=4");
     }
   };
   const onMapPage = () => {

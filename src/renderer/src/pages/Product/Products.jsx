@@ -9,7 +9,7 @@ import { FaChevronLeft } from "react-icons/fa6";
 import ProductCard from './ProductCard';
 import comercialImg from "../../assets/100years/comercial-engine-img.png"
 import ProductDetails from './ProductDetails';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate,useSearchParams } from 'react-router-dom';
 import { productEngine } from '../../components/data/productEngineData';
 import { BiHomeAlt2 } from "react-icons/bi";
 import { BiSolidChevronLeft } from "react-icons/bi";
@@ -17,6 +17,7 @@ import Logo from '../../components/Logo';
 import BackHomeButtons from '../../components/buttons/BackHomeButtons';
 function Products({handleCurrentSlide}) {
  const navigate = useNavigate();
+ const [searchParams] = useSearchParams();
   const [isDetailsVisible, setIsDetailsVisible] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0); // Middle card active by default
   const [direction, setDirection] = useState(""); // To track the direction of slide change
@@ -24,6 +25,7 @@ function Products({handleCurrentSlide}) {
   const [selectedEngineDetails, setSelectedEngineDetails] = useState(null);
     const [activeEngineIndex, setActiveEngineIndex] = useState(0);
   const [loading, setLoading] = useState(true);
+    const slideId = searchParams.get("slideId");
   const sliderRef = useRef(null);
     const sliderDOMRef = useRef(null);
   const detailsRef = useRef(null);
@@ -256,6 +258,19 @@ function Products({handleCurrentSlide}) {
     return () => clearTimeout(timer);
   }, []);
 
+  // console.log("slideId",slideId);
+  // console.log("setloading",loading);
+  useEffect(() => {
+
+      if ( sliderRef.current) {
+        // console.log("inside slick");
+        sliderRef.current.slickGoTo(slideId);
+        setActiveIndex(slideId || 0);
+        // setLoading(true)
+      }
+    
+  }, [slideId]);
+
   const id = 2;
   return (
     <div className="overflow-y-hidden relative h-screen">
@@ -422,7 +437,7 @@ function Products({handleCurrentSlide}) {
                    <video
                       autoPlay
                       loop
-                        key={productEngine[activeIndex].video} 
+                        key={productEngine[activeIndex]?.video} 
                       muted
                       // controls
                       playsInline
@@ -431,11 +446,11 @@ function Products({handleCurrentSlide}) {
                       preload='none'
                       className=" w-full h-[400px] object-cover"
                     >
-                      <source src={productEngine[activeIndex].video} type="video/mp4" />
+                      <source src={productEngine[activeIndex]?.video} type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
                    <div className='w-full py-5 px-12'>
-                   <h2 className='text-[3rem] font-[700] pb-2'>{productEngine[activeIndex].engine}</h2>
+                   <h2 className='text-[3rem] font-[700] pb-2'>{productEngine[activeIndex]?.engine}</h2>
                    <p className=' text-[1.3rem] pb-5'>{productEngine[activeIndex]?.description}</p>
                         {/* <Link to="/A100years"><div className='w-[188px] h-[40px] bg-[#E11C37] flex justify-center items-center text-white text-[15px] text-bold button_clip_path'>View Timeline</div></Link> */}
               <ProductCard  onExploreClick={handleExploreClick} engines={productEngine[activeIndex]?.engines}  activeEngineIndex={activeEngineIndex} setActiveEngineIndex={setActiveEngineIndex}  />
